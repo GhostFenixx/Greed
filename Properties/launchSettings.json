@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Greed": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
