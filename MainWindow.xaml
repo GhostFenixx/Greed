@@ -326,6 +326,7 @@
     <MenuItem Header="{DynamicResource ModWeb}" Click="ModLink"/>
     <MenuItem Header="{DynamicResource WikiPage}" Click="WikiPage"/>
     <MenuItem Header="{DynamicResource ItemIDWeb}" Click="ItemFinder"/>
+    <MenuItem Header="{DynamicResource GitHub}" Click="GitHubLink"/>
     <MenuItem Header="{DynamicResource KoFi}" Click="KofiLink"/>
     <MenuItem Header="{DynamicResource Fika}" Click="FikaDiscord"/>
    </MenuItem>

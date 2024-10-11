@@ -439,6 +439,18 @@ namespace Greed
     System.Diagnostics.Process.Start(browserPath, argUrl);
    }
   }
+  private void GitHubLink(object sender, EventArgs e)
+  {
+   Popup Message = new((string)Application.Current.FindResource("GitHubLink"));
+   Message.ShowDialog();
+   if (Message.Confirm == true)
+   {
+    string browserPath = ("C:/Windows/explorer.exe");
+    string argUrl = "\"" + "https://github.com/GhostFenixx/SVM-Issues" + "\"";
+    System.Diagnostics.Process.Start(browserPath, argUrl);
+   }
+  }
+
   private void ModLink(object sender, EventArgs e)
   {
    Popup Message = new((string)Application.Current.FindResource("ModPage"));
