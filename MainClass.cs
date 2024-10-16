@@ -315,128 +315,128 @@
    {
     GKeychain = new Case()
     {
-     VSize = 2,
-     HSize = 2,
+     Height = 2,
+     Width = 2,
      Filter = false
     };
     KeycardHolderCase = new Case()
     {
-     VSize = 3,
-     HSize = 3,
+     Height = 3,
+     Width = 3,
      Filter = false
     };
     InjectorCase = new Case()
     {
-     VSize = 3,
-     HSize = 3,
+     Height = 3,
+     Width = 3,
      Filter = false
     };
     Holodilnick = new Case()
     {
-     VSize = 8,
-     HSize = 8,
+     Height = 8,
+     Width = 8,
      Filter = false
     };
     PistolCase = new Case()
     {
-     VSize = 4,
-     HSize = 3,
+     Height = 3,
+     Width = 4,
      Filter = false
     };
     DocumentsCase = new Case()
     {
-     VSize = 4,
-     HSize = 4,
+     Height = 4,
+     Width = 4,
      Filter = false
     };
     Keytool = new Case()
     {
-     VSize = 4,
-     HSize = 4,
+     Height = 4,
+     Width = 4,
      Filter = false
     };
     SiccCase = new Case()
     {
-     VSize = 5,
-     HSize = 5,
+     Height = 5,
+     Width = 5,
      Filter = false
     };
     ThiccWeaponCase = new Case()
     {
-     VSize = 15,
-     HSize = 6,
+     Height = 15,
+     Width = 6,
      Filter = false
     };
     ThiccItemsCase = new Case()
     {
-     VSize = 14,
-     HSize = 14,
+     Height = 14,
+     Width = 14,
      Filter = false
     };
     MedicineCase = new Case()
     {
-     VSize = 7,
-     HSize = 7,
+     Height = 7,
+     Width = 7,
      Filter = false
     };
     DogtagCase = new Case()
     {
-     VSize = 10,
-     HSize = 10,
+     Height = 10,
+     Width = 10,
      Filter = false
     };
     MagazineCase = new Case()
     {
-     VSize = 7,
-     HSize = 7,
+     Height = 7,
+     Width = 7,
      Filter = false
     };
     AmmunitionCase = new Case()
     {
-     VSize = 7,
-     HSize = 7,
+     Height = 7,
+     Width = 7,
      Filter = false
     };
     WeaponCase = new Case()
     {
-     VSize = 10,
-     HSize = 5,
+     Height = 10,
+     Width = 5,
      Filter = false
     };
     ItemsCase = new Case()
     {
-     VSize = 8,
-     HSize = 8,
+     Height = 8,
+     Width = 8,
      Filter = false
     };
     GrenadeCase = new Case()
     {
-     VSize = 8,
-     HSize = 8,
+     Height = 8,
+     Width = 8,
      Filter = false
     };
     WZWallet = new Case()
     {
-     VSize = 2,
-     HSize = 2,
+     Height = 2,
+     Width = 2,
      Filter = false
     };
     SimpleWallet = new Case()
     {
-     VSize = 2,
-     HSize = 2,
+     Height = 2,
+     Width = 2,
      Filter = false
     };
     MoneyCase = new Case()
     {
-     VSize = 7,
-     HSize = 7,
+     Height = 7,
+     Width = 7,
      Filter = false
     };
     LuckyScav = new Case()
     {
-     VSize = 14,
-     HSize = 14,
+     Height = 14,
+     Width = 14,
      Filter = false
     };
    }
@@ -444,8 +444,8 @@
 
   public class Case
   {
-   public int VSize { get; set; }
-   public int HSize { get; set; }
+   public int Height { get; set; }
+   public int Width { get; set; }
    public bool Filter { get; set; }
   }
 
@@ -991,7 +991,6 @@
   public class RaidEvents
   {
    public bool DisableEvents { get; set; }
-   public bool SnowEvent { get; set; }
    public int KillaFactoryChance { get; set; } = 100;
    public int GoonsFactoryChance { get; set; } = 100;
    public bool GoonsFactory { get; set; }
@@ -1045,8 +1044,10 @@
    public double UsecMult { get; set; } = 1.5;
    public double BearMult { get; set; } = 1;
    public double ScavMult { get; set; } = 0.8;
-   public int BTRV { get; set; } = 2;
-   public int BTRH { get; set; } = 5;
+   public int BTRHeight { get; set; } = 2;
+   public int BTRHWidth { get; set; } = 5;
+   public string Season { get; set; } = "Summer";
+   public bool ForceSeason { get; set; }
    public RaidStartup RaidStartup { get; set; }
    public Raids()
    {
@@ -1164,22 +1165,22 @@
 
   public class SecureContainers
   {
-   public int KappaHSize { get; set; } = 3;
-   public int AlphaVSize { get; set; } = 2;
-   public int KappaVSize { get; set; } = 4;
-   public int AlphaHSize { get; set; } = 2;
-   public int GammaHSize { get; set; } = 3;
-   public int GammaVSize { get; set; } = 3;
-   public int GammaTUEHSize { get; set; } = 3;
-   public int GammaTUEVSize { get; set; } = 3;
-   public int BetaVSize { get; set; } = 2;
-   public int BetaHSize { get; set; } = 3;
-   public int EpsilonHSize { get; set; } = 4;
-   public int EpsilonVSize { get; set; } = 2;
-   public int DevVSize { get; set; } = 3;
-   public int DevHSize { get; set; } = 3;
-   public int WaistPouchHSize { get; set; } = 2;
-   public int WaistPouchVSize { get; set; } = 2;
+   public int KappaWidth { get; set; } = 3;
+   public int AlphaHeight { get; set; } = 2;
+   public int KappaHeight { get; set; } = 4;
+   public int AlphaWidth { get; set; } = 2;
+   public int GammaWidth { get; set; } = 3;
+   public int GammaHeight { get; set; } = 3;
+   public int GammaTUEWidth { get; set; } = 3;
+   public int GammaTUEHeight { get; set; } = 3;
+   public int BetaHeight { get; set; } = 2;
+   public int BetaWidth { get; set; } = 3;
+   public int EpsilonWidth { get; set; } = 4;
+   public int EpsilonHeight { get; set; } = 2;
+   public int DevHeight { get; set; } = 3;
+   public int DevWidth { get; set; } = 3;
+   public int WaistPouchWidth { get; set; } = 2;
+   public int WaistPouchHeight { get; set; } = 2;
   }
   public class Skills
   {

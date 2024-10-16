@@ -181,7 +181,6 @@ namespace Greed
    if (File.Exists(savepath + Presets.Text + ".json"))
    {
     Popup Message = new((string)Application.Current.FindResource("OverridePreset"));
-    //Popup Message = new((string)("Same Name Selected, want to override?"));
     Message.ShowDialog();
     return Message.Confirm;
    }
@@ -643,7 +642,8 @@ namespace Greed
    EnableSubSection(CarCoopCheck.IsChecked, CarCoopSection);
    EnableSubSection(RaidStartupCheck.IsChecked, RaidStartupSection);
    EnableSubSection(FleaConditionsCheck.IsChecked, FleaConditionsSection);
-
+   EnableSubSection(PlayerOffersCheck.IsChecked, PlayerOffersSection);
+   EnableSubSection(WeatherCheck.IsChecked, WeatherSection);
   }
   public static void EnableSection(bool? Checker, Grid Field)
   {
