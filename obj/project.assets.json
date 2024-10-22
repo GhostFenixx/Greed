@@ -1154,13 +1154,13 @@
     "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.9.1",
+    "version": "1.10.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Greed.csproj",
+      "projectUniqueName": "G:\\GitHubSVM\\Greed\\Greed.csproj",
       "projectName": "Greed",
-      "projectPath": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Greed.csproj",
+      "projectPath": "G:\\GitHubSVM\\Greed\\Greed.csproj",
       "packagesPath": "C:\\Users\\GhostFenixx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\obj\\",
+      "outputPath": "G:\\GitHubSVM\\Greed\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

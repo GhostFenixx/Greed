@@ -405,6 +405,12 @@ TUE Stash та Gamma
  <System:String x:Key="CoopExitPrices">Ціни за спільні</System:String>
  <System:String x:Key="CarExitPrices">Ціни за машини</System:String>
  <System:String x:Key="CarAndCoop">Виходи через машину</System:String>
+ <!--BTR Section-->
+ <System:String x:Key="BTR">БТР</System:String>
+ <System:String x:Key="ForceBTRStash">Форсувати розмір інвентаря БТР</System:String>
+ <System:String x:Key="ForceBTRFriendly">БТР по замовчуванню дружелюбний</System:String>
+ <System:String x:Key="BTRTaxiPrice">Цена таксі:</System:String>
+ <System:String x:Key="BTRCoverPrice">Цена вогневой підтримки:</System:String>
  <!--Events Section-->
  <System:String x:Key="Events">Події</System:String>
  <System:String x:Key="RaidersEverywhere">Рейдери замість Диких</System:String>
@@ -421,9 +427,11 @@ TUE Stash та Gamma
  <System:String x:Key="Halloween">Хелловін</System:String>
  <System:String x:Key="Christmas">Різдво</System:String>
  <System:String x:Key="DisableEvents">Вимкнути поточні події</System:String>
+ <System:String x:Key="TagillaInterchange">Тагілла сопроводжуе кіллу у Развязці</System:String>
  <System:String x:Key="GlukharLabs">Глухар у Лабораторії</System:String>
  <System:String x:Key="Bloodhounds">Шанс спавна загону Погоні</System:String>
  <!--Raid Startup Section-->
+ <System:String x:Key="RaidStartup">Налаштування перед початком рейда</System:String>
  <System:String x:Key="Cursed">Позначений і проклятий</System:String>
  <System:String x:Key="MIARaid">MIA наприкінці рейду</System:String>
  <System:String x:Key="LootRaid">Зберігати спорядження наприкінці рейду</System:String>
@@ -432,6 +440,25 @@ TUE Stash та Gamma
  <System:String x:Key="DeployTimer">Таймер Висадки:</System:String>
  <System:String x:Key="EnableBosses">Увімкнути Босів</System:String>
  <System:String x:Key="ScavWars">Війна Диких</System:String>
+
+ <System:String x:Key="AsOnline">Як в онлайні</System:String>
+ <System:String x:Key="High">Багато</System:String>
+ <System:String x:Key="Horde">Орда</System:String>
+ <System:String x:Key="Low">Мало</System:String>
+ <System:String x:Key="Medium">Средне</System:String>
+ <System:String x:Key="Impossible">Неможливо</System:String>
+ <System:String x:Key="Easy">Легко</System:String>
+ <System:String x:Key="NoBots">Викл</System:String>
+ <System:String x:Key="Hard">Важко</System:String>
+ <System:String x:Key="Random">Випадкове</System:String>
+ <!--Weather Section-->
+ <System:String x:Key="ForceSeason">Перезаписати погоду</System:String>
+ <System:String x:Key="Season">Сезон:</System:String>
+ <System:String x:Key="Summer">Літо</System:String>
+ <System:String x:Key="Autumn">Осінь</System:String>
+ <System:String x:Key="Winter">Зима</System:String>
+ <System:String x:Key="Spring">Весна</System:String>
+ <System:String x:Key="Storm">Шторм</System:String>
  <!--Fleamarket Section-->
  <System:String x:Key="PlayerFlea">Продажі/Покупки гравця</System:String>
  <System:String x:Key="FleaMarketLevel">Рівень доступу до барахолки:</System:String>
@@ -496,6 +523,8 @@ TUE Stash та Gamma
  <System:String x:Key="SpecsAmount">Кількість Спец.Слотів:</System:String>
  <System:String x:Key="Size">Розмір:</System:String>
  <System:String x:Key="Rows">Рядки:</System:String>
+ <System:String x:Key="Width">Ширина:</System:String>
+ <System:String x:Key="Height">Висота:</System:String>
  <System:String x:Key="Columns">Стовпці:</System:String>
  <System:String x:Key="FirstCell">1-ша Клітина:</System:String>
  <System:String x:Key="SecondCell">2-га Клітина:</System:String>
@@ -524,13 +553,21 @@ TUE Stash та Gamma
  <System:String x:Key="RewardSpread">Множник мінімальної нагороди:</System:String>
 
  <System:String x:Key="Types">Типи місій:</System:String>
+
+ <System:String x:Key="Levels">Рівні:</System:String>
+ <System:String x:Key="Experience">Досвід:</System:String>
+ <System:String x:Key="ItemsReward">Предмети:</System:String>
+ <System:String x:Key="Reputation">Репутація:</System:String>
+ <System:String x:Key="SkillPoint">Кільість балів навичок:</System:String>
+ <System:String x:Key="SkillChance">Шанс отримання балів навичок:</System:String>
  
- <System:String x:Key="Levels">Levels:</System:String>
- <System:String x:Key="Experience">Experience:</System:String>
- <System:String x:Key="ItemsReward">Items:</System:String>
- <System:String x:Key="Reputation">Reputation:</System:String>
- <System:String x:Key="SkillPoint">Amount of skill points:</System:String>
- <System:String x:Key="SkillChance">Chance to get skill points:</System:String>
+ <System:String x:Key="Elimination">Устранение</System:String>
+ <System:String x:Key="Exploration">Выйти с локации</System:String>
+ <System:String x:Key="Completion">Найти и передать</System:String>
+ <System:String x:Key="CompElim">Найти и передать, Устранение</System:String>
+ <System:String x:Key="CompExpl">Найти и передать, Выйти с локации</System:String>
+ <System:String x:Key="ExplElim">Выйти с локации, Устранение</System:String>
+ <System:String x:Key="ExplElimComp">Найти и передать, Выйти с локации, Устранение</System:String>
 
  <!--Scav Section-->
  <System:String x:Key="SCAVHealth">Здоров'я Дикого</System:String>

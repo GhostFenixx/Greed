@@ -5,9 +5,9 @@
 Independent Application made by GhostFenixx
 Using VS 2022 Tools on .NET 6 + ModernWPF Library By Kinnara
 https://github.com/Kinnara/ModernWpf
-Shared by CC BY-NC-ND License
-For more info: read license on - creativecommons.org
-It allows you to share, but not modify/build upon or commercially distribute(Read Sell).
+Shared by PUSL License
+For more info: read license on - https://github.com/GhostFenixx/SVM?tab=License-1-ov-file#readme
+It allows you to share if permission granted, but not modify/build upon or commercially distribute.
 </System:String>
  <System:String xml:space="preserve" x:Key="DisclaimerText">DISCLAIMER
 This application uses Media and/or Materials from the Video Game "Escape from Tarkov" and links that leads to Game official wiki that can be accessed via `https://escapefromtarkov.fandom.com/`
@@ -68,20 +68,46 @@ Everyone else who provided any kind of support to the project, whether bug repor
   
   1.9.1 For SPT 3.9.0-3
   Added: 
-TUE Stash and Gamma
-New section enablers for Currency, Cases and Secure cases.
-  
+  TUE Stash and Gamma
+  New section enablers for Currency, Cases and Secure cases.
   Reworked:
-Currency section was reworked: GP Coin was added but BSG currency design was removed due to fact i cannot scale with coins.
-Holiday events and snow were reworked and now posses mostly full functionality that SPT has to offer.
+  Currency section was reworked: GP Coin was added but BSG currency design was removed due to fact i cannot scale with coins.
+  Holiday events and snow were reworked and now posses mostly full functionality that SPT has to offer.
   
   Fixed:
-Russian locale has misaligned fleamarket field
-SCAV regenerate even if you did a PMC run
-SCAV section tooltips were in code but not binded to fields
-[H1] Currency Enabler wasn't saving properly
-[H1] Missing Ukrainian tooltips in Events
+  Russian locale has misaligned fleamarket field
+  SCAV regenerate even if you did a PMC run
+  SCAV section tooltips were in code but not binded to fields
+  [H1] Currency Enabler wasn't saving properly
+  [H1] Missing Ukrainian tooltips in Events
   
+  1.10.0 For SPT 3.10.0
+  Added:
+  Repeatable quests - now contains fields related to scaled reward
+  Additional switchers
+  Popup confirmation for re-saving a preset within same name
+  New fields in Custom section
+  New event - Tagilla follows Killa in interchange.
+  Partisan in Bots section.
+  Jaeger and Ref can be unlocked by default.
+  New lines for weirdos to read when server initializes.
+  Chinese Localization by Volcano.
+  GitHub integration
+  
+  Changed:
+  Default adjustments to match default 3.10 SPT.
+  Airdrops were rewritten to accommodate 3.10 changes.
+  FleaMarket>Price range got recolored to yellow to accommodate new tooltip adjusted to it.
+  SVM's code was revamped pretty heavy(400 lines less), waves and misc stuff were taken out of code space to separate .json files.
+  Scav Pockets ID will be changed to accommodate Mongo ID enforcement. My fault they weren't already tbh.
+  Patched HideSpecialIcon plugin to work under new EFT clients.
+  Changes to `Remove Assort` options, instead of removing them - it would set them to 0
+  To avoid issues with modded traders.
+  CSM>Custom pockets were changed to reduce causes of `nulled` pockets and straight-up the way to turn pockets back if custom option is not present.
+  Signal pistol to pockets - Added TUE pockets to be affected by that option as well - thanks to DiZek.
+  Fixes:
+  Ground Zero fields.
+  Health markup was applying too little values in backend.
  </System:String>
  <!--MessageBoxes and/or Exception handlers-->
  <System:String xml:space="preserve" x:Key="SVMWrongInstallation">You've incorrectly installed SVM, it is not located under "user\mods"
@@ -446,7 +472,6 @@ Something went wrong, is there incorrect type in the field or it is empty?</Syst
  <System:String x:Key="HealthResortIncludeGuards">Including guards</System:String>
  <System:String x:Key="GoonsFactory">Goons in Factory and their spawn chance:</System:String>
  <System:String x:Key="KillaFactory">Killa in Factory and his spawn chance:</System:String>
- <System:String x:Key="SnowEvent">Add Snow</System:String>
  <System:String x:Key="Halloween">Halloween</System:String>
  <System:String x:Key="Christmas">Christmas</System:String>
  <System:String x:Key="DisableEvents">Disable ongoing events</System:String>
@@ -464,6 +489,26 @@ Something went wrong, is there incorrect type in the field or it is empty?</Syst
  <System:String x:Key="DeployTimer">Deploy timer in the raid</System:String>
  <System:String x:Key="EnableBosses">Enable Bosses</System:String>
  <System:String x:Key="ScavWars">Scav Wars</System:String>
+
+ <System:String x:Key="AsOnline">As in online</System:String>
+ <System:String x:Key="High">High</System:String>
+ <System:String x:Key="Horde">Horde</System:String>
+ <System:String x:Key="Low">Low</System:String>
+ <System:String x:Key="Medium">Medium</System:String>
+ <System:String x:Key="Impossible">Impossible</System:String>
+ <System:String x:Key="Easy">Easy</System:String>
+ <System:String x:Key="NoBots">None</System:String>
+ <System:String x:Key="Hard">Hard</System:String>
+ <System:String x:Key="Random">Random</System:String>
+
+ <!--Raid Startup Section-->
+ <System:String x:Key="ForceSeason">Force seasonal weather</System:String>
+ <System:String x:Key="Season">Type of season:</System:String>
+ <System:String x:Key="Summer">Summer</System:String>
+ <System:String x:Key="Autumn">Autumn</System:String>
+ <System:String x:Key="Winter">Winter</System:String>
+ <System:String x:Key="Spring">Spring</System:String>
+ <System:String x:Key="Storm">Storm</System:String>
  <!--Fleamarket Section-->
  <System:String x:Key="PlayerFlea">Player Selling/Buying</System:String>
  <System:String x:Key="FleaMarketLevel">Lvl to access Fleamarket:</System:String>
@@ -529,8 +574,10 @@ Something went wrong, is there incorrect type in the field or it is empty?</Syst
  <System:String x:Key="Pockets">PMC Pockets:</System:String>
  <System:String x:Key="SpecsAmount">Amount of spec slots:</System:String>
  <System:String x:Key="Size">Size:</System:String>
- <System:String x:Key="Rows">Rows:</System:String>
- <System:String x:Key="Columns">Columns:</System:String>
+ <!--<System:String x:Key="Rows">Rows:</System:String>
+ <System:String x:Key="Columns">Columns:</System:String>-->
+ <System:String x:Key="Width">Width:</System:String>
+ <System:String x:Key="Height">Height:</System:String>
  <System:String x:Key="FirstCell">1st Cell:</System:String>
  <System:String x:Key="SecondCell">2nd  Cell:</System:String>
  <System:String x:Key="ThirdCell">3rd  Cell:</System:String>
@@ -555,7 +602,15 @@ Something went wrong, is there incorrect type in the field or it is empty?</Syst
  <System:String x:Key="KillsAmountLvl2">Amount of Kills [Lvl range 16-40]:</System:String>
  <System:String x:Key="KillsAmountLvl3">Amount of Kills [Lvl range 41-100]:</System:String>
  <System:String x:Key="ScavKillsLvl2">Amount of Kills [Lvl range 16-100]:</System:String>
- 
+
+ <System:String x:Key="Elimination">Elimination</System:String>
+ <System:String x:Key="Exploration">Exploration</System:String>
+ <System:String x:Key="Completion">Completion</System:String>
+ <System:String x:Key="CompElim">Completion, Elimination</System:String>
+ <System:String x:Key="CompExpl">Completion, Exploration</System:String>
+ <System:String x:Key="ExplElim">Exploration, Elimination</System:String>
+ <System:String x:Key="ExplElimComp">Completion, Exploration, Elimination</System:String>
+
  <System:String x:Key="RewardScale">Level based scale of rewards</System:String>
  <System:String x:Key="Levels">Levels:</System:String>
  <System:String x:Key="Experience">Experience:</System:String>
@@ -563,7 +618,6 @@ Something went wrong, is there incorrect type in the field or it is empty?</Syst
  <System:String x:Key="Reputation">Reputation:</System:String>
  <System:String x:Key="SkillPoint">Amount of skill points:</System:String>
  <System:String x:Key="SkillChance">Chance to get skill points:</System:String>
-
  <System:String x:Key="RequiredItems">Amount of items required:</System:String>
  <System:String x:Key="MaxExtracts">Maximum Extracts required:</System:String>
  <System:String x:Key="RewardSpread">Reward spread multiplier:</System:String>
@@ -803,7 +857,6 @@ Such exits as:
 AI PMC still can be converted from raiders so be aware</System:String>
  <System:String xml:space="preserve" x:Key="HealthResortIncludeGuards_TT">Highly not recommended, this is more of a stress test than a feature
 You'll have more than 30 AI in a single area, you've been warned</System:String>
- <System:String x:Key="SnowEvent_TT">Only changes weather settings</System:String>
  <System:String xml:space="preserve" x:Key="Halloween_TT">Halloween event - enables event exclusive lights in hideout, 
 alters Zryachiy behavior and spawns, adds event loot into AI</System:String>
  <System:String xml:space="preserve" x:Key="Christmas_TT">Christmas event - enables event exclusive lights in hideout, gives you a christmas gift, 
@@ -811,7 +864,7 @@ enables snow, enable the ability for Santa Claus to spawn, adds event loot into 
  <System:String  xml:space="preserve" x:Key="Types_TT">Daily missions splits into 3 types: Extermination, Completion, Exploration
  Extermination - Kill PMC, SCAVs or Bosses. Sometimes into specific body part or from close/long range.
  Completion - Provide items with `found in raid` tag
- Exploration - Exfiltrate from spefici location with the tag `survived`. Sometimes through specific exit</System:String>
+ Exploration - Exfiltrate from specific location with the tag `survived`. Sometimes through specific exit</System:String>
  <System:String  xml:space="preserve" x:Key="FenceBlacklist_TT">Removing certain IDs may result in an error on the server launch. 
 Proceed with caution</System:String>
  <System:String xml:space="preserve" x:Key="SafeExit_TT">Allows to leave via menu to save gear/loot however it will count

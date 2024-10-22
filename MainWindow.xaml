@@ -2027,22 +2027,22 @@
         </Expander.Header>
         <StackPanel IsEnabled="False" Name="RaidStartupSection" Margin="10">
          <TextBlock Text="{DynamicResource AIDifficulty}"/>
-         <ComboBox Foreground ="White" Width="200" Name="AIDifficulty" SelectedValue="{Binding Path=Raids.RaidStartup.AIDifficulty, Mode=TwoWay}" SelectedValuePath="Content">
-          <ComboBoxItem Content="AsOnline"/>
-          <ComboBoxItem Content="Easy"/>
-          <ComboBoxItem Content="Medium"/>
-          <ComboBoxItem Content="Hard"/>
-          <ComboBoxItem Content="Impossible"/>
-          <ComboBoxItem Content="Random"/>
+         <ComboBox Foreground ="White" Width="200" Name="AIDifficulty" SelectedIndex="{Binding Path=Raids.RaidStartup.AIDifficulty, Mode=TwoWay}" SelectedValuePath="Content">
+          <ComboBoxItem Content="{DynamicResource AsOnline}"/>
+          <ComboBoxItem Content="{DynamicResource Easy}"/>
+          <ComboBoxItem Content="{DynamicResource Medium}"/>
+          <ComboBoxItem Content="{DynamicResource Hard}"/>
+          <ComboBoxItem Content="{DynamicResource Impossible}"/>
+          <ComboBoxItem Content="{DynamicResource Random}"/>
          </ComboBox>
          <TextBlock Text="{DynamicResource AIAmount}"/>
-         <ComboBox Foreground ="White" Width="200" Name="AIAmount" SelectedValue="{Binding Path=Raids.RaidStartup.AIAmount, Mode=TwoWay}" SelectedValuePath="Content">
-          <ComboBoxItem Content="AsOnline"/>
-          <ComboBoxItem Content="Low"/>
-          <ComboBoxItem Content="Medium"/>
-          <ComboBoxItem Content="High"/>
-          <ComboBoxItem Content="Horde"/>
-          <ComboBoxItem Content="NoBots"/>
+         <ComboBox Foreground ="White" Width="200" Name="AIAmount" SelectedIndex="{Binding Path=Raids.RaidStartup.AIAmount, Mode=TwoWay}" SelectedValuePath="Content">
+          <ComboBoxItem Content="{DynamicResource AsOnline}"/>
+          <ComboBoxItem Content="{DynamicResource Low}"/>
+          <ComboBoxItem Content="{DynamicResource Medium}"/>
+          <ComboBoxItem Content="{DynamicResource High}"/>
+          <ComboBoxItem Content="{DynamicResource Horde}"/>
+          <ComboBoxItem Content="{DynamicResource NoBots}"/>
          </ComboBox>
          <ui:NumberBox Value="{Binding Raids.RaidStartup.TimeBeforeDeployLocal}" Minimum="5" Maximum="60" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
@@ -2066,11 +2066,10 @@
         </Expander.Header>
         <StackPanel IsEnabled="False" Name="WeatherSection" Margin="10">
          <TextBlock Text="{DynamicResource Season}" VerticalAlignment="Center" Margin="0,0,10,0"/>
-         <ComboBox Foreground ="White" Width="200" Name="WeatherBox" SelectedValue="{Binding Path=Raids.Season, Mode=TwoWay}" SelectedValuePath="Content">
+         <ComboBox Foreground ="White" Width="200" Name="WeatherBox" SelectedIndex="{Binding Path=Raids.Season, Mode=TwoWay}" SelectedValuePath="Content" Cursor="">
           <ComboBoxItem Content="{DynamicResource Summer}"/>
           <ComboBoxItem Content="{DynamicResource Autumn}"/>
-          <ComboBoxItem Content="{DynamicResource WinterS}"/>
-          <ComboBoxItem Content="{DynamicResource WinterE}"/>
+          <ComboBoxItem Content="{DynamicResource Winter}"/>
           <ComboBoxItem Content="{DynamicResource Spring}"/>
           <ComboBoxItem Content="{DynamicResource Storm}"/>
          </ComboBox>
@@ -2373,14 +2372,14 @@
          </ui:NumberBox>
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedValue="{Binding Path=Quests.DailyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
-           <ComboBoxItem Content="Elimination"/>
-           <ComboBoxItem Content="Completion"/>
-           <ComboBoxItem Content="Exploration"/>
-           <ComboBoxItem Content="Elimination,Completion"/>
-           <ComboBoxItem Content="Completion,Exploration"/>
-           <ComboBoxItem Content="Elimination,Exploration"/>
-           <ComboBoxItem Content="Completion,Elimination,Exploration"/>
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.DailyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+           <ComboBoxItem Content="{DynamicResource Elimination}"/>
+           <ComboBoxItem Content="{DynamicResource Completion}"/>
+           <ComboBoxItem Content="{DynamicResource Exploration}"/>
+           <ComboBoxItem Content="{DynamicResource CompElim}"/>
+           <ComboBoxItem Content="{DynamicResource CompExpl}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElim}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
          </StackPanel>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
@@ -2491,14 +2490,14 @@
          </ui:NumberBox>
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedValue="{Binding Path=Quests.WeeklyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
-           <ComboBoxItem Content="Elimination"/>
-           <ComboBoxItem Content="Completion"/>
-           <ComboBoxItem Content="Exploration"/>
-           <ComboBoxItem Content="Elimination,Completion"/>
-           <ComboBoxItem Content="Completion,Exploration"/>
-           <ComboBoxItem Content="Elimination,Exploration"/>
-           <ComboBoxItem Content="Completion,Elimination,Exploration"/>
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.WeeklyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+           <ComboBoxItem Content="{DynamicResource Elimination}"/>
+           <ComboBoxItem Content="{DynamicResource Completion}"/>
+           <ComboBoxItem Content="{DynamicResource Exploration}"/>
+           <ComboBoxItem Content="{DynamicResource CompElim}"/>
+           <ComboBoxItem Content="{DynamicResource CompExpl}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElim}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
 
          </StackPanel>
@@ -2609,10 +2608,10 @@
          </ui:NumberBox>
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedValue="{Binding Path=Quests.ScavQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
-           <ComboBoxItem Content="Elimination"/>
-           <ComboBoxItem Content="Completion"/>
-           <ComboBoxItem Content="Elimination,Completion"/>
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.ScavQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+           <ComboBoxItem Content="{DynamicResource Elimination}"/>
+           <ComboBoxItem Content="{DynamicResource Completion}"/>
+           <ComboBoxItem Content="{DynamicResource CompElim}"/>
           </ComboBox>
          </StackPanel>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>

@@ -484,7 +484,7 @@
    public int MinItems { get; set; }
    public int MaxItems { get; set; }
    public int Extracts { get; set; }
-   public string Types { get; set; }
+   public int Types { get; set; }
    public double Spread { get; set; }
    public int MinKillsLR1 { get; set; }
    public int MaxKillsLR1 { get; set; }
@@ -573,8 +573,7 @@
    public int StockTime_Max { get; set; } = 150;
    public int AmountOnSale { get; set; } = 140;
    public double PresetMult { get; set; } = 2;
-   public string Blacklist { get; set; } = "5c164d2286f774194c5e69fa\r\n543be6674bdc2df1348b4569\r\n5448bf274bdc2dfc2f8b456a\r\n5447bedf4bdc2d87278b4568\r\n6275303a9f372d6ea97f9ec7\r\n62e9103049c018f425059f38\r\n59f32bb586f774757e1e8442\r\n59f32c3b86f77472a31742f0\r\n627bce33f21bc425b06ab967\r\n62f109593b54472778797866\r\n5d52cc5ba4b9367408500062\r\n5d52d479a4b936793d58c76b\r\n5e99711486f7744bfc4af328\r\n62f10b79e7ee985f386b2f47\r\n633ffb5d419dbf4bea7004c6\r\n543be5dd4bdc2deb348b4569\r\n65649eb40bf0ed77b8044453\r\n5448e54d4bdc2dcc718b4568\r\n5a341c4086f77401f2541505\r\n5422acb9af1c889c16000029\r\n64d0b40fbe2eed70e254e2d4\r\n5fc22d7c187fea44d52eda44";
-	
+   public string Blacklist { get; set; } = "";
 
   }
 
@@ -950,7 +949,7 @@
      QuestAmount = 3,
      Lifespan = 1440,
      Spread = 0.5,
-     Types = "Completion,Elimination,Exploration",
+     Types = 0,
      Levels = "1,10,20,30,40,50,60",
      Experience = "1000,2000,8000,13000,19000,24000,30000",
      Reputation = "0.01,0.01,0.02,0.02,0.03,0.03,0.03",
@@ -975,7 +974,7 @@
      QuestAmount = 1,
      Lifespan = 10080,
      Spread = 0.5,
-     Types = "Completion,Elimination,Exploration",
+     Types = 0,
      Levels = "1,10,20,30,40,50,60",
      Experience = "5000,15000,27000,80000,142000,220000,290000",
      Reputation = "0.02,0.03,0.04,0.04,0.05,0.05,0.05",
@@ -1046,7 +1045,7 @@
    public double ScavMult { get; set; } = 0.8;
    public int BTRHeight { get; set; } = 2;
    public int BTRHWidth { get; set; } = 5;
-   public string Season { get; set; } = "Summer";
+   public int Season { get; set; } = 0;
    public bool ForceSeason { get; set; }
    public RaidStartup RaidStartup { get; set; }
    public Raids()
@@ -1061,9 +1060,9 @@
   {
    public bool EnableRaidStartup { get; set; }
    public int TimeBeforeDeployLocal { get; set; } = 10;
-   public string AIAmount { get; set; } = "AsOnline";
+   public int AIAmount { get; set; } = 0;
    public bool SaveLoot { get; set; } = true;
-   public string AIDifficulty { get; set; } = "AsOnline";
+   public int AIDifficulty { get; set; } = 0;
    public bool MIAEndofRaid { get; set; } = true;
    public bool TaggedAndCursed { get; set; }
    public bool EnableBosses { get; set; } = true;
@@ -1146,7 +1145,7 @@
    public int MinItems { get; set; } = 2;
    public int MaxItems { get; set; } = 5;
    public int Extracts { get; set; } = 3;
-   public string Types { get; set; } = "Elimination,Completion";
+   public int Types { get; set; } = 0;
    public double Spread { get; set; } = 0.5;
    public int MinKillsLR1 { get; set; } = 1;
    public int MaxKillsLR1 { get; set; } = 3;

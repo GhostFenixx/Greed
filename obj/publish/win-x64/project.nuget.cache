@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "bHravX9Ggk8=",
+  "dgSpecHash": "W6ylw9lOpNk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Greed.csproj",
+  "projectFilePath": "G:\\GitHubSVM\\Greed\\Greed.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GhostFenixx\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23401.1\\microsoft.net.illink.analyzers.7.0.100-1.23401.1.nupkg.sha512",
     "C:\\Users\\GhostFenixx\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23401.1\\microsoft.net.illink.tasks.7.0.100-1.23401.1.nupkg.sha512",
     "C:\\Users\\GhostFenixx\\.nuget\\packages\\modernwpfui\\0.9.6\\modernwpfui.0.9.6.nupkg.sha512",
     "C:\\Users\\GhostFenixx\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\GhostFenixx\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\GhostFenixx\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
+    "C:\\Users\\GhostFenixx\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

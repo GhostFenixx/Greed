@@ -9,7 +9,7 @@
     <ApplicationIcon>SVM.ico</ApplicationIcon>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <Title>Greed</Title>
-    <Version>1.9.1</Version>
+    <Version>1.10.0</Version>
     <Authors>GhostFenixx</Authors>
     <Description>A .Json loader creator with a GUI for SVM (Server Value Modifier) - A mod for SPT</Description>
     <Copyright>CC BY-NC-ND © GhostFenixx 2024</Copyright>
@@ -18,10 +18,6 @@
     <PackageLicenseExpression>CC-BY-NC-ND-4.0</PackageLicenseExpression>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Resources\HealthCN.png" />
-  </ItemGroup>
 
   <!--<ItemGroup>
     <None Remove="Resources\faqCN.rtf" />

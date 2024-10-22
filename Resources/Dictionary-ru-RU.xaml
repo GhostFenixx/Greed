@@ -420,7 +420,6 @@ TUE Stash и Gamma
  <System:String x:Key="HealthResortIncludeGuards">Включая Свиту</System:String>
  <System:String x:Key="GoonsFactory">Головорезы на Заводе и их шанс спавна:</System:String>
  <System:String x:Key="KillaFactory">Килла на Заводе и его шанс спавна:</System:String>
- <System:String x:Key="SnowEvent">Снег</System:String>
  <System:String x:Key="Halloween">Хэллоуин</System:String>
  <System:String x:Key="Christmas">Рождество</System:String>
  <System:String x:Key="DisableEvents">Отключить текущие события</System:String>
@@ -437,6 +436,27 @@ TUE Stash и Gamma
  <System:String x:Key="DeployTimer">Таймер Высадки:</System:String>
  <System:String x:Key="EnableBosses">Включить Боссов</System:String>
  <System:String x:Key="ScavWars">Война Диких</System:String>
+ <System:String x:Key="RaidStartup">Настроки перед стартом рейда</System:String>
+
+ <System:String x:Key="AsOnline">Как в онлайне</System:String>
+ <System:String x:Key="High">Много</System:String>
+ <System:String x:Key="Horde">Орда</System:String>
+ <System:String x:Key="Low">Мало</System:String>
+ <System:String x:Key="Medium">Среднее</System:String>
+ <System:String x:Key="Impossible">Невозможная</System:String>
+ <System:String x:Key="Easy">Легкая</System:String>
+ <System:String x:Key="NoBots">Выкл</System:String>
+ <System:String x:Key="Hard">Сложная</System:String>
+ <System:String x:Key="Random">Случайная</System:String>
+ <!--Weather Section-->
+ <System:String x:Key="ForceSeason">Перезаписать погоду</System:String>
+ <System:String x:Key="Season">Сезон:</System:String>
+ <System:String x:Key="Summer">Лето</System:String>
+ <System:String x:Key="Autumn">Осень</System:String>
+ <System:String x:Key="Winter">Зима</System:String>
+ <System:String x:Key="Spring">Весна</System:String>
+ <System:String x:Key="Storm">Шторм</System:String>
+ 
  <!--Fleamarket Section-->
  <System:String x:Key="PlayerFlea">Продажи/Покупки игрока</System:String>
  <System:String x:Key="FleaMarketLevel">Уровень для доступа к барахолке:</System:String>
@@ -500,8 +520,10 @@ TUE Stash и Gamma
  <System:String x:Key="Pockets">Карманы ЧВК:</System:String>
  <System:String x:Key="SpecsAmount">Количество Спец.Слотов:</System:String>
  <System:String x:Key="Size">Размер:</System:String>
- <System:String x:Key="Rows">Строки:</System:String>
- <System:String x:Key="Columns">Столбцы:</System:String>
+ <!--<System:String x:Key="Rows">Строки:</System:String>
+ <System:String x:Key="Columns">Столбцы:</System:String>-->
+ <System:String x:Key="Width">Ширина:</System:String>
+ <System:String x:Key="Height">Высота:</System:String>
  <System:String x:Key="FirstCell">1ая Ячейка:</System:String>
  <System:String x:Key="SecondCell">2ая  Ячейка:</System:String>
  <System:String x:Key="ThirdCell">3яя Ячейка:</System:String>
@@ -537,6 +559,13 @@ TUE Stash и Gamma
  <System:String x:Key="Reputation">Репутация:</System:String>
  <System:String x:Key="SkillPoint">Кол-во очков навыка:</System:String>
  <System:String x:Key="SkillChance">Шанс получения очков навыков:</System:String>
+ <System:String x:Key="Elimination">Устранение</System:String>
+ <System:String x:Key="Exploration">Выйти с локации</System:String>
+ <System:String x:Key="Completion">Найти и передать</System:String>
+ <System:String x:Key="CompElim">Найти и передать, Устранение</System:String>
+ <System:String x:Key="CompExpl">Найти и передать, Выйти с локации</System:String>
+ <System:String x:Key="ExplElim">Выйти с локации, Устранение</System:String>
+ <System:String x:Key="ExplElimComp">Найти и передать, Выйти с локации, Устранение</System:String>
 
  <!--Scav Section-->
  <System:String x:Key="SCAVHealth">Здоровье Дикого</System:String>
@@ -573,6 +602,11 @@ TUE Stash и Gamma
  <!--Custom Section-->
  <System:String x:Key="Debug">Инструменты отладки</System:String>
  <System:String x:Key="LoggerIntoServer">Записать пресет в лог сервера</System:String>
+ <System:String x:Key="CustomFields">Пользовательские поля</System:String>
+ <System:String x:Key="Mailbox">Почта</System:String>
+ <System:String x:Key="DisableSPTFriend">Отключить SPT Friend</System:String>
+ <System:String x:Key="DisableCommando">Отключить Commando</System:String>
+ <System:String x:Key="DisablePMCMessages">Отключить фразы от ЧВК</System:String>
  <!--Unified name of Game objects-->
  <System:String x:Key="FleaWeapons">Оружие:</System:String>
  <System:String x:Key="FleaMedical">Медицина:</System:String>
@@ -760,7 +794,6 @@ TUE Stash и Gamma
 ИИ ЧВК все еще могут появится из рейдеров, поэтому имейте в виду</System:String>
  <System:String xml:space="preserve" x:Key="HealthResortIncludeGuards_TT">Очень не рекомендуется, это скорее стресс тест чем опция
 У вас будет более 30 ИИ в одном месте, Я предупредил</System:String>
- <System:String x:Key="SnowEvent_TT">Меняет только погоду</System:String>
  <System:String x:Key="Halloween_TT">Включает праздничное освещение в убежище, 
   изменяет поведение и спавны зрячего, добавляет тематический лут в ИИ</System:String>
  <System:String xml:space="preserve" x:Key="Christmas_TT">Включает праздничное освещение в убежище, дарит рождественнский подарок 

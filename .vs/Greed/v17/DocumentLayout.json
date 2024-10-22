@@ -1,45 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\",
+  "WorkspaceRootPath": "G:\\GitHubSVM\\Greed\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\resources\\dictionary-ko-kr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-ko-kr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\mainclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\resources\\dictionary-en-us.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\resources\\dictionary-en-us.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-en-us.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\resources\\dictionary-ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\mainclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\resources\\dictionary-zh-cn.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-zh-cn.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|c:\\users\\ghostfenixx\\source\\repos\\greed\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\greed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:greed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\resources\\dictionary-zh-cn.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-zh-cn.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\resources\\dictionary-ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\resources\\dictionary-ko-kr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-ko-kr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\resources\\dictionary-uk-ua.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:resources\\dictionary-uk-ua.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|g:\\githubsvm\\greed\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C67E951D-ADBD-459E-ABA0-803F71A4F2EC}|Greed.csproj|solutionrelative:converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,17 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 311,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MainClass.cs",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainClass.cs",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\MainClass.cs",
               "RelativeDocumentMoniker": "MainClass.cs",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainClass.cs",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\MainClass.cs",
               "RelativeToolTip": "MainClass.cs",
-              "ViewState": "AQIAAEcCAAAAAAAAAAAawFgCAAAjAAAA",
+              "ViewState": "AQIAAM8BAAAAAAAAAAA0wOMBAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-14T03:47:43.303Z",
               "IsPinned": true,
@@ -68,114 +76,129 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAE8CAAAAAAAAAAAMwHECAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T13:09:01.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dictionary-ru-RU.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-ru-RU.xaml",
-              "RelativeDocumentMoniker": "Resources\\Dictionary-ru-RU.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-ru-RU.xaml",
-              "RelativeToolTip": "Resources\\Dictionary-ru-RU.xaml",
+              "DocumentIndex": 9,
+              "Title": "Dictionary-uk-UA.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-uk-UA.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionary-uk-UA.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-uk-UA.xaml",
+              "RelativeToolTip": "Resources\\Dictionary-uk-UA.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-14T03:15:19.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dictionary-en-US.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-en-US.xaml",
-              "RelativeDocumentMoniker": "Resources\\Dictionary-en-US.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-en-US.xaml",
-              "RelativeToolTip": "Resources\\Dictionary-en-US.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-14T03:15:18.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T17:25:35.092Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Dictionary-zh-CN.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-zh-CN.xaml",
-              "RelativeDocumentMoniker": "Resources\\Dictionary-zh-CN.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-zh-CN.xaml",
-              "RelativeToolTip": "Resources\\Dictionary-zh-CN.xaml",
+              "Title": "Dictionary-ru-RU.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-ru-RU.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionary-ru-RU.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-ru-RU.xaml",
+              "RelativeToolTip": "Resources\\Dictionary-ru-RU.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-20T16:06:53.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dictionary-ko-KR.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-ko-KR.xaml",
-              "RelativeDocumentMoniker": "Resources\\Dictionary-ko-KR.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Resources\\Dictionary-ko-KR.xaml",
-              "RelativeToolTip": "Resources\\Dictionary-ko-KR.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-18T15:27:16.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-14T02:32:46.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T01:50:41.966Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Dictionary-ko-KR.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-ko-KR.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionary-ko-KR.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-ko-KR.xaml",
+              "RelativeToolTip": "Resources\\Dictionary-ko-KR.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T01:50:13.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dictionary-zh-CN.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-zh-CN.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionary-zh-CN.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-zh-CN.xaml",
+              "RelativeToolTip": "Resources\\Dictionary-zh-CN.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T01:48:45.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dictionary-en-US.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-en-US.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionary-en-US.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Resources\\Dictionary-en-US.xaml",
+              "RelativeToolTip": "Resources\\Dictionary-en-US.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T01:35:56.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-02-14T02:32:46.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\App.xaml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\App.xaml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-15T01:44:43.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-15T01:44:43.73Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FolderProfile.pubxml",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Properties\\PublishProfiles\\FolderProfile.pubxml",
-              "RelativeDocumentMoniker": "Properties\\PublishProfiles\\FolderProfile.pubxml",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Properties\\PublishProfiles\\FolderProfile.pubxml",
-              "RelativeToolTip": "Properties\\PublishProfiles\\FolderProfile.pubxml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-07-15T06:01:44.996Z",
-              "EditorCaption": ""
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAACEBAAAAAAAAAAAswOgBAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T13:09:01.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
+              "Title": "Greed.csproj",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Greed.csproj",
+              "RelativeDocumentMoniker": "Greed.csproj",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Greed.csproj",
+              "RelativeToolTip": "Greed.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-19T18:56:11.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Converters.cs",
-              "DocumentMoniker": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Converters.cs",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Converters.cs",
               "RelativeDocumentMoniker": "Converters.cs",
-              "ToolTip": "C:\\Users\\GhostFenixx\\source\\repos\\Greed\\Converters.cs",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Converters.cs",
               "RelativeToolTip": "Converters.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAeAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowB4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T01:01:58.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T01:01:58.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FolderProfile.pubxml",
+              "DocumentMoniker": "G:\\GitHubSVM\\Greed\\Properties\\PublishProfiles\\FolderProfile.pubxml",
+              "RelativeDocumentMoniker": "Properties\\PublishProfiles\\FolderProfile.pubxml",
+              "ToolTip": "G:\\GitHubSVM\\Greed\\Properties\\PublishProfiles\\FolderProfile.pubxml",
+              "RelativeToolTip": "Properties\\PublishProfiles\\FolderProfile.pubxml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-07-15T06:01:44.996Z"
             }
           ]
         }

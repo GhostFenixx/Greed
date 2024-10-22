@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A .Json loader creator with a GUI for SVM (Server Value Modifier) - A mod for SPT" +
     "")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.9.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.9.1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.9.1+598a50466adc0424e189e5430dabaecef00b8523")]
 [assembly: System.Reflection.AssemblyProductAttribute("Greed")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Greed")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.9.1.0")]

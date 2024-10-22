@@ -79,6 +79,7 @@ SCAV section tooltips were in code but not binded to fields
 [H1] Missing Ukrainian tooltips in Events
  </System:String>
  <!--MessageBoxes and/or Exception handlers-->
+ <System:String xml:space="preserve" x:Key="SVMWrongInstallation">Wrong Installation: NEEDTRANSLATION</System:String>
  <System:String x:Key="FileNotFoundException">로드하려는 파일이 존재하지 않습니다.</System:String>
  <System:String x:Key="CorruptedJSON">이 파일이 손상되었거나 프리셋으로 로드할 수 없습니다.</System:String>
  <System:String x:Key="NoAccess">파일을 읽을 수 없습니다. Windows 권한 문제인가요?</System:String>
@@ -255,6 +256,8 @@ SCAV section tooltips were in code but not binded to fields
  <!--Traders Section-->
  <System:String x:Key="TradersMisc">상인 기타 설정</System:String>
  <System:String x:Key="FIRTrade">상인이 판매하는 아이템 "인 레이드" 표시</System:String>
+ <System:String x:Key="UnlockJaeger">NEEDTRANSLATION</System:String>
+ <System:String x:Key="UnlockRef">NEEDTRANSLATION</System:String>
  <System:String x:Key="AllQuestsAvailable">모든 퀘스트 활성화</System:String>
  <System:String x:Key="RemoveTimeCondition">신규 퀘스트 생성 시간 설정(24시간)제거</System:String>
  <System:String x:Key="TradersLvl4">모든 상인 레벨 4 등급</System:String>
@@ -406,6 +409,14 @@ SCAV section tooltips were in code but not binded to fields
  <System:String x:Key="CarExtractTime">택시 탈출 대기 시간 (단위:초)</System:String>
  <System:String x:Key="CoopExitPrices">협동 탈출 지불 가격</System:String>
  <System:String x:Key="CarExitPrices">택시 탈출 지불 가격</System:String>
+
+ <!--BTR Section-->
+ <System:String x:Key="BTR">NEEDTRANSLATION</System:String>
+ <System:String x:Key="ForceBTRStash">NEEDTRANSLATION</System:String>
+ <System:String x:Key="ForceBTRFriendly">NEEDTRANSLATION</System:String>
+ <System:String x:Key="BTRTaxiPrice">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="BTRCoverPrice">NEEDTRANSLATION:</System:String>
+
  <!--Events Section-->
  <System:String x:Key="Events">이벤트 설정</System:String>
  <System:String x:Key="RaidersEverywhere">모든 스캐브가 레이더로 변경 (보스포함)</System:String>
@@ -416,10 +427,10 @@ SCAV section tooltips were in code but not binded to fields
  <System:String x:Key="BossesOnCustoms">모든 보스들 커스텀(세관)에 생성</System:String>
  <System:String x:Key="GoonsFactory">군즈 팩토리(공장) 생성 확률 :</System:String>
  <System:String x:Key="KillaFactory">킬라 팩토리(공장) 생성 확률 :</System:String>
- <System:String x:Key="SnowEvent">눈 추가</System:String>
  <System:String x:Key="Halloween">할로윈</System:String>
  <System:String x:Key="Christmas">크리스마스</System:String>
  <System:String x:Key="DisableEvents">진행 중인 이벤트 비활성화</System:String>
+ <System:String x:Key="TagillaInterchange">NEEDTRANSLATION</System:String>
  <System:String x:Key="GlukharLabs">랩(연구실)에 글루하 생성</System:String>
  <System:String x:Key="Bloodhounds">블러드하운드 생성 확률</System:String>
  <System:String x:Key="RedBlueEvent">스키어/피스키퍼 분대 스폰 확률</System:String>
@@ -434,6 +445,17 @@ SCAV section tooltips were in code but not binded to fields
  <System:String x:Key="DeployTimer">레이드 진입 전 준비 시간</System:String>
  <System:String x:Key="EnableBosses">보스 활성화</System:String>
  <System:String x:Key="ScavWars">스캐브(Scav) 전쟁</System:String>
+
+ <System:String x:Key="AsOnline">온라인과 같게</System:String>
+ <System:String x:Key="High">많음</System:String>
+ <System:String x:Key="Horde">넘쳐남</System:String>
+ <System:String x:Key="Low">적음</System:String>
+ <System:String x:Key="Medium">보통</System:String>
+ <System:String x:Key="Impossible">불가능한</System:String>
+ <System:String x:Key="Easy">쉬움</System:String>
+ <System:String x:Key="NoBots">없음</System:String>
+ <System:String x:Key="Hard">어려움</System:String>
+ <System:String x:Key="Random">무작위</System:String>
  <!--Fleamarket Section-->
  <System:String x:Key="PlayerFlea">플레이어 판매/구매</System:String>
  <System:String x:Key="FleaMarketLevel">플리마켓 활성화 레벨</System:String>
@@ -528,13 +550,21 @@ SCAV section tooltips were in code but not binded to fields
 
  <System:String x:Key="Types">퀘스트 임무 종류 :</System:String>
 
- <System:String x:Key="Levels">레벨 :</System:String>
- <System:String x:Key="ExpReward">NEEDTRANSLATION :</System:String>
- <System:String x:Key="CurrencyReward">NEEDTRANSLATION :</System:String>
- <System:String x:Key="ItemsReward">NEEDTRANSLATION :</System:String>
- <System:String x:Key="ReputationReward">NEEDTRANSLATION :</System:String>
- <System:String x:Key="ChanceToGiveSkillPoints">NEEDTRANSLATION :</System:String>
- <System:String x:Key="AmountOfSkillPoints">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="RewardScale">Level based scale of rewards</System:String>
+ <System:String x:Key="Levels">레벨:</System:String>
+ <System:String x:Key="Experience">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="ItemsReward">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="Reputation">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="SkillPoint">NEEDTRANSLATION:</System:String>
+ <System:String x:Key="SkillChance">NEEDTRANSLATION:</System:String>
+
+ <System:String x:Key="Elimination">사살 임무</System:String>
+ <System:String x:Key="Exploration">지역 탈출 임무</System:String>
+ <System:String x:Key="Completion">물건 전달 임무</System:String>
+ <System:String x:Key="CompElim">물건 전달 임무, 사살 임무</System:String>
+ <System:String x:Key="CompExpl">물건 전달 임무, 지역 탈출 임무</System:String>
+ <System:String x:Key="ExplElim">지역 탈출 임무, 사살 임무</System:String>
+ <System:String x:Key="ExplElimComp">물건 전달 임무, 지역 탈출 임무, 사살 임무</System:String>
 
  <!--Scav Section-->
  <System:String x:Key="SCAVHealth">스캐브(Scav) 체력 편집기</System:String>
@@ -548,9 +578,6 @@ SCAV section tooltips were in code but not binded to fields
  <System:String x:Key="CarBaseStanding">택시 / 협동 탈출 시 펜스 우호도 :</System:String>
  <System:String x:Key="StandingFriendlyKill">아군 스캐브 사살 시 펜스 우호도 :</System:String>
  <System:String x:Key="StandingPMCKill">PMC 사살 시 펜스 우호도 :</System:String>
- <!--<System:String x:Key="Levels">Alpha:</System:String>
- <System:String x:Key="Levels">Alpha:</System:String>
- <System:String x:Key="Levels">Alpha:</System:String>-->
 
  <!--Bots Section-->
  <System:String x:Key="BotsSpawnChance">보스 및 특수 유형 생성 확률</System:String>
@@ -575,8 +602,22 @@ SCAV section tooltips were in code but not binded to fields
  <System:String x:Key="OverridePMCNames">기본 SPT 이름 제거</System:String>
  <!--Custom Section-->
  <System:String x:Key="Debug">디버그 설정</System:String>
- <System:String x:Key="DebugAI">서버 터미널에서 AI 디버그</System:String>
  <System:String x:Key="LoggerIntoServer">서버 내 프리셋 기록</System:String>
+ <System:String x:Key="CustomFields">NEEDTRANSLATION</System:String>
+ <System:String x:Key="Mailbox">NEEDTRANSLATION</System:String>
+ <System:String x:Key="DisableSPTFriend">NEEDTRANSLATION</System:String>
+ <System:String x:Key="DisableCommando">NEEDTRANSLATION</System:String>
+ <System:String x:Key="DisablePMCMessages">NEEDTRANSLATION</System:String>
+ <!--Feel free to leave those as it is-->
+ <System:String x:Key="CustomCheck1">Custom Checkbox 1</System:String>
+ <System:String x:Key="CustomCheck2">Custom Checkbox 2</System:String>
+ <System:String x:Key="CustomCheck3">Custom Checkbox 3</System:String>
+ <System:String x:Key="CustomCheck4">Custom Checkbox 4</System:String>
+ <System:String x:Key="CustomNumber1">Custom Number 1</System:String>
+ <System:String x:Key="CustomNumber2">Custom Number 2</System:String>
+ <System:String x:Key="CustomNumber3">Custom Number 3</System:String>
+ <System:String x:Key="CustomNumber4">Custom Number 4</System:String>
+
  <!--Unified name of Game objects-->
  <System:String x:Key="FleaWeapons">무기 :</System:String>
  <System:String x:Key="FleaMedical">의약품 :</System:String>
@@ -758,7 +799,6 @@ GPU당 약 1배 효율 증가를 달성하려면 24.26으로 설정하세요.</S
 AI PMC는 여전히 레이더에서 변환될 수 있으므로 주의하세요.</System:String>
  <System:String xml:space="preserve" x:Key="HealthResortIncludeGuards_TT">매우 권장하지 않습니다. 이는 기능이라기보다는 스트레스 테스트에 가깝습니다.
 단일 지역에 30명 이상의 AI가 생성되니 주의하세요. 이 점을 명심하시기 바랍니다!</System:String>
- <System:String xml:space="preserve" x:Key="SnowEvent_TT">날씨 설정만 변경합니다.</System:String>
  <System:String xml:space="preserve" x:Key="Halloween_TT">은신처에 이벤트 전용 조명을 활성화하고, 
 지라치의 생성과 행동을 변경하며, AI에 이벤트 전리품을 추가합니다.</System:String>
  <System:String xml:space="preserve" x:Key="Christmas_TT">은신처에 이벤트 전용 조명을 활성화하고, 크리스마스 선물을 제공하며, 

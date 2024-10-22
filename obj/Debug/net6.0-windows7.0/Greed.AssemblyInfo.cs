@@ -16,11 +16,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("CC BY-NC-ND © GhostFenixx 2024")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A .Json loader creator with a GUI for SVM (Server Value Modifier) - A mod for SPT" +
     "")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.9.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.9.1")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.10.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.10.0+598a50466adc0424e189e5430dabaecef00b8523")]
 [assembly: System.Reflection.AssemblyProductAttribute("Greed")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Greed")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.9.1.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.10.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
