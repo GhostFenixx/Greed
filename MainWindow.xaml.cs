@@ -47,14 +47,6 @@ namespace Greed
    ToList();
    MainClass.MainConfig mainConfig = new();
    DataContext = mainConfig;
-   // LoadRTF(WelcomeMessage, Assembly.GetExecutingAssembly().GetManifestResourceStream("Greed.Resources.HelloEN.rtf"));
-   // LoadRTF(RTF1, Assembly.GetExecutingAssembly().GetManifestResourceStream("Greed.Resources.test.rtf"));
-   //Stream RFTReader = Assembly.GetExecutingAssembly().GetManifestResourceStream("Greed.Resources.test.rtf");
-   //using StreamReader RtfStream = new(RFTReader);
-   // RTF1.Selection.Load(RFTReader, DataFormats.Rtf);
-   //RTF1.Selection.Select(RTF1.Selection.Start, RTF1.Selection.Start);
-
-   //RTF1.Document.SetText();
   }
 
   private void LangSwitchClick(object sender, RoutedEventArgs e)
@@ -227,14 +219,6 @@ namespace Greed
   {
    try
    {
-    //var options = new JsonSerializerOptions
-    //{
-    // // Add NullToDefaultConverter() before any other converters that may apply such as JsonStringEnumConverter()
-    // Converters = { new NullToDefaultConverter() /*, new JsonStringEnumConverter() */ },
-    // PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-    // // Modify other properties as required,
-    // WriteIndented = true,
-    //};
     string rawJSON = File.ReadAllText(Directory.GetCurrentDirectory() + @"\Presets\" + Presets.Text + ".json");
     MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
     DataContext = loadedConfig;

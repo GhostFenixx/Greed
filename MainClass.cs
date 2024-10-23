@@ -2,15 +2,6 @@
 {
  internal class MainClass
  {
-  // using System.Xml.Serialization;
-  // XmlSerializer serializer = new XmlSerializer(typeof(Main));
-  // using (StringReader reader = new StringReader(xml))
-  // {
-  //    var test = (Main)serializer.Deserialize(reader);
-  // }
-  // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-  // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
- 
   public class MainConfig
   {
    public string PresetNotes { get; set; } = "";
@@ -51,7 +42,6 @@
   public class Custom
   {
    public bool EnableCustom { get; set; }
-  //public bool DebugAI { get; set; } = false;
    public bool LoggerIntoServer { get; set; }
    public bool DisableSPTFriend { get; set; }
    public bool DisableCommando { get; set; }

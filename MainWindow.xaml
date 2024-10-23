@@ -8,7 +8,7 @@
         Title="Greed" ui:ThemeManager.RequestedTheme="Dark"
         Height="700" Width="1225" MinHeight="700" MinWidth="1225"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        xmlns:controls="clr-namespace:Converters"
+        xmlns:controls="clr-namespace:Greed"
         Icon="Resources/SVMLOGO.png" Closing="WindowClosing" WindowStyle="None" MouseLeftButtonDown="Dragger" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
  <Window.Resources>
   <!-- .... other resources .... -->
@@ -478,26 +478,10 @@
          </DockPanel>
         </Expander.Header>
         <StackPanel Name="IICSection" IsEnabled="False" Margin="10">
-         <!--<DockPanel>
-          <Button>
-           <StackPanel Orientation="Horizontal">
-            <TextBlock Style="{StaticResource TabText}" Text="Add" VerticalAlignment="Center"/>
-           </StackPanel>
-          </Button>
-          <Button>
-           <StackPanel Orientation="Horizontal">
-            <TextBlock Style="{StaticResource TabText}" Text="Remove" VerticalAlignment="Center"/>
-           </StackPanel>
-          </Button>
-          <Button/>
-         </DockPanel>-->
-         <!--<TextBox/>-->
-         <!--<ListBox MinHeight="150" ItemsSource="{Binding Items.IDBox}"/>-->
          <TextBox MinHeight="150" TextWrapping="Wrap" AcceptsReturn="True" Name="IDBoxView" Text="{Binding Items.IDBox}">
          </TextBox>
         </StackPanel>
        </Expander>
-       <!--<Image Source="Resources/SVMLOGO.png" Width="50" Height="25"/>-->
       </StackPanel>
       <StackPanel Grid.Column="1" Grid.Row="0">
        <Expander IsExpanded="True"  BorderThickness="1">
@@ -621,10 +605,8 @@
     <TabItem.Header>
      <DockPanel Height="34" VerticalAlignment="Center">
       <Image Source="Resources/Icons/hideout_icon_black.png" />
-      <!--<Image Source="Resources/Icons/icon_switcher_generator_off.png" Width="30" Height="30" Name="HideoutDisabled" Visibility="{Binding IsChecked, ElementName=EnableHideout, Converter={StaticResource b2v}}"/>-->
-      <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Hideout}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-      <!--<Image Source="Resources/Icons/icon_switcher_generator_off.png" Width="30" HorizontalAlignment="Right" Name="HideoutIconSwitch" Margin="0,0,5,0"/>-->
-      <CheckBox Name="HideoutCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Hideout.EnableHideout}" Click="SectionEnabled"/>
+   <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Hideout}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <CheckBox Name="HideoutCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Hideout.EnableHideout}" Click="SectionEnabled"/>
      </DockPanel>
     </TabItem.Header>
     <ScrollViewer VerticalScrollBarVisibility="Visible" Visibility="Visible">
