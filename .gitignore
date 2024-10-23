@@ -1,9 +1,7 @@
 
 /obj
 /.vs
-/.vs
-/obj
-/.vs
+/bin
 Resources/Dictionary-ru-RU.xaml
 Resources/Dictionary-en-US.xaml
 Resources/Dictionary-zn-CN.xaml
@@ -19,3 +17,4 @@ Resources/faqEN.rtf
 Resources/faqCN.rtf
 Resources/faqUA.rtf
 Resources/faqKR.rtf
+Resources/HideSpecialIcon.dll
