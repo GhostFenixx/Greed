@@ -1,2 +1,0 @@
-C:\Users\GhostFenixx\source\repos\Greed\bin\Debug\net6.0-windows7.0\win-x64\publish\Greed.pdb
-C:\Users\GhostFenixx\source\repos\Greed\bin\Debug\net6.0-windows7.0\win-x64\publish\Greed.exe
