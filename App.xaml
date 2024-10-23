@@ -8,7 +8,7 @@
   <ResourceDictionary>
    <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Dictionary-en-US.xaml"/>
-    <ResourceDictionary Source="Resources/Dictionary-ru-RU.xaml"/>
+                <ResourceDictionary Source="Resources/Dictionary-ru-RU.xaml"/>
     <ui:ThemeResources />
                 <ui:ThemeResources />
                 <ui:XamlControlsResources />

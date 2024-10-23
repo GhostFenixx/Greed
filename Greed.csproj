@@ -161,9 +161,6 @@
     <Resource Include="Resources\Icons\Trade_Sell_Icon_Idle.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Jovanny Lemonad - Bender.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\SVMLOGO.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
