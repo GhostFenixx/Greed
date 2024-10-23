@@ -84,7 +84,7 @@ namespace Greed
    Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
    //Application.Current.Resources.MergedDictionaries.Clear();
    switch (lang)
-    {
+   {
     case "ru-RU":
     case "ru-UA":
      LoadLanguage($"/Resources/Dictionary-ru-RU.xaml", "Greed.Resources.HelloRU.rtf", "Greed.Resources.faqRU.rtf");
@@ -145,10 +145,9 @@ namespace Greed
     else
     {
      if (CheckName())
-      {
+     {
       string rawJSON = JsonSerializer.Serialize((MainClass.MainConfig)DataContext, new JsonSerializerOptions() { WriteIndented = true });
       string savepath = Directory.GetCurrentDirectory() + @"\Presets\";
-      //File.WriteAllText(@"C:\Users\GhostFenixx\source\repos\Greed\Result\result.json", rawJSON);
       savepath += (Presets.Text == "") ? "Noname.json" : Presets.Text + ".json";
       File.WriteAllText(savepath, rawJSON);
       ToList();
@@ -180,7 +179,7 @@ namespace Greed
    {
     return true;
    }
-   else 
+   else
    {
     Popup Message = new((string)Application.Current.FindResource("PresetNameFail"));
     Message.ShowDialog();
@@ -198,7 +197,6 @@ namespace Greed
      Popup Message = new((string)Application.Current.FindResource("NonameLoaded"));
      Message.ShowDialog();
      LoadFunc();
-     LoadFunc();//TODO: FIX ASAP MINIMUMS
      LoadTextAsync();
     }
     else
@@ -210,18 +208,23 @@ namespace Greed
    else
    {
     LoadFunc();
-    LoadFunc();//TODO: FIX ASAP MINIMUMS
     LoadTextAsync();
    }
   }
 
+  private void LoadJson()
+  {
+  string rawJSON = File.ReadAllText(Directory.GetCurrentDirectory() + @"\Presets\" + Presets.Text + ".json");
+  MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
+  DataContext = loadedConfig;
+  }
   private void LoadFunc()
   {
    try
    {
-    string rawJSON = File.ReadAllText(Directory.GetCurrentDirectory() + @"\Presets\" + Presets.Text + ".json");
-    MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
-    DataContext = loadedConfig;
+   LoadJson();//Horrible solution - the issue is: Converters and MVVM maximum/minimums bugging out the parsed values, therefore to properly apply them - i need to reload DataContext twice.
+    LoadJson();//Possible solution was nulling DataContext, however it cause application to hang for 3-5 seconds, unacceptable. Previous solution was loading whole LoadFunc, causing messages to show up twice.
+    //May coding dieties mercy me
     SectionEnabled(null, null);
    }
    catch (FileNotFoundException)
@@ -229,9 +232,9 @@ namespace Greed
     Popup Message = new((string)Application.Current.FindResource("FileNotFoundException"));
     Message.ShowDialog();
    }
-   catch (System.Text.Json.JsonException)
+   catch (System.Text.Json.JsonException e)
    {
-    Popup Message = new((string)Application.Current.FindResource("CorruptedJSON"));
+    Popup Message = new((string)Application.Current.FindResource("CorruptedJSON") +"\n" +  e.Message );
     Message.ShowDialog();
    }
    catch (AccessViolationException)
@@ -315,12 +318,6 @@ namespace Greed
     Message.ShowDialog();
    }
   }
-  //private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-  //{
-  // Regex regex = new Regex("^-?[0-9]*[\\.,]?[0-9]?[0-9]?$");
-  // var futureText = $"{(sender as TextBox).Text}{e.Text}";
-  // e.Handled = !regex.IsMatch(futureText);
-  //}
   private void Apply_Click(object sender, RoutedEventArgs e)
   {
    if (RoubleRatio.Value + DollarRatio.Value + EuroRatio.Value != 100)
@@ -378,25 +375,14 @@ namespace Greed
    await Task.Delay(2500);
    Save.Text = new((string)Application.Current.FindResource("SaveButton"));
   }
-  private void SPTDiscord(object sender, EventArgs e)
+  private void RunURL(string Resource, string URL)
   {
-   Popup Message = new((string)Application.Current.FindResource("SPTLink"));
+   Popup Message = new((string)Application.Current.FindResource(Resource));
    Message.ShowDialog();
    if (Message.Confirm == true)
    {
     string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://discord.gg/Xn9msqQZan" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
-  }
-  private void SPTWEB(object sender, EventArgs e)
-  {
-   Popup Message = new((string)Application.Current.FindResource("SPTWeb"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://hub.sp-tarkov.com" + "\"";
+    string argUrl = "\"" + URL + "\"";
     System.Diagnostics.Process.Start(browserPath, argUrl);
    }
   }
@@ -411,61 +397,33 @@ namespace Greed
     System.Diagnostics.Process.Start(browserPath, argUrl);
    }
   }
+  private void SPTDiscord(object sender, EventArgs e)
+  {
+   RunURL("SPTLink", "https://discord.gg/Xn9msqQZan");
+  }
+  private void SPTWEB(object sender, EventArgs e)
+  {
+   RunURL("SPTWeb", "https://hub.sp-tarkov.com");
+  }
   private void KofiLink(object sender, EventArgs e)
   {
-   Popup Message = new((string)Application.Current.FindResource("KofiLink"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://ko-fi.com/sptsvm" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
+   RunURL("KofiLink", "https://ko-fi.com/sptsvm");
   }
   private void GitHubLink(object sender, EventArgs e)
   {
-   Popup Message = new((string)Application.Current.FindResource("GitHubLink"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://github.com/GhostFenixx/SVM-Issues" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
+    RunURL("GitHubLink", "https://github.com/GhostFenixx?tab=repositories");
   }
-
   private void ModLink(object sender, EventArgs e)
   {
-   Popup Message = new((string)Application.Current.FindResource("ModPage"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://hub.sp-tarkov.com/files/file/379-kmc-server-value-modifier" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
+   RunURL("ModPage", "https://hub.sp-tarkov.com/files/file/379-kmc-server-value-modifier");
   }
   private void FikaDiscord(object sender, EventArgs e)
   {
-   Popup Message = new((string)Application.Current.FindResource("FikaLink"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://discord.gg/HknsaAjGvX" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
+   RunURL("FikaLink", "https://discord.gg/HknsaAjGv");
   }
   private void WikiPage(object sender, EventArgs e)
   {
-   Popup Message = new((string)Application.Current.FindResource("WikiPage_Link"));
-   Message.ShowDialog();
-   if (Message.Confirm == true)
-   {
-    string browserPath = ("C:/Windows/explorer.exe");
-    string argUrl = "\"" + "https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki" + "\"";
-    System.Diagnostics.Process.Start(browserPath, argUrl);
-   }
+   RunURL("WikiPage_Link", "https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki");
   }
   private void InstallPlugin(object sender, RoutedEventArgs e)
   {
@@ -518,6 +476,11 @@ namespace Greed
    {
     File.WriteAllText("UIcfg", "true," + Presets.Text);
    }
+  }
+  private void TextValidationTextBox(object sender, TextCompositionEventArgs e)
+  {
+   Regex regex = new Regex("[`<>^@!?#%*%:&\\]*$]");
+   e.Handled = regex.IsMatch(e.Text);
   }
   private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
   {

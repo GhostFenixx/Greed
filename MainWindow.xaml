@@ -3634,7 +3634,7 @@
      <TextBlock Margin="0,0,5,0" Name="Load" Style="{StaticResource TabText}" Text="{DynamicResource LoadButton}" VerticalAlignment="Center"/>
     </StackPanel>
    </Button>
-   <ComboBox Name="Presets" Width="350" Height="30" VerticalAlignment="Center" IsEditable="True"/>
+   <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
   <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" Text="Version № 1.10.0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
