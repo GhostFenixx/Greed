@@ -736,7 +736,10 @@
    public int KeyDurabilityThreshold { get; set; } = 40;
    public bool IDChanger { get; set; }
    public bool NoGearPenalty { get; set; }
-   public string IDBox { get; set; } = "";
+   public string IDDefault { get; set; } = "";
+   public string IDParent { get; set; } = "";
+   public string IDFilter { get; set; } = "";
+   public string IDPrice { get; set; } = "";
    public bool RemoveKeysUsageNumber { get; set; }
    public bool RaidDrop { get; set; }
    public Items()

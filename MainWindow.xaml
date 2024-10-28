@@ -131,6 +131,14 @@
    <Setter Property="NumberFormatter" Value="{StaticResource ValidityFormatter}"/>
    <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
   </Style>
+  <Style x:Key="Sizes" TargetType="ui:NumberBox">
+   <Setter Property="SmallChange" Value="1"/>
+   <Setter Property="Minimum" Value="1"/>
+   <Setter Property="Maximum" Value="20"/>
+   <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
+   <Setter Property="NumberFormatter" Value="{StaticResource ValidityFormatter}"/>
+   <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
+  </Style>
   <Style x:Key="Health" TargetType="ui:NumberBox">
    <Setter Property="SmallChange" Value="15"/>
    <Setter Property="Minimum" Value="5"/>
@@ -478,8 +486,14 @@
          </DockPanel>
         </Expander.Header>
         <StackPanel Name="IICSection" IsEnabled="False" Margin="10">
-         <TextBox MinHeight="150" TextWrapping="Wrap" AcceptsReturn="True" Name="IDBoxView" Text="{Binding Items.IDBox}">
-         </TextBox>
+         <TextBlock  Text="{DynamicResource IDDefault}" VerticalAlignment="Center" />
+         <TextBox MinHeight="100"  MaxHeight="200" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Items.IDDefault}"/>
+         <TextBlock  Text="{DynamicResource IDParent}" VerticalAlignment="Center" />
+         <TextBox MinHeight="100" MaxHeight="200" TextWrapping="Wrap" AcceptsReturn="True"  Text="{Binding Items.IDParent}"/>
+         <TextBlock Text="{DynamicResource IDFilter}" VerticalAlignment="Center"  />
+         <TextBox MinHeight="100" MaxHeight="200" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Items.IDFilter}"/>
+         <TextBlock  Text="{DynamicResource IDPrice}" VerticalAlignment="Center"/>
+         <TextBox MinHeight="100" MaxHeight="200" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Items.IDPrice}"/>
         </StackPanel>
        </Expander>
       </StackPanel>
@@ -2701,12 +2715,12 @@
         <StackPanel Name="CasesSection" Margin="0">
          <DockPanel Margin="5,5,0,5">
           <TextBlock Text="{DynamicResource MoneyCase}" Width="185" VerticalAlignment="Center" Padding="0,30,0,0"/>
-          <ui:NumberBox Value="{Binding  CSM.Cases.MoneyCase.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox Value="{Binding  CSM.Cases.MoneyCase.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding  CSM.Cases.MoneyCase.Height}" Width="90" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox Value="{Binding  CSM.Cases.MoneyCase.Height}" Width="90" Style="{StaticResource Sizes}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Height}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
@@ -2718,122 +2732,122 @@
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource SimpleWallet}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.SimpleWallet.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.SimpleWallet.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.SimpleWallet.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.SimpleWallet.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding  CSM.Cases.SimpleWallet.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource WZWallet}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding  CSM.Cases.WZWallet.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding  CSM.Cases.WZWallet.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding  CSM.Cases.WZWallet.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding  CSM.Cases.WZWallet.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding  CSM.Cases.WZWallet.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource GrenadeCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.GrenadeCase.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.GrenadeCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.GrenadeCase.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.GrenadeCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.GrenadeCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource ItemsCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
           <ui:NumberBox Value="{Binding CSM.Cases.ItemsCase.Width}"  Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.ItemsCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ItemsCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.ItemsCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource WeaponCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.WeaponCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.WeaponCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.WeaponCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.WeaponCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.WeaponCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource LuckyScav}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.LuckyScav.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.LuckyScav.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.LuckyScav.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.LuckyScav.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.LuckyScav.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource AmmunitionCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.AmmunitionCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.AmmunitionCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.AmmunitionCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.AmmunitionCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.AmmunitionCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource MagazineCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.MagazineCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.MagazineCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.MagazineCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.MagazineCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.MagazineCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource DogtagCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.DogtagCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.DogtagCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.DogtagCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.DogtagCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.DogtagCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource MedicineCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.MedicineCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.MedicineCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.MedicineCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.MedicineCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.MedicineCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource ThiccItemsCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.ThiccItemsCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.ThiccItemsCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ThiccItemsCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ThiccItemsCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.ThiccItemsCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource ThiccWeaponCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.ThiccWeaponCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.ThiccWeaponCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ThiccWeaponCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ThiccWeaponCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.ThiccWeaponCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource SiccCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.SiccCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.SiccCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.SiccCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.SiccCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.SiccCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource Keytool}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.Keytool.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.Keytool.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.Keytool.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.Keytool.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.Keytool.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource DocumentsCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.DocumentsCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.DocumentsCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.DocumentsCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.DocumentsCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.DocumentsCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource PistolCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.PistolCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.PistolCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.PistolCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.PistolCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.PistolCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource Holodilnick}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.Holodilnick.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.Holodilnick.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.Holodilnick.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.Holodilnick.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.Holodilnick.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource InjectorCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.InjectorCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.InjectorCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.InjectorCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.InjectorCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.InjectorCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource KeycardHolderCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.KeycardHolderCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.KeycardHolderCase.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.KeycardHolderCase.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.KeycardHolderCase.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.KeycardHolderCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5">
           <TextBlock Text="{DynamicResource GKeychain}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.GKeychain.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource FlatsSmall}"/>
-          <ui:NumberBox Value="{Binding CSM.Cases.GKeychain.Height}" Width="90" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.GKeychain.Width}" Margin="0,0,15,0" Width="90" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.GKeychain.Height}" Width="90" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.GKeychain.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
 
@@ -2853,12 +2867,12 @@
         <StackPanel x:Name="SecureCasesSection" Margin="10">
          <DockPanel Margin="5,5,0,5" Height="60">
           <TextBlock Text="{DynamicResource Alpha}" Width="150" VerticalAlignment="Center" Padding="0,20,0,0"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.AlphaWidth}" Minimum="1" Maximum="20" Width="100" Height="60">
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.AlphaWidth}" Style="{StaticResource Sizes}" Width="100" Height="60">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.AlphaHeight}" Minimum="1" Maximum="20"  Width="100">
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.AlphaHeight}" Style="{StaticResource Sizes}"  Width="100">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Height}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
@@ -2866,40 +2880,39 @@
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource Beta}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.BetaWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.BetaHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.BetaWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.BetaHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource Gamma}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource GammaTUE}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaTUEWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaTUEHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaTUEWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.GammaTUEHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource Epsilon}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.EpsilonWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.EpsilonHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.EpsilonWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.EpsilonHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource Kappa}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource WaistPouch}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.WaistPouchWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.WaistPouchHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.WaistPouchWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.WaistPouchHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource Dev}" Width="150" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.DevWidth}" Minimum="1" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.SecureContainers.DevHeight}" Minimum="1" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.DevWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.DevHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
-         <!--<TextBox Margin="0,10" Text="{Binding Raids.RaidStartup.AIAmount}"/>-->
         </StackPanel>
        </Expander>
        <Expander>
@@ -2910,7 +2923,7 @@
          </DockPanel>
         </Expander.Header>
         <StackPanel Margin="10" IsEnabled="False" Name="PMCPocketsSection">
-         <ui:NumberBox Value="{Binding  CSM.Pockets.SpecSlots}" Maximum="5" Style="{StaticResource FlatsSmall}" Width="200" HorizontalAlignment="Left">
+         <ui:NumberBox Value="{Binding  CSM.Pockets.SpecSlots}" Maximum="5" Minimum="0" Style="{StaticResource Sizes}" Width="200" HorizontalAlignment="Left">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource SpecsAmount}"/>
           </ui:NumberBox.Header>
