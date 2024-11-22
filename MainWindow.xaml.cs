@@ -155,7 +155,7 @@ namespace Greed
       {
        Presets.Text = "Noname";
       }
-      SaveTextAsync();
+      _ = SaveTextAsync();
      }
     }
    }
@@ -197,7 +197,7 @@ namespace Greed
      Popup Message = new((string)Application.Current.FindResource("NonameLoaded"));
      Message.ShowDialog();
      LoadFunc();
-     LoadTextAsync();
+     _ = LoadTextAsync();
     }
     else
     {
@@ -208,7 +208,7 @@ namespace Greed
    else
    {
     LoadFunc();
-    LoadTextAsync();
+    _ = LoadTextAsync();
    }
   }
 
@@ -347,7 +347,7 @@ namespace Greed
     else
     {
      System.IO.File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\":\"" + Presets.Text + "\"\n}");
-     ApplyTextAsync();
+     _ = ApplyTextAsync();
     }
    }
    catch
@@ -360,19 +360,19 @@ namespace Greed
   private async Task ApplyTextAsync()
   {
    Apply.Text = new((string)Application.Current.FindResource("Applied"));
-   await Task.Delay(2500);
+   await Task.Delay(1500);
    Apply.Text = new((string)Application.Current.FindResource("ApplyButton"));
   }
   private async Task LoadTextAsync()
   {
    Load.Text = new((string)Application.Current.FindResource("Loaded"));
-   await Task.Delay(2500);
+   await Task.Delay(1500);
    Load.Text = new((string)Application.Current.FindResource("LoadButton"));
   }
   private async Task SaveTextAsync()
   {
    Save.Text = new((string)Application.Current.FindResource("Saved"));
-   await Task.Delay(2500);
+   await Task.Delay(1500);
    Save.Text = new((string)Application.Current.FindResource("SaveButton"));
   }
   private void RunURL(string Resource, string URL)
@@ -479,12 +479,12 @@ namespace Greed
   }
   private void TextValidationTextBox(object sender, TextCompositionEventArgs e)
   {
-   Regex regex = new Regex("[`<>^@!?#%*%:&\\]*$]");
+   Regex regex = new("[`<>^@!?#%*%:&\\]*$]");
    e.Handled = regex.IsMatch(e.Text);
   }
   private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
   {
-   Regex regex = new Regex("[^0-9.,]+");
+   Regex regex = new("[^0-9.,]+");
    e.Handled = regex.IsMatch(e.Text);
   }
 
@@ -591,6 +591,7 @@ namespace Greed
    EnableSubSection(FleaConditionsCheck.IsChecked, FleaConditionsSection);
    EnableSubSection(PlayerOffersCheck.IsChecked, PlayerOffersSection);
    EnableSubSection(WeatherCheck.IsChecked, WeatherSection);
+   EnableSubSection(ScavStatsCheck.IsChecked, ScavStatsSection);
   }
   public static void EnableSection(bool? Checker, Grid Field)
   {

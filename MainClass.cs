@@ -661,16 +661,24 @@
    public RepairBox RepairBox { get; set; }
    public bool EnableHealMarkup { get; set; }
    public bool EnableInsurance { get; set; }
+   public bool EnableTimeOverride { get; set; }
+   public int FreeHealLvl { get; set; } = 5;
+   public int FreeHealRaids { get; set; } = 30;
+   public int ReturnChancePrapor { get; set; } = 85;
+   public int ReturnChanceTherapist { get; set; } = 95;
+   public int InsuranceInterval { get; set; } = 600;
+   public int InsuranceTimeOverride { get; set; } = 30;
+   public int InsuranceAttachmentChance { get; set; } = 10;
+   public int TherapistStorageTime { get; set; } = 144;
+   public int PraporStorageTime { get; set; } = 96;
+   public int Prapor_Max { get; set; } = 36;
+   public int Prapor_Min { get; set; } = 24;
+   public int Therapist_Max { get; set; } = 24;
+   public int Therapist_Min { get; set; } = 12;
    public double TherapistLvl1 { get; set; } = 1;
    public double TherapistLvl2 { get; set; } = 1.1;
    public double TherapistLvl3 { get; set; } = 1.2;
    public double TherapistLvl4 { get; set; } = 1.35;
-   public int FreeHealLvl { get; set; } = 5;
-   public int FreeHealRaids { get; set; } = 30;
-   public int ReturnChanceTherapist { get; set; } = 85;
-   public int InsuranceInterval { get; set; } = 600;
-   public int InsuranceTimeOverride { get; set; } = 30;
-   public bool EnableTimeOverride { get; set; }
    public double InsuranceMultTherapistLvl1 { get; set; } = 20;
    public double InsuranceMultTherapistLvl2 { get; set; } = 21;
    public double InsuranceMultTherapistLvl3 { get; set; } = 22;
@@ -683,15 +691,8 @@
    public bool EnableServices { get; set; }
    public bool EnableRepair{ get; set; }
    public bool ClothesAnySide { get; set; }
-   public int TherapistStorageTime { get; set; } = 144;
-   public int PraporStorageTime { get; set; } = 96;
-   public int ReturnChancePrapor { get; set; } = 75;
    public bool ClothesLevelUnlock { get; set; }
    public bool ClothesFree { get; set; }
-   public int Prapor_Max { get; set; } = 36;
-   public int Prapor_Min { get; set; } = 24;
-   public int Therapist_Max { get; set; } = 24;
-   public int Therapist_Min { get; set; } = 12;
    public Services()
    {
     RepairBox = new RepairBox();
@@ -700,17 +701,18 @@
 
   public class Items
   {
-   public double HeatFactor { get; set; } = 1;
-   public double ExamineTime { get; set; } = 1;
    public bool ExamineKeys { get; set; }
    public bool AddSignalPistolToSpec { get; set; }
    public bool WeaponHeatOff { get; set; }
    public bool SMGToHolster { get; set; }
    public bool PistolToMain { get; set; }
    public bool AllExaminedItems { get; set; }
-   public double MisfireChance { get; set; } = 1;
    public bool EquipRigsWithArmors { get; set; }
    public bool RemoveSecureContainerFilters { get; set; }
+   public double MisfireChance { get; set; } = 1;
+   public double FragmentMult { get; set; } = 1;
+   public double HeatFactor { get; set; } = 1;
+   public double ExamineTime { get; set; } = 1;
    public double MalfunctChanceMult { get; set; } = 1;
    public double WeightChanger { get; set; } = 1;
    public double ItemPriceMult { get; set; } = 1;
@@ -740,7 +742,8 @@
    public string IDParent { get; set; } = "";
    public string IDFilter { get; set; } = "";
    public string IDPrice { get; set; } = "";
-   public bool RemoveKeysUsageNumber { get; set; }
+   public bool InfiniteKeys { get; set; }
+   public bool InfiniteKeycards { get; set; }
    public bool RaidDrop { get; set; }
    public Items()
    {
@@ -845,9 +848,15 @@
     Locations = new Locations();
    }
   }
+  public class Stats
+  {
+   public int MaxHydration { get; set; } = 100;
+   public int MaxEnergy { get; set; } = 100;
+  }
   public class Player
   {
    public bool EnableFatigue { get; set; }
+   public Stats PMCStats { get; set; }
    public CharXP CharXP { get; set; }
    public RaidMult RaidMult { get; set; }
    public bool EnableStats { get; set; }
@@ -864,10 +873,15 @@
    public DiedHealth DiedHealth { get; set; }
    public int MaxStamina { get; set; } = 100;
    public bool UnlimitedStamina { get; set; }
-   public int MaxHydration { get; set; }  = 100;
-   public int MaxEnergy { get; set; } = 100;
+
+   //public Stats()
+   //{ 
+   // MaxEnergy = 100,
+   //  MaxStamina = 100
+   //}
    public Player()
    {
+    PMCStats = new Stats(); 
     CharXP = new CharXP();
     RaidMult = new RaidMult();
     Skills = new Skills();
@@ -996,6 +1010,8 @@
    public int PeaceFighters { get; set; } = 15;
    public bool Christmas { get; set; }
    public bool Halloween { get; set; }
+   public bool DisableZombies { get; set; }
+   public bool RandomInfectionLevel { get; set; }
    public bool IncludeStreetBosses { get; set; }
    public bool KillaFactory { get; set; }
    public bool BossesOnReserve { get; set; }
@@ -1103,6 +1119,8 @@
    public Health Health { get; set; }
    public bool EnableScavHealth { get; set; }
    public bool EnableScav { get; set; }
+   public Stats ScavStats { get; set; }
+   public bool EnableStats { get; set; }
    public Scav()
    {
     SCAVPockets = new SCAVPockets();
@@ -1116,6 +1134,7 @@
      RightArm = 60,
      RightLeg = 65
     };
+    ScavStats = new Stats();
    }
   }
 
@@ -1242,17 +1261,5 @@
     TraderSell = new TraderSell();
    }
   }
-
-  //public class TraderStaticOffers
-  //{
-  // public bool Jaegeroffers { get; set; }
-  // public bool Peacekeeperoffers { get; set; }
-  // public bool Praporoffers { get; set; }
-  // public bool SkierOffers { get; set; }
-  // public bool Therapistoffers { get; set; }
-  // public bool Mechanicoffers { get; set; }
-  // public bool Ragmanoffers { get; set; }
-  //}
-
  }
 }

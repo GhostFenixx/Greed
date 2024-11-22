@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Greed"
         mc:Ignorable="d"
         Title="Greed" ui:ThemeManager.RequestedTheme="Dark"
-        Height="700" Width="1225" MinHeight="700" MinWidth="1225"
+        Height="1700" Width="1225" MinHeight="700" MinWidth="1225"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:controls="clr-namespace:Greed"
         Icon="Resources/SVMLOGO.png" Closing="WindowClosing" WindowStyle="None" MouseLeftButtonDown="Dragger" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
@@ -503,12 +503,12 @@
          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Multipliers}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10" Cursor="">
-         <ui:NumberBox Style="{StaticResource Mults}" Value="{Binding Items.ItemPriceMult}">
+         <ui:NumberBox Style="{StaticResource Mults}" Maximum="5" Value="{Binding Items.ItemPriceMult}">
           <ui:NumberBox.Header>
            <TextBlock  Text="{DynamicResource ItemPriceMult}" ToolTip="{DynamicResource ItemPriceMult_TT}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Style="{StaticResource Mults}" Value="{Binding Items.WeightChanger}">
+         <ui:NumberBox Style="{StaticResource Mults}" Minimum="0" Maximum="5" Value="{Binding Items.WeightChanger}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource WeightChanger}"/>
           </ui:NumberBox.Header>
@@ -533,6 +533,11 @@
            <TextBlock Text="{DynamicResource MisfireChance}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
+         <ui:NumberBox Style="{StaticResource Mults}" Minimum="0"   Value="{Binding Items.FragmentMult}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource FragmentMult}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
          <ui:NumberBox Style="{StaticResource Mults}" Value="{Binding Items.AmmoLoadSpeed}" ToolTip="{DynamicResource AmmoLoadSpeed_TT}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource AmmoLoadSpeed}"/>
@@ -543,7 +548,7 @@
            <TextBlock Text="{DynamicResource ExamineTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Style="{StaticResource Mults}" Value="{Binding Items.HeatFactor}">
+         <ui:NumberBox Style="{StaticResource Mults}" Minimum="0" Value="{Binding Items.HeatFactor}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource HeatFactor}"/>
           </ui:NumberBox.Header>
@@ -574,7 +579,8 @@
            <TextBlock Text="{DynamicResource KeyDurabilityThreshold}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <CheckBox Content="{DynamicResource RemoveKeysUsageNumber}" IsChecked="{Binding Items.RemoveKeysUsageNumber}"/>
+         <CheckBox Content="{DynamicResource InfiniteKeycards}" IsChecked="{Binding Items.InfiniteKeycards}"/>
+         <CheckBox Content="{DynamicResource InfiniteKeys}" IsChecked="{Binding Items.InfiniteKeys}"/>
          <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidSingleKeys}" IsChecked="{Binding Items.AvoidSingleKeys}"/>
          <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidMarkedKeys}" IsChecked="{Binding Items.AvoidMarkedKeys}"/>
         </StackPanel>
@@ -1075,15 +1081,6 @@
           <ui:NumberBox Value="{Binding Services.TherapistStorageTime}" Minimum="1" Maximum="1440"  Margin="5,0,5,0" Width="100" Style="{StaticResource FlatsSmall}"/>
           <ui:NumberBox Value="{Binding Services.PraporStorageTime}" Minimum="1"  Maximum="1440" Margin="5,0,5,0" Width="100" Style="{StaticResource FlatsSmall}"/>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Services.InsuranceInterval}" Minimum="30" Maximum="720" Style="{DynamicResource FlatsSmall}">
-          <ui:NumberBox.Header>
-           <TextBlock Foreground="#FFFFA73B" ToolTip="{ DynamicResource InsuranceInterval_TT}" Text="{DynamicResource InsuranceInterval}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <StackPanel>
-          <CheckBox Content="{DynamicResource InsuranceTimeOverride}" ToolTip="{ DynamicResource InsuranceTimeOverride_TT}"  IsChecked="{Binding Services.EnableTimeOverride}" Cursor="Hand"/>
-          <ui:NumberBox Margin="0,0,0,5" Value="{Binding Services.InsuranceTimeOverride}" Minimum="5" Maximum="3600" Style="{StaticResource FlatsSmall}" VerticalAlignment="Center"/>
-         </StackPanel>
          <DockPanel Margin="5,5,0,5">
           <TextBlock Text="{DynamicResource InsuranceTradersChance}" Width="200" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding Services.ReturnChanceTherapist}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}"/>
@@ -1112,6 +1109,20 @@
           <ui:NumberBox Value="{Binding Services.InsuranceMultTherapistLvl4}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}"/>
           <ui:NumberBox Value="{Binding Services.InsuranceMultPraporLvl4}" Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}"/>
          </DockPanel>
+         <ui:NumberBox Value="{Binding Services.InsuranceAttachmentChance}" Style="{StaticResource MinMax}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource InsuranceAttachmentChance}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Services.InsuranceInterval}" Minimum="30" Maximum="720" Style="{DynamicResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Foreground="#FFFFA73B" ToolTip="{ DynamicResource InsuranceInterval_TT}" Text="{DynamicResource InsuranceInterval}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <StackPanel>
+          <CheckBox Content="{DynamicResource InsuranceTimeOverride}" ToolTip="{ DynamicResource InsuranceTimeOverride_TT}"  IsChecked="{Binding Services.EnableTimeOverride}" Cursor="Hand"/>
+          <ui:NumberBox Margin="0,0,0,5" Value="{Binding Services.InsuranceTimeOverride}" Minimum="5" Maximum="3600" Style="{StaticResource FlatsSmall}" VerticalAlignment="Center"/>
+         </StackPanel>
         </StackPanel>
        </Expander>
       </StackPanel>
@@ -1630,12 +1641,12 @@
         </Expander.Header>
         <StackPanel Margin="10" Name="PMCStatsSection" IsEnabled="False">
          <DockPanel>
-          <ui:NumberBox  Value="{Binding Player.MaxEnergy}" Style="{StaticResource FlatsSmall}" Width="200" Margin="0,0,5,0">
+          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxEnergy}" Style="{StaticResource FlatsSmall}" Width="200" Margin="0,0,5,0">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource MaxEnergy}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox  Value="{Binding Player.MaxHydration}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxHydration}" Style="{StaticResource FlatsSmall}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource MaxHydration}"/>
            </ui:NumberBox.Header>
@@ -1976,6 +1987,8 @@
          <CheckBox Margin="20,0,0,0" Content="{DynamicResource IncludeStreetBosses}" IsChecked="{Binding Raids.RaidEvents.IncludeStreetBosses}"/>
          <CheckBox Content="{DynamicResource Christmas}" ToolTip="{DynamicResource Christmas_TT}" IsChecked="{Binding Raids.RaidEvents.Christmas}"/>
          <CheckBox Content="{DynamicResource Halloween}" ToolTip="{DynamicResource Halloween_TT}" IsChecked="{Binding Raids.RaidEvents.Halloween}"/>
+         <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource DisableZombies_TT}" Content="{DynamicResource DisableZombies}" IsChecked="{Binding Raids.RaidEvents.DisableZombies}"/>
+         <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource RandomInfectionLevel_TT}" Content="{DynamicResource RandomInfectionLevel}" IsChecked="{Binding Raids.RaidEvents.RandomInfectionLevel}"/>
          <CheckBox Content="{DynamicResource DisableEvents}" IsChecked="{Binding Raids.RaidEvents.DisableEvents}"/>
          <CheckBox Content="{DynamicResource TagillaInterchange}" IsChecked="{Binding Raids.RaidEvents.TagillaInterchange}"/>
          <StackPanel>
@@ -3010,16 +3023,7 @@
            <TextBlock Text="{DynamicResource CarBaseStanding}" Cursor=""/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding  Scav.StandingFriendlyKill}" Style="{StaticResource MinusMults}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource StandingFriendlyKill}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding  Scav.StandingPMCKill}" Style="{StaticResource MinusMults}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource StandingPMCKill}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
+
          <CheckBox Content="{DynamicResource ScavLab}" IsChecked="{Binding Scav.ScavLab}"/>
          <CheckBox Content="{DynamicResource HostileScavs}" Name="HostileScav" IsChecked="{Binding Scav.HostileScavs}" Click="HostilitySwitchers"/>
          <CheckBox Content="{DynamicResource FriendlyScavs}" Name="FriendlyScav" IsChecked="{Binding Scav.FriendlyScavs}" Click="FriendlySwitchers"/>
@@ -3066,6 +3070,28 @@
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.FourthH}" Maximum="6" Width="100"/>
          </DockPanel>
          <!--<TextBox Margin="0,10" Text="{Binding Raids.RaidStartup.AIAmount}"/>-->
+        </StackPanel>
+       </Expander>
+       <Expander>
+        <Expander.Header>
+         <DockPanel>
+          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource ScavStats}" VerticalAlignment="Center" FontSize="20"/>
+          <CheckBox Click="SectionEnabled" Name="ScavStatsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Scav.EnableStats}"/>
+         </DockPanel>
+        </Expander.Header>
+        <StackPanel Margin="10" Name="ScavStatsSection" IsEnabled="False">
+         <DockPanel>
+          <ui:NumberBox  Value="{Binding Scav.ScavStats.MaxEnergy}" Style="{StaticResource FlatsSmall}" Width="200" Margin="0,0,5,0">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource MaxEnergy}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox  Value="{Binding Scav.ScavStats.MaxHydration}" Style="{StaticResource FlatsSmall}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource MaxHydration}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
         </StackPanel>
        </Expander>
       </StackPanel>
