@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Greed"
         mc:Ignorable="d"
         Title="Greed" ui:ThemeManager.RequestedTheme="Dark"
-        Height="1700" Width="1225" MinHeight="700" MinWidth="1225"
+        Height="700" Width="1225" MinHeight="700" MinWidth="1225"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:controls="clr-namespace:Greed"
         Icon="Resources/SVMLOGO.png" Closing="WindowClosing" WindowStyle="None" MouseLeftButtonDown="Dragger" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
@@ -2739,7 +2739,7 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
           <StackPanel>
-           <TextBlock Text="Remove filters" HorizontalAlignment="Center"/>
+           <TextBlock Text="{DynamicResource RemoveFilters}" HorizontalAlignment="Center"/>
            <CheckBox IsChecked="{Binding CSM.Cases.MoneyCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
           </StackPanel>
          </DockPanel>
