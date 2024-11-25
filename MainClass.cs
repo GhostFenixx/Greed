@@ -919,14 +919,14 @@
    public bool SpecKeytool { get; set; }
    public bool SpecInjectorCase { get; set; }
    public int SpecSlots { get; set; } = 3;
-   public int FourthH { get; set; } = 1;
-   public int FourthV { get; set; } = 1;
-   public int ThirdH { get; set; } = 1;
-   public int ThirdV { get; set; } = 1;
-   public int SecondH { get; set; } = 1;
-   public int SecondV { get; set; } = 1;
-   public int FirstH { get; set; } = 1;
-   public int FirstV { get; set; } = 1;
+   public int FourthWidth { get; set; } = 1;
+   public int FourthHeight { get; set; } = 1;
+   public int ThirdWidth { get; set; } = 1;
+   public int ThirdHeight { get; set; } = 1;
+   public int SecondWidth { get; set; } = 1;
+   public int SecondHeight { get; set; } = 1;
+   public int FirstWidth { get; set; } = 1;
+   public int FirstHeight { get; set; } = 1;
   }
 
   public class Quests
@@ -1140,14 +1140,14 @@
 
   public class SCAVPockets
   {
-   public int FourthH { get; set; } = 1;
-   public int FourthV { get; set; } = 1;
-   public int ThirdH { get; set; } = 1;
-   public int ThirdV { get; set; } = 1;
-   public int SecondH { get; set; } = 1;
-   public int SecondV { get; set; } = 1;
-   public int FirstH { get; set; } = 1;
-   public int FirstV { get; set; } = 1;
+   public int FourthHeight { get; set; } = 1;
+   public int FourthWidth { get; set; } = 1;
+   public int ThirdHeight { get; set; } = 1;
+   public int ThirdWidth { get; set; } = 1;
+   public int SecondHeight { get; set; } = 1;
+   public int SecondWidth { get; set; } = 1;
+   public int FirstHeight { get; set; } = 1;
+   public int FirstWidth { get; set; } = 1;
   }
 
   public class ScavQuests

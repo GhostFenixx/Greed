@@ -214,15 +214,15 @@ namespace Greed
 
   private void LoadJson()
   {
-  string rawJSON = File.ReadAllText(Directory.GetCurrentDirectory() + @"\Presets\" + Presets.Text + ".json");
-  MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
-  DataContext = loadedConfig;
+   string rawJSON = File.ReadAllText(Directory.GetCurrentDirectory() + @"\Presets\" + Presets.Text + ".json");
+   MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
+   DataContext = loadedConfig;
   }
   private void LoadFunc()
   {
    try
    {
-   LoadJson();//Horrible solution - the issue is: Converters and MVVM maximum/minimums bugging out the parsed values, therefore to properly apply them - i need to reload DataContext twice.
+    LoadJson();//Horrible solution - the issue is: Converters and MVVM maximum/minimums bugging out the parsed values, therefore to properly apply them - i need to reload DataContext twice.
     LoadJson();//Possible solution was nulling DataContext, however it cause application to hang for 3-5 seconds, unacceptable. Previous solution was loading whole LoadFunc, causing messages to show up twice.
     //May coding dieties mercy me
     SectionEnabled(null, null);
@@ -234,7 +234,7 @@ namespace Greed
    }
    catch (System.Text.Json.JsonException e)
    {
-    Popup Message = new((string)Application.Current.FindResource("CorruptedJSON") +"\n" +  e.Message );
+    Popup Message = new((string)Application.Current.FindResource("CorruptedJSON") + "\n" + e.Message);
     Message.ShowDialog();
    }
    catch (AccessViolationException)
@@ -356,7 +356,7 @@ namespace Greed
     Message.ShowDialog();
    }
   }
-   
+
   private async Task ApplyTextAsync()
   {
    Apply.Text = new((string)Application.Current.FindResource("Applied"));
@@ -411,7 +411,7 @@ namespace Greed
   }
   private void GitHubLink(object sender, EventArgs e)
   {
-    RunURL("GitHubLink", "https://github.com/GhostFenixx?tab=repositories");
+   RunURL("GitHubLink", "https://github.com/GhostFenixx?tab=repositories");
   }
   private void ModLink(object sender, EventArgs e)
   {
@@ -433,7 +433,7 @@ namespace Greed
    string pluginname = @"HideSpecialIcon.dll";
    try
    {
-    if (!File.Exists(pluginFolder+pluginname))
+    if (!File.Exists(pluginFolder + pluginname))
     {
      Stream stream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream("Greed.Resources.HideSpecialIcon.dll");
      var fileStream = File.Create(pluginFolder + pluginname);
