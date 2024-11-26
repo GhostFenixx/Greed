@@ -126,8 +126,8 @@
      ArmorMax = 0,
      PresetMin = 0,
      PresetMax = 0,
-     BarterMin = 17,
-     BarterMax = 28,
+     BarterMin = 25,
+     BarterMax = 45,
      CratesMin = 0,
      CratesMax = 0,
     };
@@ -519,7 +519,7 @@
    public double Price_min { get; set; } = 0.8;
    public int NonStack_max { get; set; } = 10;
    public int Time_max { get; set; } = 60;
-   public double Price_max { get; set; } = 1.4;
+   public double Price_max { get; set; } = 1.2;
   }
 
   public class Exfils

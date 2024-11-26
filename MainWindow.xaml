@@ -2939,7 +2939,7 @@
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <DockPanel Margin="5,5,0,5">
-          <TextBlock Text="{DynamicResource FirstCell}" Width="100" VerticalAlignment="Center" Padding="0,20,0,0"/>
+          <TextBlock Text="{DynamicResource FirstCell}" Width="110" VerticalAlignment="Center" Padding="0,20,0,0"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.FirstHeight}" Maximum="20" Width="100">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
@@ -2952,17 +2952,17 @@
           </ui:NumberBox>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource SecondCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource SecondCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.SecondHeight}"  Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.SecondWidth}"  Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource ThirdCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource ThirdCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.ThirdHeight}" Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.ThirdWidth}" Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource FourthCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource FourthCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.FourthHeight}" Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding CSM.Pockets.FourthWidth}" Maximum="6" Width="100"/>
          </DockPanel>
@@ -3039,7 +3039,7 @@
         <StackPanel Margin="10" IsEnabled="False" Name="ScavPocketsSection">
 
          <DockPanel Margin="5,5,0,5">
-          <TextBlock Text="{DynamicResource FirstCell}" Width="100" VerticalAlignment="Center" Padding="0,20,0,0"/>
+          <TextBlock Text="{DynamicResource FirstCell}" Width="110" VerticalAlignment="Center" Padding="0,20,0,0"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.FirstWidth}" Maximum="20" Width="100">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
@@ -3052,17 +3052,17 @@
           </ui:NumberBox>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource SecondCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource SecondCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.SecondWidth}"  Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.SecondHeight}"  Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource ThirdCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource ThirdCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.ThirdWidth}" Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.ThirdHeight}" Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
-          <TextBlock Text="{DynamicResource FourthCell}" Width="100" VerticalAlignment="Center"/>
+          <TextBlock Text="{DynamicResource FourthCell}" Width="110" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.FourthWidth}" Maximum="20" Width="100"/>
           <ui:NumberBox Value="{Binding Scav.SCAVPockets.FourthHeight}" Maximum="6" Width="100"/>
          </DockPanel>
@@ -3072,7 +3072,7 @@
        <Expander>
         <Expander.Header>
          <DockPanel>
-          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource ScavStats}" VerticalAlignment="Center" FontSize="20"/>
+          <TextBlock Style="{StaticResource TabText}" Foreground="White" Text="{DynamicResource ScavStats}" VerticalAlignment="Center" FontSize="20"/>
           <CheckBox Click="SectionEnabled" Name="ScavStatsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Scav.EnableStats}"/>
          </DockPanel>
         </Expander.Header>
