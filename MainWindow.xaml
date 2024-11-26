@@ -2940,12 +2940,12 @@
          </ui:NumberBox>
          <DockPanel Margin="5,5,0,5">
           <TextBlock Text="{DynamicResource FirstCell}" Width="110" VerticalAlignment="Center" Padding="0,20,0,0"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.FirstHeight}" Maximum="20" Width="100">
+          <ui:NumberBox Value="{Binding CSM.Pockets.FirstWidth}" Maximum="20" Width="100">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding CSM.Pockets.FirstWidth}" Maximum="6"  Width="100">
+          <ui:NumberBox Value="{Binding CSM.Pockets.FirstHeight}" Maximum="6"  Width="100">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Height}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
@@ -2953,18 +2953,18 @@
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
           <TextBlock Text="{DynamicResource SecondCell}" Width="110" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.SecondHeight}"  Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.SecondWidth}"  Maximum="6" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.SecondWidth}"  Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.SecondHeight}"  Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
           <TextBlock Text="{DynamicResource ThirdCell}" Width="110" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.ThirdHeight}" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.ThirdWidth}" Maximum="6" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.ThirdWidth}" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.ThirdHeight}" Maximum="6" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5" Height="35">
           <TextBlock Text="{DynamicResource FourthCell}" Width="110" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.FourthHeight}" Maximum="20" Width="100"/>
-          <ui:NumberBox Value="{Binding CSM.Pockets.FourthWidth}" Maximum="6" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.FourthWidth}" Maximum="20" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.Pockets.FourthHeight}" Maximum="6" Width="100"/>
          </DockPanel>
          <TextBlock Text="{DynamicResource CasesInSpec}" HorizontalAlignment="Center" />
          <CheckBox Content="{DynamicResource SimpleWallet}" IsChecked="{Binding CSM.Pockets.SpecSimpleWallet}"/>
