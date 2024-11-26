@@ -407,7 +407,7 @@ namespace Greed
   }
   private void KofiLink(object sender, EventArgs e)
   {
-   RunURL("KofiLink", "https://ko-fi.com/sptsvm");
+   RunURL("KofiLink", "https://ko-fi.com/ghostfenixx");
   }
   private void GitHubLink(object sender, EventArgs e)
   {
