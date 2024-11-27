@@ -530,20 +530,6 @@ namespace Greed
     HostileBoss.IsChecked = false;
    }
   }
-  private void SafeExitsSwitchers(object sender, RoutedEventArgs e)
-  {
-   if (Softcore.IsChecked == true && SafeExits.IsChecked == true)
-   {
-    Softcore.IsChecked = false;
-   }
-  }
-  private void SoftcoreSwitchers(object sender, RoutedEventArgs e)
-  {
-   if (SafeExits.IsChecked == true && Softcore.IsChecked == true)
-   {
-    SafeExits.IsChecked = false;
-   }
-  }
 
   private void ChangelogOpen(object sender, RoutedEventArgs e)
   {

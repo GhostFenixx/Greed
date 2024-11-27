@@ -1819,8 +1819,7 @@
         <StackPanel Margin="10">
          <CheckBox Content="{DynamicResource Removelabkey}" IsChecked="{Binding Raids.Removelabkey}"/>
          <CheckBox Content="{DynamicResource LabInsurance}" IsChecked="{Binding Raids.LabInsurance}"/>
-         <CheckBox Content="{DynamicResource SafeExit}" Name="SafeExits"   ToolTip="{DynamicResource SafeExit_TT}" IsChecked="{Binding Raids.SafeExit}" Click="SafeExitsSwitchers"/>
-         <CheckBox Content="{DynamicResource SaveGearAfterDeath}" Name="Softcore" ToolTip="{DynamicResource SaveGearAfterDeath_TT}" IsChecked="{Binding Raids.SaveGearAfterDeath}" Click="SoftcoreSwitchers"/>
+         <CheckBox Content="{DynamicResource SaveGearAfterDeath}" ToolTip="{DynamicResource SaveGearAfterDeath_TT}" IsChecked="{Binding Raids.SaveGearAfterDeath}"/>
          <CheckBox Content="{DynamicResource NoRunThrough}" ToolTip="{DynamicResource NoRunThrough_TT}" IsChecked="{Binding Raids.NoRunThrough}"/>
          <CheckBox Content="{DynamicResource SaveQuestItems}" IsChecked="{Binding Raids.SaveQuestItems}"/>
          <ui:NumberBox Value="{Binding Raids.SandboxAccessLevel}" Style="{StaticResource FlatsSmall}">
