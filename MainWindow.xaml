@@ -2374,14 +2374,10 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Quests.DailyQuests.Access}" Width="300" HorizontalAlignment="Left">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource QuestLevel}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
+
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.DailyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="500" SelectedIndex="{Binding Path=Quests.DailyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
            <ComboBoxItem Content="{DynamicResource Elimination}"/>
            <ComboBoxItem Content="{DynamicResource Completion}"/>
            <ComboBoxItem Content="{DynamicResource Exploration}"/>
@@ -2391,6 +2387,11 @@
            <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
          </StackPanel>
+         <ui:NumberBox Value="{Binding Quests.DailyQuests.Access}" Width="300" HorizontalAlignment="Left">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource QuestLevel}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
@@ -2492,14 +2493,9 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Access}" Width="300" HorizontalAlignment="Left">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource QuestLevel}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.WeeklyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="500" SelectedIndex="{Binding Path=Quests.WeeklyQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
            <ComboBoxItem Content="{DynamicResource Elimination}"/>
            <ComboBoxItem Content="{DynamicResource Completion}"/>
            <ComboBoxItem Content="{DynamicResource Exploration}"/>
@@ -2508,7 +2504,11 @@
            <ComboBoxItem Content="{DynamicResource ExplElim}"/>
            <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
-
+          <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Access}" Width="300" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource QuestLevel}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
          </StackPanel>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
@@ -2610,19 +2610,19 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Quests.ScavQuests.Access}" Width="300" HorizontalAlignment="Left">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource QuestLevel}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
          <StackPanel>
           <TextBlock Text="{DynamicResource Types}" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="300" SelectedIndex="{Binding Path=Quests.ScavQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
+          <ComboBox Foreground ="White" Margin="0,4,0,0" Width="500" SelectedIndex="{Binding Path=Quests.ScavQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
            <ComboBoxItem Content="{DynamicResource Elimination}"/>
            <ComboBoxItem Content="{DynamicResource Completion}"/>
            <ComboBoxItem Content="{DynamicResource CompElim}"/>
           </ComboBox>
          </StackPanel>
+         <ui:NumberBox Value="{Binding Quests.ScavQuests.Access}" Width="300" HorizontalAlignment="Left">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource QuestLevel}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
