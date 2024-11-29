@@ -956,7 +956,7 @@
      QuestAmount = 3,
      Lifespan = 1440,
      Spread = 0.5,
-     Types = 0,
+     Types = 6,
      Levels = "1,10,20,30,40,50,60",
      Experience = "1000,2000,8000,13000,19000,24000,30000",
      Reputation = "0.01,0.01,0.02,0.02,0.03,0.03,0.03",
@@ -981,7 +981,7 @@
      QuestAmount = 1,
      Lifespan = 10080,
      Spread = 0.5,
-     Types = 0,
+     Types = 6,
      Levels = "1,10,20,30,40,50,60",
      Experience = "5000,15000,27000,80000,142000,220000,290000",
      Reputation = "0.02,0.03,0.04,0.04,0.05,0.05,0.05",
@@ -1157,7 +1157,7 @@
    public int MinItems { get; set; } = 2;
    public int MaxItems { get; set; } = 5;
    public int Extracts { get; set; } = 3;
-   public int Types { get; set; } = 0;
+   public int Types { get; set; } = 2;
    public double Spread { get; set; } = 0.5;
    public int MinKillsLR1 { get; set; } = 1;
    public int MaxKillsLR1 { get; set; } = 3;
