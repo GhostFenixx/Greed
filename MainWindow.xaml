@@ -1635,7 +1635,7 @@
        <Expander>
         <Expander.Header>
          <DockPanel>
-          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource PMCStats}" VerticalAlignment="Center" Foreground="#FFFF3B3B" FontSize="20"/>
+          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource PMCStats}" ToolTip="{DynamicResource PMCStats_TT}" VerticalAlignment="Center" Foreground="#FFFF3B3B" FontSize="20"/>
           <CheckBox Click="SectionEnabled" Name="PMCStatsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Player.EnableStats}"/>
          </DockPanel>
         </Expander.Header>
@@ -1928,7 +1928,7 @@
          <CheckBox Content="{DynamicResource ForceBTRFriendly}" IsChecked="{Binding Raids.ForceBTRFriendly}"/>
          <CheckBox Content="{DynamicResource ForceBTRStash}" IsChecked="{Binding Raids.ForceBTRStash}"/>
          <DockPanel Margin="5,5,0,5">
-          <ui:NumberBox Value="{Binding Raids.BTRHWidth}" Maximum="6" Width="100" HorizontalAlignment="Center" Margin="80,0,0,0">
+          <ui:NumberBox Value="{Binding Raids.BTRWidth}" Maximum="6" Width="100" HorizontalAlignment="Center" Margin="80,0,0,0">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
@@ -3672,7 +3672,7 @@
    </Button>
    <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
-  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" Text="Version № 1.10.0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.0 Hotfix#4" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
  </Grid>
 </Window>

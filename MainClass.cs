@@ -1053,7 +1053,7 @@
    public double BearMult { get; set; } = 1;
    public double ScavMult { get; set; } = 0.8;
    public int BTRHeight { get; set; } = 2;
-   public int BTRHWidth { get; set; } = 5;
+   public int BTRWidth { get; set; } = 5;
    public int Season { get; set; } = 0;
    public bool ForceSeason { get; set; }
    public RaidStartup RaidStartup { get; set; }
