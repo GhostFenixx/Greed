@@ -592,6 +592,8 @@ namespace Greed
    EnableSubSection(PlayerOffersCheck.IsChecked, PlayerOffersSection);
    EnableSubSection(WeatherCheck.IsChecked, WeatherSection);
    EnableSubSection(ScavStatsCheck.IsChecked, ScavStatsSection);
+   EnableSubSection(StaminaLegsCheck.IsChecked, StaminaLegsSection);
+   EnableSubSection(StaminaHandsCheck.IsChecked, StaminaHandsSection);
   }
   public static void EnableSection(bool? Checker, Grid Field)
   {

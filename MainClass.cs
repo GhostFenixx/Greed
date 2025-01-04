@@ -62,10 +62,11 @@
   {
    public int KolontayStreets { get; set; } = 25;
    public int KolontayGZ { get; set; } = 45;
-   //public int PartisanCustoms { get; set; } = 100;
-   public int PartisanShoreline { get; set; } = 10;
-   public int PartisanWoods { get; set; } = 10;
-   public int PartisanLighthouse { get; set; } = 10;
+   public bool ForcePartisan { get; set; }
+   public int PartisanCustoms { get; set; } = 30;
+   public int PartisanShoreline { get; set; } = 30;
+   public int PartisanWoods { get; set; } = 30;
+   public int PartisanLighthouse { get; set; } = 30;
 
    public int Kaban { get; set; } = 25;
    public int TagillaNight { get; set; } = 25;
@@ -174,6 +175,7 @@
    public int CursedToPMC { get; set; } = 20;
    public int SnipertoPMC { get; set; } = 0;
    public int ScavToPMC { get; set; } = 30;
+   public int ScavToPMCFactory { get; set; } = 13;
    public int RogueToPMC { get; set; } = 5;
    public int RaiderToPMC { get; set; } = 7;
   }
@@ -300,9 +302,16 @@
    public Case SimpleWallet { get; set; }
    public Case MoneyCase { get; set; }
    public Case LuckyScav { get; set; }
+   public Case StreamerCase { get; set; }
 
    public Cases()
    {
+    StreamerCase = new Case()
+    {
+     Height = 11,
+     Width = 7,
+     Filter = false
+    };
     GKeychain = new Case()
     {
      Height = 2,
@@ -643,6 +652,8 @@
    public double WaterFilterRate { get; set; } = 66;
    public double GPUBoostRate { get; set; } = 1;
    public double AirFilterRate { get; set; } = 1;
+   public double CultistTime { get; set; } = 1;
+   public int CultistMaxRewards { get; set; } = 5;
    public bool RemoveConstructionsRequirements { get; set; }
    public bool RemoveSkillRequirements { get; set; }
    public bool RemoveTraderLevelRequirements { get; set; }
@@ -871,7 +882,17 @@
    public double WeaponSkillMult { get; set; } = 1;
    public bool EnablePlayer { get; set; }
    public DiedHealth DiedHealth { get; set; }
-   public int MaxStamina { get; set; } = 100;
+   public int MaxStaminaLegs { get; set; } = 100;
+   public int MaxStaminaHands { get; set; } = 80;
+   public bool EnableStaminaHands { get; set; }
+   public bool EnableStaminaLegs { get; set; }
+   public double RegenStaminaLegs { get; set; } = 4.5;
+   public double RegenStaminaHands { get; set; } = 2.1;
+   public int JumpConsumption { get; set; } = 14;
+   public double SitToStandConsumption { get; set; } = 1;
+   public double Standing { get; set; } = 1;
+   public double LayingDown { get; set; } = 0.15;
+   public double Crouching { get; set; } = 0.75;
    public bool UnlimitedStamina { get; set; }
 
    //public Stats()
@@ -998,7 +1019,9 @@
   {
    public bool DisableEvents { get; set; }
    public int KillaFactoryChance { get; set; } = 100;
+   public int CultistBossesChance { get; set; } = 100;
    public int GoonsFactoryChance { get; set; } = 100;
+   public bool CultistBosses{ get; set; }
    public bool GoonsFactory { get; set; }
    public bool BossesOnCustoms { get; set; }
    public bool BossesOnHealthResort { get; set; }
@@ -1207,9 +1230,9 @@
   {
    public int StashTUE { get; set; } = 72;
    public int StashLvl4 { get; set; } = 68;
-   public int StashLvl3 { get; set; } = 48;
-   public int StashLvl2 { get; set; } = 38;
-   public int StashLvl1 { get; set; } = 28;
+   public int StashLvl3 { get; set; } = 50;
+   public int StashLvl2 { get; set; } = 40;
+   public int StashLvl1 { get; set; } = 30;
   }
 
   public class TraderMarkup
@@ -1237,7 +1260,8 @@
   {
    public Fence Fence { get; set; }
    public bool RemoveTradeLimits { get; set; }
-   public int QuestRedeemTime { get; set; } = 48;
+   public int QuestRedeemDefault { get; set; } = 48;
+   public int QuestRedeemUnheard { get; set; } = 72;
    public TraderMarkup TraderMarkup { get; set; }
    public TraderSell TraderSell { get; set; }
    public int MinDurabSell { get; set; } = 60;

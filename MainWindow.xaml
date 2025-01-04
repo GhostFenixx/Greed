@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Greed"
         mc:Ignorable="d"
         Title="Greed" ui:ThemeManager.RequestedTheme="Dark"
-        Height="700" Width="1225" MinHeight="700" MinWidth="1225"
+        Height="1700" Width="1225" MinHeight="700" MinWidth="1225"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:controls="clr-namespace:Greed"
         Icon="Resources/SVMLOGO.png" Closing="WindowClosing" WindowStyle="None" MouseLeftButtonDown="Dragger" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
@@ -57,7 +57,7 @@
                    Value="true">
         <Setter TargetName="Border"
                     Property="CornerRadius"
-                    Value="4" />
+                    Value="4,4,4,4" />
         <Setter TargetName="Border"
                     Property="SnapsToDevicePixels"
                     Value="true" />
@@ -673,6 +673,11 @@
            <TextBlock Text="{DynamicResource BitcoinTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
+         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.CultistMaxRewards}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource CultistMaxRewards}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
         </StackPanel>
        </Expander>
        <Expander>
@@ -720,6 +725,11 @@
            <TextBlock Text="{DynamicResource ScavCasePrice}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Hideout.CultistTime}" ToolTip="{DynamicResource CultistTime_TT}" Style="{StaticResource ThreeMults}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource CultistTime}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
         </StackPanel>
        </Expander>
        <!--<Image Source="Resources/SVMLOGO.png" Width="50" Height="25"/>-->
@@ -754,6 +764,7 @@
          </DockPanel>
         </StackPanel>
        </Expander>
+       
        <Expander>
         <Expander.Header>
          <DockPanel>
@@ -789,6 +800,7 @@
          </ui:NumberBox>
         </StackPanel>
        </Expander>
+
       </StackPanel>
      </Grid>
     </ScrollViewer>
@@ -817,11 +829,19 @@
          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Misc}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10">
-         <ui:NumberBox Value="{Binding Traders.QuestRedeemTime}" Minimum="6" Maximum="144" Style="{StaticResource FlatsSmall}">
+         <DockPanel>
+          <TextBlock Width="150" TextWrapping="Wrap" Text="{DynamicResource QuestRedeemTime}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+          <ui:NumberBox Width="120" Value="{Binding Traders.QuestRedeemDefault}" Minimum="6" Maximum="144" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource QuestRedeemTime}"/>
+           <TextBlock Text="{DynamicResource Default}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
+          <ui:NumberBox Width="120" Value="{Binding Traders.QuestRedeemUnheard}" Minimum="6" Maximum="144" Style="{StaticResource FlatsSmall}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Unheard}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
          <!--<ui:NumberBox Value="{Binding Traders.StockTime}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource StockTime}" Cursor=""/>
@@ -1632,32 +1652,74 @@
          </ui:NumberBox>
         </StackPanel>
        </Expander>
+
        <Expander>
         <Expander.Header>
          <DockPanel>
-          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource PMCStats}" ToolTip="{DynamicResource PMCStats_TT}" VerticalAlignment="Center" Foreground="#FFFF3B3B" FontSize="20"/>
-          <CheckBox Click="SectionEnabled" Name="PMCStatsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Player.EnableStats}"/>
+          <TextBlock Style="{StaticResource TabText}" Foreground="White" Text="{DynamicResource LegsStamina}" VerticalAlignment="Center" FontSize="20"/>
+          <CheckBox Name="StaminaLegsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Player.EnableStaminaLegs}" Click="SectionEnabled"/>
          </DockPanel>
         </Expander.Header>
-        <StackPanel Margin="10" Name="PMCStatsSection" IsEnabled="False">
-         <DockPanel>
-          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxEnergy}" Style="{StaticResource FlatsSmall}" Width="200" Margin="0,0,5,0">
-           <ui:NumberBox.Header>
-            <TextBlock Text="{DynamicResource MaxEnergy}"/>
-           </ui:NumberBox.Header>
-          </ui:NumberBox>
-          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxHydration}" Style="{StaticResource FlatsSmall}">
-           <ui:NumberBox.Header>
-            <TextBlock Text="{DynamicResource MaxHydration}"/>
-           </ui:NumberBox.Header>
-          </ui:NumberBox>
 
-         </DockPanel>
-         <ui:NumberBox Width="200" Value="{Binding Player.MaxStamina}" Style="{StaticResource FlatsSmall}" HorizontalAlignment="Left">
+        <StackPanel Margin="10" Name="StaminaLegsSection" IsEnabled="False">
+         <ui:NumberBox Value="{Binding Player.MaxStaminaLegs}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource MaxStamina}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Player.RegenStaminaLegs}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource StaminaRegenRate}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Player.JumpConsumption}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource JumpConsumption}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Player.SitToStandConsumption}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource SitToStandConsumption}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+        </StackPanel>
+       </Expander>
+       <Expander>
+        <Expander.Header>
+         <DockPanel>
+          <TextBlock Style="{StaticResource TabText}" Foreground="White" Text="{DynamicResource HandsStamina}" VerticalAlignment="Center" FontSize="20"/>
+          <CheckBox Name="StaminaHandsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Player.EnableStaminaHands}" Click="SectionEnabled"/>
+         </DockPanel>
+        </Expander.Header>
+        <StackPanel Margin="10" Name="StaminaHandsSection" IsEnabled="False">
+         <ui:NumberBox Value="{Binding Player.MaxStaminaHands}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource MaxStamina}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding Player.RegenStaminaHands}" Style="{StaticResource FlatsSmall}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource StaminaRegenRate}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <TextBlock TextWrapping="Wrap" Margin="10,5,10,5" Text="{DynamicResource StaminaStanceConsumption}" HorizontalAlignment="Center"/>
+         <DockPanel>
+          <ui:NumberBox Value="{Binding Player.Standing}" Margin="20,0,0,0"  Width="100"  Style="{StaticResource MinMax}" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Standing}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Player.Crouching}" Margin="30,0,0,0"  Width="100"  Style="{StaticResource MinMax}" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Crouching}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Player.LayingDown}" Margin="30,0,0,0"  Width="100"  Style="{StaticResource MinMax}" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource LayingDown}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
         </StackPanel>
        </Expander>
        <Expander>
@@ -1665,10 +1727,9 @@
          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Misc}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10">
-         <StackPanel Margin="10">
-          <CheckBox Content="{DynamicResource UnlimitedStamina}" IsChecked="{Binding Player.UnlimitedStamina}"/>
+         <CheckBox Content="{DynamicResource UnlimitedStamina}" IsChecked="{Binding Player.UnlimitedStamina}"/>
           <CheckBox Content="{DynamicResource FallDamage}" IsChecked="{Binding Player.FallDamage}"/>
-         </StackPanel>
+
         </StackPanel>
        </Expander>
       </StackPanel>
@@ -1751,6 +1812,29 @@
             <TextBlock Text="{DynamicResource PMCHMult}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
+         </DockPanel>
+        </StackPanel>
+       </Expander>
+       <Expander>
+        <Expander.Header>
+         <DockPanel>
+          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource PMCStats}" ToolTip="{DynamicResource PMCStats_TT}" VerticalAlignment="Center" Foreground="#FFFF3B3B" FontSize="20"/>
+          <CheckBox Click="SectionEnabled" Name="PMCStatsCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding Player.EnableStats}"/>
+         </DockPanel>
+        </Expander.Header>
+        <StackPanel Margin="10" Name="PMCStatsSection" IsEnabled="False">
+         <DockPanel>
+          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxEnergy}" Style="{StaticResource FlatsSmall}" Width="200" Margin="0,0,5,0">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource MaxEnergy}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox  Value="{Binding Player.PMCStats.MaxHydration}" Style="{StaticResource FlatsSmall}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource MaxHydration}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+
          </DockPanel>
         </StackPanel>
        </Expander>
@@ -1999,6 +2083,10 @@
           <CheckBox Content="{DynamicResource KillaFactory}" IsChecked="{Binding Raids.RaidEvents.KillaFactory}" Cursor="Hand"/>
           <ui:NumberBox Value="{Binding Raids.RaidEvents.KillaFactoryChance}"  Style="{StaticResource MinMax}" VerticalAlignment="Center"/>
          </StackPanel>
+         <StackPanel>
+          <CheckBox Content="{DynamicResource CultistBosses}" IsChecked="{Binding Raids.RaidEvents.CultistBosses}" Cursor="Hand"/>
+          <ui:NumberBox Value="{Binding Raids.RaidEvents.CultistBossesChance}"  Style="{StaticResource MinMax}" VerticalAlignment="Center"/>
+         </StackPanel>
          <TextBlock Margin="0,5,0,5" Text="{DynamicResource Bloodhounds}" HorizontalAlignment="Center"/>
          <DockPanel>
           <ui:NumberBox Value="{Binding Raids.RaidEvents.HoundsCustoms}" Margin="80,0,0,0"  Width="100"  Style="{StaticResource MinMax}" HorizontalAlignment="Left">
@@ -2060,7 +2148,6 @@
          </ui:NumberBox>
          <CheckBox Content="{DynamicResource ScavWars}" IsChecked="{Binding Raids.RaidStartup.ScavWars}"/>
          <CheckBox Content="{DynamicResource Bosses}" IsChecked="{Binding Raids.RaidStartup.EnableBosses}"/>
-         <CheckBox Content="{DynamicResource MIARaid}" IsChecked="{Binding Raids.RaidStartup.MIAEndofRaid}"/>
          <CheckBox Content="{DynamicResource Cursed}" IsChecked="{Binding Raids.RaidStartup.TaggedAndCursed}"/>
          <CheckBox Content="{DynamicResource LootRaid}" IsChecked="{Binding Raids.RaidStartup.SaveLoot}"/>
 
@@ -2860,7 +2947,12 @@
           <ui:NumberBox Value="{Binding CSM.Cases.GKeychain.Height}" Width="85" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.GKeychain.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
-
+         <DockPanel Margin="5,0,0,5">
+          <TextBlock Text="{DynamicResource StreamerCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.StreamerCase.Width}" Margin="0,0,15,0" Width="85" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.StreamerCase.Height}" Width="85" Style="{StaticResource Sizes}"/>
+          <CheckBox IsChecked="{Binding CSM.Cases.StreamerCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+         </DockPanel>
 
          <!--<TextBox Margin="0,10" Text="{Binding Raids.RaidStartup.AIAmount}"/>-->
         </StackPanel>
@@ -3217,6 +3309,7 @@
           </ui:NumberBox>
          </DockPanel>
          <TextBlock Text="{DynamicResource Partisan}" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+         <CheckBox Content="{DynamicResource ForcePartisan}" IsChecked="{Binding  Bots.AIChance.ForcePartisan}"/>
          <DockPanel>
           <ui:NumberBox Value="{Binding Bots.AIChance.PartisanShoreline}" Style="{StaticResource MinMax}" Width="200" Margin="0,0,5,0">
            <ui:NumberBox.Header>
@@ -3229,12 +3322,18 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Bots.AIChance.PartisanWoods}" Style="{StaticResource MinMax}" Width="200" Margin="0,0,5,0" HorizontalAlignment="Left">
+         <DockPanel>
+          <ui:NumberBox Value="{Binding Bots.AIChance.PartisanWoods}" Style="{StaticResource MinMax}" Width="200" Margin="0,0,5,0" HorizontalAlignment="Left">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Woods}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-
+          <ui:NumberBox Value="{Binding Bots.AIChance.PartisanCustoms}" Style="{StaticResource MinMax}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Customs}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
          <TextBlock Text="{DynamicResource Tagilla}" HorizontalAlignment="Center" Margin="0,5,0,5"/>
          <DockPanel>
           <ui:NumberBox Value="{Binding Bots.AIChance.Tagilla}" Style="{StaticResource MinMax}" Width="200" Margin="0,0,5,0">
@@ -3487,6 +3586,11 @@
          <ui:NumberBox Value="{Binding PMC.AItoPMC.ScavToPMC}" Style="{StaticResource MinMax}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource SCAVAI}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding PMC.AItoPMC.ScavToPMCFactory}" Style="{StaticResource MinMax}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource SCAVAIFactory}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <ui:NumberBox Value="{Binding PMC.AItoPMC.SnipertoPMC}" Style="{StaticResource MinMax}">
