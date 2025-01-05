@@ -1068,6 +1068,9 @@
    public bool EnableCarCoop { get; set; }
    public bool ForceBTRFriendly { get; set; }
 
+   public bool ForceTransitStash { get; set; }
+   public int TransitHeight { get; set; } = 2;
+   public int TransitWidth { get; set; } = 5;
    public bool ForceBTRStash { get; set; }
    public bool EnableBTR { get; set; }
    public int BTRCoverPrice { get; set; } = 30000;

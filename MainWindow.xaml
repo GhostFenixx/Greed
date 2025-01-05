@@ -1934,8 +1934,21 @@
          <CheckBox Content="{DynamicResource GearExtract}" ToolTip="{DynamicResource GearExtract_TT}" IsChecked="{Binding Raids.Exfils.GearExtract}"/>
          <CheckBox Content="{DynamicResource ArmorExtract}" ToolTip="{DynamicResource ArmorExtract_TT}" IsChecked="{Binding Raids.Exfils.ArmorExtract}"/>
          <CheckBox Content="{DynamicResource NoBackpack}" ToolTip="{DynamicResource NoBackpack_TT}" IsChecked="{Binding Raids.Exfils.NoBackpack}"/>
-
          <CheckBox Content="{DynamicResource FenceGift}" IsChecked="{Binding Raids.Exfils.FenceGift}"/>
+
+         <CheckBox Content="{DynamicResource ForceTransitStash}" IsChecked="{Binding Raids.ForceTransitStash}"/>
+         <DockPanel Margin="5,5,0,5">
+          <ui:NumberBox Value="{Binding Raids.TransitWidth}" Maximum="6" Width="100" HorizontalAlignment="Center" Margin="80,0,0,0">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Width}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Raids.TransitHeight}" Maximum="20"  Width="100">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Height}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
         </StackPanel>
        </Expander>
        <Expander>
