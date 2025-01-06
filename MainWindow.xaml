@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Greed"
         mc:Ignorable="d"
         Title="Greed" ui:ThemeManager.RequestedTheme="Dark"
-        Height="1700" Width="1225" MinHeight="700" MinWidth="1225"
+        Height="700" Width="1225" MinHeight="700" MinWidth="1225"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:controls="clr-namespace:Greed"
         Icon="Resources/SVMLOGO.png" Closing="WindowClosing" WindowStyle="None" MouseLeftButtonDown="Dragger" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
@@ -2086,6 +2086,8 @@
          <CheckBox Content="{DynamicResource Halloween}" ToolTip="{DynamicResource Halloween_TT}" IsChecked="{Binding Raids.RaidEvents.Halloween}"/>
          <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource DisableZombies_TT}" Content="{DynamicResource DisableZombies}" IsChecked="{Binding Raids.RaidEvents.DisableZombies}"/>
          <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource RandomInfectionLevel_TT}" Content="{DynamicResource RandomInfectionLevel}" IsChecked="{Binding Raids.RaidEvents.RandomInfectionLevel}"/>
+         <CheckBox Margin="20,0,0,0"  Content="{DynamicResource DisableHalloweenAIFriendly}" IsChecked="{Binding Raids.RaidEvents.DisableHalloweenAIFriendly}"/>
+         <CheckBox Content="{DynamicResource NonSeasonalQuests}" IsChecked="{Binding Raids.RaidEvents.NonSeasonalQuests}"/>
          <CheckBox Content="{DynamicResource DisableEvents}" IsChecked="{Binding Raids.RaidEvents.DisableEvents}"/>
          <CheckBox Content="{DynamicResource TagillaInterchange}" IsChecked="{Binding Raids.RaidEvents.TagillaInterchange}"/>
          <StackPanel>
@@ -2496,7 +2498,7 @@
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
            <TextBlock  Text="{DynamicResource Levels}" Margin="0,0,0,5"/>
-           <TextBox Text="{Binding Quests.DailyQuests.Levels}" PreviewTextInput="NumberValidationTextBox" Width="350" HorizontalAlignment="Left"/>
+           <TextBox  Text="{Binding Quests.DailyQuests.Levels}" PreviewTextInput="NumberValidationTextBox" Width="350" HorizontalAlignment="Left"/>
           </StackPanel>
           <StackPanel>
            <TextBlock Text="{DynamicResource Experience}" Margin="0,0,0,5"/>
@@ -2510,7 +2512,7 @@
           </StackPanel>
           <StackPanel>
            <TextBlock Text="{DynamicResource GPCoin}" Margin="0,0,0,5"/>
-           <TextBox Text="{Binding Quests.DailyQuests.GPcoins}" PreviewTextInput="NumberValidationTextBox" Width="350" HorizontalAlignment="Left"/>
+           <TextBox Text="{Binding Quests.DailyQuests.GPcoins}"  PreviewTextInput="NumberValidationTextBox" Width="350" HorizontalAlignment="Left"/>
           </StackPanel>
          </DockPanel>
          <DockPanel>
@@ -3789,7 +3791,7 @@
    </Button>
    <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
-  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.0 Hotfix#4" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
  </Grid>
 </Window>
