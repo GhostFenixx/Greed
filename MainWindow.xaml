@@ -117,11 +117,13 @@
    <Setter Property="NumberFormatter" Value="{StaticResource UpperLimit}"/>
    <Setter Property="SmallChange" Value="5"/>
    <Setter Property="Minimum" Value="0"/>
+   <Setter Property="Maximum" Value="2000"/>
    <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
   </Style>
   <Style x:Key="FlatsBig" TargetType="ui:NumberBox">
    <Setter Property="SmallChange" Value="5000"/>
    <Setter Property="Minimum" Value="0"/>
+   <Setter Property="Maximum" Value="20000000"/>
    <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
   </Style>
   <Style x:Key="MinMax" TargetType="ui:NumberBox">
@@ -456,22 +458,22 @@
         </Expander.Header>
         <StackPanel Margin="10" Name="CurrencySection">
          <!--<CheckBox Content="{DynamicResource DisableDefaultCashStack}" ToolTip="{DynamicResource DisableDefaultCashStack_TT}" IsChecked="{Binding Items.BSGCashStack}"/>-->
-         <ui:NumberBox Value="{Binding Items.RubStack}" SmallChange="50000">
+         <ui:NumberBox Value="{Binding Items.RubStack}" Style="{StaticResource FlatsBig}" SmallChange="50000">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource RoublesOrDefault}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.DollarStack}" SmallChange="500">
+         <ui:NumberBox Value="{Binding Items.DollarStack}" Style="{StaticResource FlatsBig}" SmallChange="500">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Dollars}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.EuroStack}" SmallChange="500">
+         <ui:NumberBox Value="{Binding Items.EuroStack}" Style="{StaticResource FlatsBig}" SmallChange="500">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Euros}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.GPStack}" SmallChange="5">
+         <ui:NumberBox Value="{Binding Items.GPStack}" Style="{StaticResource FlatsSmall}" SmallChange="5">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource GPCoin}"/>
           </ui:NumberBox.Header>
@@ -663,17 +665,17 @@
            <TextBlock Text="{DynamicResource WaterFilterTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.MaxBitcoins}">
+         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.MaxBitcoins}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource MaxBitcoins}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.BitcoinTime}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Maximum="40" Value="{Binding Hideout.BitcoinTime}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource BitcoinTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.CultistMaxRewards}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Maximum="40" Value="{Binding Hideout.CultistMaxRewards}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource CultistMaxRewards}"/>
           </ui:NumberBox.Header>
@@ -832,21 +834,16 @@
          <DockPanel>
           <TextBlock Width="150" TextWrapping="Wrap" Text="{DynamicResource QuestRedeemTime}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
           <ui:NumberBox Width="120" Value="{Binding Traders.QuestRedeemDefault}" Minimum="6" Maximum="144" Style="{StaticResource FlatsSmall}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource Default}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Default}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
           <ui:NumberBox Width="120" Value="{Binding Traders.QuestRedeemUnheard}" Minimum="6" Maximum="144" Style="{StaticResource FlatsSmall}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Unheard}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <!--<ui:NumberBox Value="{Binding Traders.StockTime}" Style="{StaticResource FlatsSmall}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource StockTime}" Cursor=""/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>-->
          <ui:NumberBox Value="{Binding Traders.MinDurabSell}" Style="{StaticResource MinMax}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource MinDurabSell}"/>
@@ -855,7 +852,7 @@
          <CheckBox Content="{DynamicResource UnlockJaeger}" IsChecked="{Binding Traders.UnlockJaeger}"/>
          <CheckBox Content="{DynamicResource UnlockRef}" IsChecked="{Binding Traders.UnlockRef}"/>
          <CheckBox Content="{DynamicResource FIRTrade}" IsChecked="{Binding Traders.FIRTrade}"/>
-         <CheckBox Content="{DynamicResource AllQuestsAvailable}" ToolTip="{DynamicResource AllQuestsAvailable_TT}" Foreground="#FFFFA73B"  IsChecked="{Binding Traders.AllQuestsAvailable}"/>
+         <CheckBox Content="{DynamicResource AllQuestsAvailable}" ToolTip="{DynamicResource AllQuestsAvailable_TT}" Foreground="#FFFF3B3B"  IsChecked="{Binding Traders.AllQuestsAvailable}"/>
          <CheckBox Content="{DynamicResource RemoveTimeCondition}"  IsChecked="{Binding Traders.RemoveTimeCondition}" ToolTip="{DynamicResource RemoveTimeCondition_TT}"/>
          <CheckBox Content="{DynamicResource TradersLvl4}"  IsChecked="{Binding Traders.TradersLvl4}"/>
          <CheckBox Content="{DynamicResource FIRRestrictsQuests}" IsChecked="{Binding Traders.FIRRestrictsQuests}"/>
@@ -1677,11 +1674,19 @@
            <TextBlock Text="{DynamicResource JumpConsumption}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Player.SitToStandConsumption}" Style="{StaticResource FlatsSmall}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource SitToStandConsumption}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
+         <TextBlock TextWrapping="Wrap" Margin="10,5,10,5" Text="{DynamicResource StanceSwitchConsumption}" HorizontalAlignment="Center"/>
+         <DockPanel>
+          <ui:NumberBox Value="{Binding Player.LayToStand}" Margin="20,0,0,0"  Width="150"  Style="{StaticResource FlatsSmall}" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource LayingDown}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Player.CrouchToStand}" Margin="30,0,0,0"  Width="150"  Style="{StaticResource FlatsSmall}" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Crouching}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
         </StackPanel>
        </Expander>
        <Expander>
@@ -1912,12 +1917,12 @@
            <TextBlock Text="{DynamicResource SandboxAccessLevel}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Raids.RaidTime}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Value="{Binding Raids.RaidTime}" Maximum="720" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource RaidTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Raids.Timeacceleration}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Value="{Binding Raids.Timeacceleration}" Maximum="35" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Timeacceleration}" Cursor=""/>
           </ui:NumberBox.Header>
@@ -2079,14 +2084,14 @@
          <CheckBox Content="{DynamicResource GlukharLabs}" IsChecked="{Binding Raids.RaidEvents.GlukharLabs}"/>
          <CheckBox Content="{DynamicResource BossesOnCustoms}" IsChecked="{Binding Raids.RaidEvents.BossesOnCustoms}"/>
          <CheckBox Content="{DynamicResource BossesOnHealthResort}" IsChecked="{Binding Raids.RaidEvents.BossesOnHealthResort}"/>
-         <CheckBox  Foreground="#FFFFA73B" Margin="20,0,0,0"  ToolTip="{DynamicResource HealthResortIncludeGuards_TT}" Content="{DynamicResource HealthResortIncludeGuards}" IsChecked="{Binding Raids.RaidEvents.HealthResortIncludeGuards}"/>
+         <CheckBox Foreground="#FFFFA73B" Margin="20,0,0,0"  ToolTip="{DynamicResource HealthResortIncludeGuards_TT}" Content="{DynamicResource HealthResortIncludeGuards}" IsChecked="{Binding Raids.RaidEvents.HealthResortIncludeGuards}"/>
          <CheckBox Content="{DynamicResource BossesOnReserve}" IsChecked="{Binding Raids.RaidEvents.BossesOnReserve}"/>
          <CheckBox Margin="20,0,0,0" Content="{DynamicResource IncludeStreetBosses}" IsChecked="{Binding Raids.RaidEvents.IncludeStreetBosses}"/>
          <CheckBox Content="{DynamicResource Christmas}" ToolTip="{DynamicResource Christmas_TT}" IsChecked="{Binding Raids.RaidEvents.Christmas}"/>
          <CheckBox Content="{DynamicResource Halloween}" ToolTip="{DynamicResource Halloween_TT}" IsChecked="{Binding Raids.RaidEvents.Halloween}"/>
          <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource DisableZombies_TT}" Content="{DynamicResource DisableZombies}" IsChecked="{Binding Raids.RaidEvents.DisableZombies}"/>
          <CheckBox Margin="20,0,0,0"  ToolTip="{DynamicResource RandomInfectionLevel_TT}" Content="{DynamicResource RandomInfectionLevel}" IsChecked="{Binding Raids.RaidEvents.RandomInfectionLevel}"/>
-         <CheckBox Margin="20,0,0,0"  Content="{DynamicResource DisableHalloweenAIFriendly}" IsChecked="{Binding Raids.RaidEvents.DisableHalloweenAIFriendly}"/>
+         <CheckBox  Foreground="#FFFFA73B" Margin="20,0,0,0"  ToolTip="{DynamicResource DisableHalloweenAIFriendly_TT}" Content="{DynamicResource DisableHalloweenAIFriendly}" IsChecked="{Binding Raids.RaidEvents.DisableHalloweenAIFriendly}"/>
          <CheckBox Content="{DynamicResource NonSeasonalQuests}" IsChecked="{Binding Raids.RaidEvents.NonSeasonalQuests}"/>
          <CheckBox Content="{DynamicResource DisableEvents}" IsChecked="{Binding Raids.RaidEvents.DisableEvents}"/>
          <CheckBox Content="{DynamicResource TagillaInterchange}" IsChecked="{Binding Raids.RaidEvents.TagillaInterchange}"/>
@@ -3324,7 +3329,7 @@
           </ui:NumberBox>
          </DockPanel>
          <TextBlock Text="{DynamicResource Partisan}" HorizontalAlignment="Center" Margin="0,5,0,5"/>
-         <CheckBox Content="{DynamicResource ForcePartisan}" IsChecked="{Binding  Bots.AIChance.ForcePartisan}"/>
+         <CheckBox Content="{DynamicResource ForcePartisan}" IsChecked="{Binding  Bots.AIChance.ForcePartisan}" ToolTip="{DynamicResource ForcePartisan_TT}"/>
          <DockPanel>
           <ui:NumberBox Value="{Binding Bots.AIChance.PartisanShoreline}" Style="{StaticResource MinMax}" Width="200" Margin="0,0,5,0">
            <ui:NumberBox.Header>
@@ -3571,9 +3576,9 @@
           <CheckBox Content="{DynamicResource ForcePMC}" IsChecked="{Binding PMC.ForceCustomWaves}"/>
           <ui:NumberBox Value="{Binding PMC.CustomWaveChance}" Style="{StaticResource FlatsSmall}"/>
          </StackPanel>-->
-         <ui:NumberBox Value="{Binding PMC.PMCRatio}" ToolTip="{DynamicResource PMCRatio_TT}" Style="{StaticResource MinMax}">
+         <ui:NumberBox  Value="{Binding PMC.PMCRatio}" ToolTip="{DynamicResource PMCRatio_TT}" Style="{StaticResource MinMax}">
           <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource PMCRatio}"/>
+           <TextBlock Foreground="RoyalBlue" Text="{DynamicResource PMCRatio}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <ui:NumberBox Value="{Binding PMC.LevelUpMargin}" Minimum="1" Maximum="70" Style="{StaticResource MinMax}">
@@ -3658,6 +3663,11 @@
          <ui:NumberBox Value="{Binding PMC.PMCChance.PMCAllNamePrefix}" Style="{StaticResource MinMax}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource AllPMCHaveYourName}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         <ui:NumberBox Value="{Binding PMC.PMCChance.HostileSamePMC}" Style="{StaticResource MinMax}">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource PMCSameHostility}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <ui:NumberBox Value="{Binding PMC.PMCChance.HostilePMC}" Style="{StaticResource MinMax}">

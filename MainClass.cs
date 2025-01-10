@@ -882,14 +882,15 @@
    public double WeaponSkillMult { get; set; } = 1;
    public bool EnablePlayer { get; set; }
    public DiedHealth DiedHealth { get; set; }
-   public int MaxStaminaLegs { get; set; } = 100;
+   public int MaxStaminaLegs { get; set; } = 115;
    public int MaxStaminaHands { get; set; } = 80;
    public bool EnableStaminaHands { get; set; }
    public bool EnableStaminaLegs { get; set; }
    public double RegenStaminaLegs { get; set; } = 4.5;
    public double RegenStaminaHands { get; set; } = 2.1;
    public int JumpConsumption { get; set; } = 14;
-   public double SitToStandConsumption { get; set; } = 1;
+   public int LayToStand { get; set; } = 20;
+   public int CrouchToStand { get; set; } = 10;
    public double Standing { get; set; } = 1;
    public double LayingDown { get; set; } = 0.15;
    public double Crouching { get; set; } = 0.75;
@@ -927,7 +928,9 @@
    public int PMCNamePrefix { get; set; } = 15;
    public int PMCAllNamePrefix { get; set; } = 5;
    public int PMCLooseWep { get; set; } = 15;
-   public int HostilePMC { get; set; } = 80;
+   public int HostileSamePMC { get; set; } = 85;
+
+   public int HostilePMC { get; set; } = 100;
    public int PMCWepEnhance { get; set; } = 5;
   }
 
