@@ -3769,8 +3769,8 @@
          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Mailbox}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10">
-         <CheckBox Content="{DynamicResource DisableSPTFriend}" IsChecked="{Binding Custom.DisableSPTFriend}"/>
-         <CheckBox Content="{DynamicResource DisableCommando}" IsChecked="{Binding Custom.DisableCommando}"/>
+         <CheckBox  Content="{DynamicResource DisableSPTFriend}"  Foreground="RoyalBlue"  IsChecked="{Binding Custom.DisableSPTFriend}"/>
+         <CheckBox Content="{DynamicResource DisableCommando}"  Foreground="RoyalBlue" IsChecked="{Binding Custom.DisableCommando}"/>
          <CheckBox Content="{DynamicResource DisablePMCMessages}" IsChecked="{Binding Custom.DisablePMCMessages}"/>
         </StackPanel>
        </Expander>
@@ -3801,7 +3801,7 @@
    </Button>
    <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
-  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.1 Hotfix #1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
  </Grid>
 </Window>
