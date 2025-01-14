@@ -665,12 +665,12 @@
            <TextBlock Text="{DynamicResource WaterFilterTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Maximum="4000" Value="{Binding Hideout.MaxBitcoins}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Maximum="40" Value="{Binding Hideout.MaxBitcoins}" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource MaxBitcoins}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Maximum="40" Value="{Binding Hideout.BitcoinTime}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Maximum="4000" SmallChange="30" Value="{Binding Hideout.BitcoinTime}" Style="{StaticResource FlatsBig}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource BitcoinTime}"/>
           </ui:NumberBox.Header>
@@ -2475,7 +2475,7 @@
             <TextBlock Text="{DynamicResource MaxExtracts}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Quests.DailyQuests.Spread}" Minimum="0" Maximum="2" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
+          <ui:NumberBox Value="{Binding Quests.DailyQuests.Spread}" Minimum="0.01" Maximum="2" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource RewardSpread}"/>
            </ui:NumberBox.Header>
@@ -2594,7 +2594,7 @@
             <TextBlock Text="{DynamicResource MaxExtracts}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Spread}" Minimum="0" Maximum="2"  ToolTip="{DynamicResource RewardSpread_TT}" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
+          <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Spread}" Minimum="0.01" Maximum="2"  ToolTip="{DynamicResource RewardSpread_TT}" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource RewardSpread}"/>
            </ui:NumberBox.Header>
@@ -2711,7 +2711,7 @@
             <TextBlock Text="{DynamicResource MaxExtracts}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Quests.ScavQuests.Spread}" Minimum="0" Maximum="2" ToolTip="{DynamicResource RewardSpread_TT}" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
+          <ui:NumberBox Value="{Binding Quests.ScavQuests.Spread}" Minimum="0.01" Maximum="2" ToolTip="{DynamicResource RewardSpread_TT}" Style="{StaticResource Mults}" HorizontalAlignment="Left" Width="300">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource RewardSpread}"/>
            </ui:NumberBox.Header>

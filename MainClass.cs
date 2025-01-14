@@ -68,26 +68,26 @@
    public int PartisanWoods { get; set; } = 30;
    public int PartisanLighthouse { get; set; } = 30;
 
-   public int Kaban { get; set; } = 25;
-   public int TagillaNight { get; set; } = 25;
-   public int TrioLighthouse { get; set; } = 25;
-   public int TrioShoreline { get; set; } = 25;
-   public int TrioWoods { get; set; } = 25;
+   public int Kaban { get; set; } = 30;
+   public int TagillaNight { get; set; } = 30;
+   public int TrioLighthouse { get; set; } = 30;
+   public int TrioShoreline { get; set; } = 30;
+   public int TrioWoods { get; set; } = 30;
    public int Zryachiy { get; set; } = 100;
-   public int CultistCustoms { get; set; } = 10;
-   public int CultistShoreline { get; set; } = 20;
-   public int Trio { get; set; } = 25;
+   public int CultistCustoms { get; set; } = 40;
+   public int CultistShoreline { get; set; } = 15;
+   public int Trio { get; set; } = 30;
    public int RaiderLab { get; set; } = 45;
-   public int RaiderReserve { get; set; } = 40;
-   public int CultistFactory { get; set; } = 2;
-   public int CultistWoods { get; set; } = 20;
+   public int RaiderReserve { get; set; } = 35;
+   public int CultistFactory { get; set; } = 20;
+   public int CultistWoods { get; set; } = 15;
   public int CultistGroundZero { get; set; } = 44;
    public int Rogue { get; set; } = 70;
-   public int Tagilla { get; set; } = 25;
-   public int Shturman { get; set; } = 25;
+   public int Tagilla { get; set; } = 30;
+   public int Shturman { get; set; } = 30;
    public int Glukhar { get; set; } = 35;
-   public int Sanitar { get; set; } = 25;
-   public int Reshala { get; set; } = 25;
+   public int Sanitar { get; set; } = 30;
+   public int Reshala { get; set; } = 30;
    public int Killa { get; set; } = 35;
   }
 
@@ -97,15 +97,15 @@
    public AirdropContents Medical { get; set; }
    public AirdropContents Barter { get; set; }
    public AirdropContents Weapon { get; set; }
-   public int Sandbox_air { get; set; } = 20;
-   public int Streets_air { get; set; } = 20;
+   public int Sandbox_air { get; set; } = 13;
+   public int Streets_air { get; set; } = 13;
    public int AirtimeMin { get; set; } = 1;
    public int AirtimeMax { get; set; } = 5;
    public int Lighthouse_air { get; set; } = 20;
-   public int Bigmap_air { get; set; } = 25;
+   public int Bigmap_air { get; set; } = 20;
    public int Interchange_air { get; set; } = 20;
    public int Shoreline_air { get; set; } = 20;
-   public int Reserve_air { get; set; } = 20;
+   public int Reserve_air { get; set; } = 10;
    public int Woods_air { get; set; } = 25;
 
    public Airdrops()
@@ -890,7 +890,7 @@
    public double RegenStaminaHands { get; set; } = 2.1;
    public int JumpConsumption { get; set; } = 14;
    public int LayToStand { get; set; } = 20;
-   public int CrouchToStand { get; set; } = 10;
+   public int CrouchToStand { get; set; } = 11;
    public double Standing { get; set; } = 1;
    public double LayingDown { get; set; } = 0.15;
    public double Crouching { get; set; } = 0.75;
