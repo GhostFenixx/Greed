@@ -419,7 +419,7 @@ namespace Greed
   }
   private void FikaDiscord(object sender, EventArgs e)
   {
-   RunURL("FikaLink", "https://discord.gg/HknsaAjGv");
+   RunURL("FikaLink", "https://discord.gg/HknsaAjGvX");
   }
   private void WikiPage(object sender, EventArgs e)
   {
