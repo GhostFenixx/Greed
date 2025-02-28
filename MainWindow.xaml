@@ -3122,7 +3122,7 @@
          <TextBlock Style="{StaticResource TabText}" Text="{DynamicResource Misc}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10">
-         <ui:NumberBox Value="{Binding Scav.ScavTimer}" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox Value="{Binding Scav.ScavTimer}" Style="{StaticResource FlatsSmall}" Maximum="14400" Minimum="1" >
           <ui:NumberBox.Header>
            <TextBlock Foreground="#FFFFA73B" ToolTip="{DynamicResource ScavTimer_TT}" Text="{DynamicResource ScavTimer}"/>
           </ui:NumberBox.Header>
