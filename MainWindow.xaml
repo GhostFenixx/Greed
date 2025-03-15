@@ -582,8 +582,10 @@
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <CheckBox Content="{DynamicResource InfiniteKeycards}" IsChecked="{Binding Items.InfiniteKeycards}"/>
+         <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidResidential}" ToolTip="{DynamicResource AvoidResidential_TT}" IsChecked="{Binding Items.AvoidResidential}"/>
          <CheckBox Content="{DynamicResource InfiniteKeys}" IsChecked="{Binding Items.InfiniteKeys}"/>
          <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidSingleKeys}" IsChecked="{Binding Items.AvoidSingleKeys}"/>
+         <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidOddKeys}"  ToolTip="{DynamicResource AvoidOddKeys_TT}" IsChecked="{Binding Items.AvoidOddKeys}"/>
          <CheckBox Margin="30,0,0,0" Content="{DynamicResource AvoidMarkedKeys}" IsChecked="{Binding Items.AvoidMarkedKeys}"/>
         </StackPanel>
        </Expander>
@@ -2494,12 +2496,19 @@
            <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
          </StackPanel>
-         <ui:NumberBox Value="{Binding Quests.DailyQuests.Access}" Width="300" HorizontalAlignment="Left">
+         <DockPanel>
+          <ui:NumberBox Value="{Binding Quests.DailyQuests.Access}" Margin="0,0,40,0" Width="300" HorizontalAlignment="Left">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource QuestLevel}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
+         <ui:NumberBox Value="{Binding Quests.DailyQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource Reroll}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
+         </DockPanel>
+          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
            <TextBlock  Text="{DynamicResource Levels}" Margin="0,0,0,5"/>
@@ -2611,13 +2620,20 @@
            <ComboBoxItem Content="{DynamicResource ExplElim}"/>
            <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
-          <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Access}" Width="300" HorizontalAlignment="Left">
-           <ui:NumberBox.Header>
-            <TextBlock Text="{DynamicResource QuestLevel}"/>
-           </ui:NumberBox.Header>
-          </ui:NumberBox>
          </StackPanel>
-         <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
+         <DockPanel>
+           <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Access}" Margin="0,0,40,0" Width="300" HorizontalAlignment="Left">
+            <ui:NumberBox.Header>
+             <TextBlock Text="{DynamicResource QuestLevel}"/>
+            </ui:NumberBox.Header>
+           </ui:NumberBox>
+           <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+            <ui:NumberBox.Header>
+             <TextBlock Text="{DynamicResource Reroll}"/>
+            </ui:NumberBox.Header>
+           </ui:NumberBox>
+          </DockPanel>
+          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
            <TextBlock  Text="{DynamicResource Levels}" Margin="0,0,0,5"/>
@@ -2725,11 +2741,18 @@
            <ComboBoxItem Content="{DynamicResource CompElim}"/>
           </ComboBox>
          </StackPanel>
-         <ui:NumberBox Value="{Binding Quests.ScavQuests.Access}" Width="300" HorizontalAlignment="Left">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource QuestLevel}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
+         <DockPanel>
+          <ui:NumberBox Value="{Binding Quests.ScavQuests.Access}" Margin="0,0,40,0" Width="300" HorizontalAlignment="Left">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource QuestLevel}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Quests.ScavQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Reroll}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
          <TextBlock Foreground="#FF9F0ACC" Text="{DynamicResource RewardScale}" HorizontalAlignment="Left" Margin="275,10,0,10"/>
          <DockPanel>
           <StackPanel Margin="0,0,40,0">
@@ -2972,6 +2995,12 @@
           <ui:NumberBox Value="{Binding CSM.Cases.StreamerCase.Width}" Margin="0,0,15,0" Width="85" Style="{StaticResource Sizes}"/>
           <ui:NumberBox Value="{Binding CSM.Cases.StreamerCase.Height}" Width="85" Style="{StaticResource Sizes}"/>
           <CheckBox IsChecked="{Binding CSM.Cases.StreamerCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+         </DockPanel>
+         <DockPanel Margin="5,0,0,5">
+          <TextBlock Text="{DynamicResource ArmorPlateCase}" Width="180" VerticalAlignment="Center" Margin="0,0,5,0"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ArmorPlateCase.Width}" Margin="0,0,15,0" Width="85" Style="{StaticResource Sizes}"/>
+          <ui:NumberBox Value="{Binding CSM.Cases.ArmorPlateCase.Height}" Width="85" Style="{StaticResource Sizes}"/>
+          <CheckBox IsChecked="{Binding CSM.Cases.ArmorPlateCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
          </DockPanel>
 
          <!--<TextBox Margin="0,10" Text="{Binding Raids.RaidStartup.AIAmount}"/>-->
@@ -3595,46 +3624,6 @@
          <CheckBox Content="{DynamicResource DisableLowLevelPMC}" IsChecked="{Binding PMC.DisableLowLevelPMC}"/>
         </StackPanel>
        </Expander>
-       <Expander>
-        <Expander.Header>
-         <DockPanel>
-          <TextBlock Style="{StaticResource TabText}" ToolTip="{DynamicResource AIToPMC_TT}" Text="{DynamicResource AIToPMC}" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
-          <CheckBox Name="PMCConvertCheck" Style="{StaticResource SectionSwitch}" IsChecked="{Binding PMC.EnableConvert}" Click="SectionEnabled"/>
-         </DockPanel>
-        </Expander.Header>
-        <StackPanel Margin="10" Name="ConvertSection" IsEnabled="False" Cursor="">
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.ScavToPMC}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource SCAVAI}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.ScavToPMCFactory}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource SCAVAIFactory}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.SnipertoPMC}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource SCAVSniper}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.RogueToPMC}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource Rogues}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.CursedToPMC}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource CursedSCAV}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-         <ui:NumberBox Value="{Binding PMC.AItoPMC.RaiderToPMC}" Style="{StaticResource MinMax}">
-          <ui:NumberBox.Header>
-           <TextBlock Text="{DynamicResource Raiders}"/>
-          </ui:NumberBox.Header>
-         </ui:NumberBox>
-        </StackPanel>
-       </Expander>
       </StackPanel>
       <StackPanel Grid.Column="1" Grid.Row="0">
        <Expander>
@@ -3801,7 +3790,7 @@
    </Button>
    <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
-  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.10.1 Hotfix #1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.11.0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
  </Grid>
 </Window>

@@ -304,8 +304,15 @@
    public Case LuckyScav { get; set; }
    public Case StreamerCase { get; set; }
 
+   public Case ArmorPlateCase { get; set; }
    public Cases()
    {
+    ArmorPlateCase = new Case()
+    {
+     Height = 12,
+     Width = 8,
+     Filter = false
+    };
     StreamerCase = new Case()
     {
      Height = 11,
@@ -484,6 +491,7 @@
    public int MaxItems { get; set; }
    public int Extracts { get; set; }
    public int Types { get; set; }
+   public int Reroll { get; set; }
    public double Spread { get; set; }
    public int MinKillsLR1 { get; set; }
    public int MaxKillsLR1 { get; set; }
@@ -743,6 +751,8 @@
    public bool RemoveBackpacksRestrictions { get; set; }
    public bool AvoidSingleKeys { get; set; }
    public bool AvoidMarkedKeys { get; set; }
+   public bool AvoidResidential { get; set; }
+   public bool AvoidOddKeys { get; set; }
    public double KeyUseMult { get; set; } = 1;
    public double KeycardUseMult { get; set; } = 1;
 
@@ -754,6 +764,7 @@
    public string IDFilter { get; set; } = "";
    public string IDPrice { get; set; } = "";
    public bool InfiniteKeys { get; set; }
+
    public bool InfiniteKeycards { get; set; }
    public bool RaidDrop { get; set; }
    public Items()
@@ -981,6 +992,7 @@
      Lifespan = 1440,
      Spread = 0.5,
      Types = 6,
+     Reroll = 2,
      Levels = "1,10,20,30,40,50,60",
      Experience = "1000,2000,8000,13000,19000,24000,30000",
      Reputation = "0.01,0.01,0.02,0.02,0.03,0.03,0.03",
@@ -1006,6 +1018,7 @@
      Lifespan = 10080,
      Spread = 0.5,
      Types = 6,
+     Reroll = 0,
      Levels = "1,10,20,30,40,50,60",
      Experience = "5000,15000,27000,80000,142000,220000,290000",
      Reputation = "0.02,0.03,0.04,0.04,0.05,0.05,0.05",
@@ -1189,6 +1202,7 @@
    public int MaxItems { get; set; } = 5;
    public int Extracts { get; set; } = 3;
    public int Types { get; set; } = 2;
+   public int Reroll { get; set; } = 0;
    public double Spread { get; set; } = 0.5;
    public int MinKillsLR1 { get; set; } = 1;
    public int MaxKillsLR1 { get; set; } = 3;

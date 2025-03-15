@@ -584,7 +584,6 @@ namespace Greed
    EnableSubSection(FatigueCheck.IsChecked, FatigueSection);
    EnableSubSection(KeysCheck.IsChecked, KeysSection);
    EnableSubSection(FenceCheck.IsChecked, FenceSection);
-   EnableSubSection(PMCConvertCheck.IsChecked, ConvertSection);
    EnableSubSection(BTRCheck.IsChecked, BTRSection);
    EnableSubSection(CarCoopCheck.IsChecked, CarCoopSection);
    EnableSubSection(RaidStartupCheck.IsChecked, RaidStartupSection);
