@@ -2502,7 +2502,7 @@
            <TextBlock Text="{DynamicResource QuestLevel}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Quests.DailyQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+         <ui:NumberBox Value="{Binding Quests.DailyQuests.Reroll}" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Reroll}"/>
           </ui:NumberBox.Header>
@@ -2627,7 +2627,7 @@
              <TextBlock Text="{DynamicResource QuestLevel}"/>
             </ui:NumberBox.Header>
            </ui:NumberBox>
-           <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+           <ui:NumberBox Value="{Binding Quests.WeeklyQuests.Reroll}" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
             <ui:NumberBox.Header>
              <TextBlock Text="{DynamicResource Reroll}"/>
             </ui:NumberBox.Header>
@@ -2747,7 +2747,7 @@
             <TextBlock Text="{DynamicResource QuestLevel}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Quests.ScavQuests.Reroll}" Minimum="0.01" Maximum="2" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
+          <ui:NumberBox Value="{Binding Quests.ScavQuests.Reroll}" Style="{StaticResource MinMax}" HorizontalAlignment="Left" Width="300">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Reroll}"/>
            </ui:NumberBox.Header>
