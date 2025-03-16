@@ -663,6 +663,7 @@
    public double CultistTime { get; set; } = 1;
    public int CultistMaxRewards { get; set; } = 5;
    public bool RemoveConstructionsRequirements { get; set; }
+   public bool RemoveConstructionsFIRRequirements { get; set; }
    public bool RemoveSkillRequirements { get; set; }
    public bool RemoveTraderLevelRequirements { get; set; }
    public bool EnableHideout { get; set; }
@@ -1264,6 +1265,7 @@
    public int Fence { get; set; } = 40;
    public int Prapor { get; set; } = 50;
    public int Jaeger { get; set; } = 60;
+   public int Ref { get; set; } = 56;
    public int Mechanic { get; set; } = 56;
    public int Skier { get; set; } = 49;
    public int Therapist { get; set; } = 63;
@@ -1276,6 +1278,7 @@
    public double Jaeger { get; set; } = 1;
    public double Mechanic { get; set; } = 1;
    public double Skier { get; set; } = 1;
+   public double Ref { get; set; } = 1;
    public double Therapist { get; set; } = 1;
   }
   public class Traders

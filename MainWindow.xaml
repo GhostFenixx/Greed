@@ -653,6 +653,7 @@
          <TextBlock Style="{StaticResource TabText}" ToolTip="{DynamicResource HideoutMisc_TT}" Text="{DynamicResource Misc}" VerticalAlignment="Center" Foreground="#FFFFA73B" FontSize="20"/>
         </Expander.Header>
         <StackPanel Margin="10">
+         <CheckBox Content="{DynamicResource RemoveConstructionsFIRRequirements}" IsChecked="{Binding Hideout.RemoveConstructionsFIRRequirements}"/>
          <CheckBox Content="{DynamicResource RemoveConstructionsRequirements}" ToolTip="{DynamicResource RemoveConstructionsRequirements_TT}" IsChecked="{Binding Hideout.RemoveConstructionsRequirements}"/>
          <CheckBox Content="{DynamicResource RemoveSkillRequirements}" ToolTip="{DynamicResource RemoveSkillRequirements_TT}" IsChecked="{Binding Hideout.RemoveSkillRequirements}"/>
          <CheckBox Content="{DynamicResource RemoveTraderLevelRequirements}" ToolTip="{DynamicResource RemoveTraderLevelRequirements_TT}" IsChecked="{Binding Hideout.RemoveTraderLevelRequirements}"/>
@@ -978,9 +979,14 @@
           <ui:NumberBox Value="{Binding Traders.TraderMarkup.Jaeger}" Style="{DynamicResource MinMax}"  Width="200">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Jaeger}"/>
-           </ui:NumberBox.Header>
+           </ui:NumberBox.Header> 
           </ui:NumberBox>
          </DockPanel>
+         <ui:NumberBox Value="{Binding Traders.TraderMarkup.Ref}" HorizontalAlignment="Left" Style="{DynamicResource MinMax}"  Width="200">
+          <ui:NumberBox.Header>
+           <TextBlock Text="{DynamicResource Ref}"/>
+          </ui:NumberBox.Header>
+         </ui:NumberBox>
         </StackPanel>
        </Expander>
        <Expander>
@@ -1024,10 +1030,15 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <DockPanel HorizontalAlignment="Left">
+         <DockPanel>
           <ui:NumberBox Value="{Binding Traders.TraderSell.Mechanic}" Style="{StaticResource Mults}"  Width="200">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Mechanic}"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding Traders.TraderSell.Ref}" Style="{DynamicResource MinMax}"  Width="200">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Ref}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
