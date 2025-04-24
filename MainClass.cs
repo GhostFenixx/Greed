@@ -737,9 +737,9 @@
    public double WeightChanger { get; set; } = 1;
    public double ItemPriceMult { get; set; } = 1;
    public bool EnableCurrency { get; set; }
-   public int RubStack { get; set; } = 500000;
+   public int RubStack { get; set; } = 1000000;
    public int DollarStack { get; set; } = 50000;
-   public int GPStack { get; set; } = 20;
+   public int GPStack { get; set; } = 100;
    public int EuroStack { get; set; } = 50000;
    public double AmmoLoadSpeed { get; set; } = 1;
    public double LootExp { get; set; } = 1;
@@ -1094,6 +1094,16 @@
    public bool EnableBTR { get; set; }
    public int BTRCoverPrice { get; set; } = 30000;
    public int BTRTaxiPrice { get; set; } = 7000;
+
+   public int BTRWoodsTimeMin { get; set; } = 5;
+
+   public int BTRWoodsTimeMax { get; set; } = 10;
+   public int BTRWoodsChance { get; set; } = 50;
+   public int BTRStreetsChance { get; set; } = 50;
+   public int BTRStreetsTimeMin { get; set; } = 5;
+
+   public int BTRStreetsTimeMax { get; set; } = 10;
+
    public double UsecMult { get; set; } = 1.5;
    public double BearMult { get; set; } = 1;
    public double ScavMult { get; set; } = 0.8;
@@ -1223,8 +1233,11 @@
   public class SecureContainers
   {
    public int KappaWidth { get; set; } = 3;
-   public int AlphaHeight { get; set; } = 2;
+
    public int KappaHeight { get; set; } = 4;
+   public int AlphaHeight { get; set; } = 2;
+   public int DesecratedKappaWidth { get; set; } = 3;
+   public int DesecratedKappaHeight { get; set; } = 4;
    public int AlphaWidth { get; set; } = 2;
    public int GammaWidth { get; set; } = 3;
    public int GammaHeight { get; set; } = 3;

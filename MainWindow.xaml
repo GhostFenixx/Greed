@@ -351,6 +351,7 @@
     <MenuItem Header="简体中文" Tag="zh-CN" Click="LangSwitchClick"/>
     <MenuItem Header="Русский" Tag="ru-RU" Click="LangSwitchClick"/>
     <MenuItem Header="Українська" Tag="uk-UA" Click="LangSwitchClick"/>
+    <MenuItem Header="Español" Tag="es-ES" Click="LangSwitchClick"/>
    </MenuItem>
   </Menu>
   <DockPanel Grid.Column="2" Width="140">
@@ -458,22 +459,22 @@
         </Expander.Header>
         <StackPanel Margin="10" Name="CurrencySection">
          <!--<CheckBox Content="{DynamicResource DisableDefaultCashStack}" ToolTip="{DynamicResource DisableDefaultCashStack_TT}" IsChecked="{Binding Items.BSGCashStack}"/>-->
-         <ui:NumberBox Value="{Binding Items.RubStack}" Style="{StaticResource FlatsBig}" SmallChange="50000">
+         <ui:NumberBox Value="{Binding Items.RubStack}" Minimum="50000" Style="{StaticResource FlatsBig}" SmallChange="50000">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource RoublesOrDefault}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.DollarStack}" Style="{StaticResource FlatsBig}" SmallChange="500">
+         <ui:NumberBox Value="{Binding Items.DollarStack}" Minimum="500" Style="{StaticResource FlatsBig}" SmallChange="500">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Dollars}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.EuroStack}" Style="{StaticResource FlatsBig}" SmallChange="500">
+         <ui:NumberBox Value="{Binding Items.EuroStack}" Minimum="500" Style="{StaticResource FlatsBig}" SmallChange="500">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource Euros}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Items.GPStack}" Style="{StaticResource FlatsSmall}" SmallChange="5">
+         <ui:NumberBox Value="{Binding Items.GPStack}" Minimum="5" Style="{StaticResource FlatsSmall}" SmallChange="5">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource GPCoin}"/>
           </ui:NumberBox.Header>
@@ -901,7 +902,7 @@
           </ui:NumberBox.Header>
          </ui:NumberBox>
          <DockPanel Margin="0,5,0,5">
-          <TextBlock Text="{DynamicResource FenceGunDurability}" Width="200" VerticalAlignment="Center" Padding="0,20,0,0"/>
+          <TextBlock TextWrapping="Wrap" Text="{DynamicResource FenceGunDurability}" Width="200" VerticalAlignment="Center" Padding="0,20,0,0"/>
           <ui:NumberBox Value="{Binding Traders.Fence.ArmorDurability_Min}" Maximum="{Binding Traders.Fence.ArmorDurability_Max}" Width="100" Style="{StaticResource MinMax}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Min}" HorizontalAlignment="Center"/>
@@ -914,7 +915,7 @@
           </ui:NumberBox>
          </DockPanel>
          <DockPanel Margin="0,5,0,5">
-          <TextBlock Text="{DynamicResource FenceArmorDurability}" Width="200"  VerticalAlignment="Center"/>
+          <TextBlock TextWrapping="Wrap" Text="{DynamicResource FenceArmorDurability}" Width="200"  VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding Traders.Fence.GunDurability_Min}" Maximum="{Binding Traders.Fence.GunDurability_Max}" Width="100" Style="{StaticResource MinMax}"/>
           <ui:NumberBox Value="{Binding Traders.Fence.GunDurability_Max}" Minimum="{Binding Traders.Fence.GunDurability_Min}" Width="100" Style="{StaticResource MinMax}"/>
          </DockPanel>
@@ -2054,12 +2055,35 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
          </DockPanel>
-         <ui:NumberBox Value="{Binding Raids.BTRTaxiPrice}" Minimum="1" Maximum="500000" Style="{StaticResource FlatsBig}" Cursor="">
+         <DockPanel Margin="5,5,0,5">
+          <TextBlock Text="{DynamicResource BTRChance}" TextWrapping="Wrap" Width="180" VerticalAlignment="Center" Padding="0,20,0,0"/>
+          <ui:NumberBox Value="{Binding Raids.BTRWoodsChance}" Width="100" Margin="10,0,0,0" Style="{StaticResource FlatsSmall}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource Woods}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+          <ui:NumberBox Value="{Binding  Raids.BTRStreetsChance}" Width="100"  Style="{StaticResource FlatsSmall}">
+           <ui:NumberBox.Header>
+            <TextBlock Text="{DynamicResource StreetsShort}" HorizontalAlignment="Center"/>
+           </ui:NumberBox.Header>
+          </ui:NumberBox>
+         </DockPanel>
+         <DockPanel Margin="5,5,0,5">
+          <TextBlock Text="{DynamicResource BTRTimeMin}"  TextWrapping="Wrap" Width="180"/>
+          <ui:NumberBox Value="{Binding  Raids.BTRWoodsTimeMin}" Margin="10,0,0,0" Width="100" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding  Raids.BTRStreetsTimeMin}" Width="100" Style="{StaticResource FlatsSmall}"/>
+         </DockPanel>
+         <DockPanel Margin="5,5,0,5">
+          <TextBlock Text="{DynamicResource BTRTimeMax}" TextWrapping="Wrap" Width="180"/>
+          <ui:NumberBox Value="{Binding  Raids.BTRWoodsTimeMax}" VerticalAlignment="Center" Margin="10,0,0,0" Width="100" Style="{StaticResource FlatsSmall}"/>
+          <ui:NumberBox Value="{Binding  Raids.BTRStreetsTimeMax}" VerticalAlignment="Center" Width="100" Style="{StaticResource FlatsSmall}"/>
+         </DockPanel>
+         <ui:NumberBox Margin="0,5,0,5" Value="{Binding Raids.BTRTaxiPrice}" Minimum="1" Maximum="500000" Style="{StaticResource FlatsBig}" Cursor="">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource BTRTaxiPrice}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Raids.BTRCoverPrice}" Minimum="1" Maximum="500000" Style="{StaticResource FlatsBig}" Cursor="">
+         <ui:NumberBox Margin="0,5,0,5" Value="{Binding Raids.BTRCoverPrice}" Minimum="1" Maximum="500000" Style="{StaticResource FlatsBig}" Cursor="">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource BTRCoverPrice}"/>
           </ui:NumberBox.Header>
@@ -2157,7 +2181,7 @@
         </Expander.Header>
         <StackPanel IsEnabled="False" Name="RaidStartupSection" Margin="10">
          <TextBlock Text="{DynamicResource AIDifficulty}"/>
-         <ComboBox Foreground ="White" Width="200" Name="AIDifficulty" SelectedIndex="{Binding Path=Raids.RaidStartup.AIDifficulty, Mode=TwoWay}" SelectedValuePath="Content">
+         <ComboBox Foreground ="White" Width="250" Name="AIDifficulty" SelectedIndex="{Binding Path=Raids.RaidStartup.AIDifficulty, Mode=TwoWay}" SelectedValuePath="Content">
           <ComboBoxItem Content="{DynamicResource AsOnline}"/>
           <ComboBoxItem Content="{DynamicResource Easy}"/>
           <ComboBoxItem Content="{DynamicResource Medium}"/>
@@ -2166,7 +2190,7 @@
           <ComboBoxItem Content="{DynamicResource Random}"/>
          </ComboBox>
          <TextBlock Text="{DynamicResource AIAmount}"/>
-         <ComboBox Foreground ="White" Width="200" Name="AIAmount" SelectedIndex="{Binding Path=Raids.RaidStartup.AIAmount, Mode=TwoWay}" SelectedValuePath="Content">
+         <ComboBox Foreground ="White" Width="250" Name="AIAmount" SelectedIndex="{Binding Path=Raids.RaidStartup.AIAmount, Mode=TwoWay}" SelectedValuePath="Content">
           <ComboBoxItem Content="{DynamicResource AsOnline}"/>
           <ComboBoxItem Content="{DynamicResource Low}"/>
           <ComboBoxItem Content="{DynamicResource Medium}"/>
@@ -2174,7 +2198,7 @@
           <ComboBoxItem Content="{DynamicResource Horde}"/>
           <ComboBoxItem Content="{DynamicResource NoBots}"/>
          </ComboBox>
-         <ui:NumberBox Value="{Binding Raids.RaidStartup.TimeBeforeDeployLocal}" Minimum="5" Maximum="60" Style="{StaticResource FlatsSmall}">
+         <ui:NumberBox HorizontalAlignment="Left" Width="250" Value="{Binding Raids.RaidStartup.TimeBeforeDeployLocal}" Minimum="5" Maximum="60" Style="{StaticResource FlatsSmall}">
           <ui:NumberBox.Header>
            <TextBlock Text="{DynamicResource DeployTimer}"/>
           </ui:NumberBox.Header>
@@ -2749,7 +2773,11 @@
           <ComboBox Foreground ="White" Margin="0,4,0,0" Width="500" SelectedIndex="{Binding Path=Quests.ScavQuests.Types, Mode=TwoWay}" ToolTip="{DynamicResource Types_TT}" SelectedValuePath="Content">
            <ComboBoxItem Content="{DynamicResource Elimination}"/>
            <ComboBoxItem Content="{DynamicResource Completion}"/>
+           <ComboBoxItem Content="{DynamicResource Exploration}"/>
            <ComboBoxItem Content="{DynamicResource CompElim}"/>
+           <ComboBoxItem Content="{DynamicResource CompExpl}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElim}"/>
+           <ComboBoxItem Content="{DynamicResource ExplElimComp}"/>
           </ComboBox>
          </StackPanel>
          <DockPanel>
@@ -3064,6 +3092,11 @@
           <TextBlock Text="{DynamicResource Kappa}" Width="150" VerticalAlignment="Center"/>
           <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaWidth}" Style="{StaticResource Sizes}" Width="100"/>
           <ui:NumberBox Value="{Binding CSM.SecureContainers.KappaHeight}" Style="{StaticResource Sizes}" Width="100"/>
+         </DockPanel>
+         <DockPanel Margin="5,0,0,5" Height="35">
+          <TextBlock Text="{DynamicResource DesecratedKappa}" Width="150" VerticalAlignment="Center"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.DesecratedKappaWidth}" Style="{StaticResource Sizes}" Width="100"/>
+          <ui:NumberBox Value="{Binding CSM.SecureContainers.DesecratedKappaHeight}" Style="{StaticResource Sizes}" Width="100"/>
          </DockPanel>
          <DockPanel Margin="5,0,0,5" Height="35">
           <TextBlock Text="{DynamicResource WaistPouch}" Width="150" VerticalAlignment="Center"/>
@@ -3801,7 +3834,7 @@
    </Button>
    <ComboBox Name="Presets" Width="350" Height="30"  PreviewTextInput="TextValidationTextBox" VerticalAlignment="Center" IsEditable="True"/>
   </StackPanel>
-  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.11.0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Margin="0,0,15,5" FontWeight="Bold" FontFamily="{StaticResource Bender}" Foreground="#FFC5C3B2" Style="{StaticResource TabText}" TextWrapping="Wrap" Text="Version № 1.11.1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
  </Grid>
 </Window>
