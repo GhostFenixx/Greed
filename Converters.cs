@@ -59,7 +59,22 @@ namespace Greed
   public string FormatDouble(double value)
   {
    return Math.Clamp(value, 0, 100).ToString();
+  }
+  public double? ParseDouble(string text)
+  {
+   if (double.TryParse(text, out double result))
+   {
+    return result;
+   }
+   return null;
+  }
+ }
 
+ public class ForceToOneInteger : INumberBoxNumberFormatter
+ {
+  public string FormatDouble(double value)
+  {
+   return Math.Clamp(value, 1, 168).ToString();
   }
   public double? ParseDouble(string text)
   {

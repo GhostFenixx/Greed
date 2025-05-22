@@ -17,6 +17,7 @@
   <controls:ThreeDecimalPlacesFormatter x:Key="ThreeDecimalFormatter"/>
   <controls:ValidityFormatter x:Key="ValidityFormatter"/>
   <controls:TwoDecimalPlacesFormatterWithNegative x:Key="DecimalFormatterMinus"/>
+  <controls:ForceToOneInteger x:Key="ForceToOneInteger"/>
   <controls:UpperLimit x:Key="UpperLimit"/>
   <Style x:Key="TabText" TargetType="TextBlock">
    <Setter Property="FontFamily" Value="{StaticResource Bender}"/>
@@ -129,15 +130,18 @@
   <Style x:Key="MinMax" TargetType="ui:NumberBox">
    <Setter Property="SmallChange" Value="5"/>
    <Setter Property="Minimum" Value="0"/>
-   <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
    <Setter Property="NumberFormatter" Value="{StaticResource ValidityFormatter}"/>
+   <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
+  </Style>
+  <Style x:Key="MinMaxOne" TargetType="ui:NumberBox">
+   <Setter Property="SmallChange" Value="5"/>
+   <Setter Property="NumberFormatter" Value="{StaticResource ForceToOneInteger}"/>
    <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
   </Style>
   <Style x:Key="Sizes" TargetType="ui:NumberBox">
    <Setter Property="SmallChange" Value="1"/>
    <Setter Property="Minimum" Value="1"/>
    <Setter Property="Maximum" Value="20"/>
-   <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
    <Setter Property="NumberFormatter" Value="{StaticResource ValidityFormatter}"/>
    <Setter Property="ValidationMode" Value="InvalidInputOverwritten"/>
   </Style>
@@ -731,8 +735,9 @@
            <TextBlock Text="{DynamicResource ScavCasePrice}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
-         <ui:NumberBox Value="{Binding Hideout.CultistTime}" ToolTip="{DynamicResource CultistTime_TT}" Style="{StaticResource ThreeMults}">
+         <ui:NumberBox Value="{Binding Hideout.CultistTime}"  Style="{StaticResource ThreeMults}">
           <ui:NumberBox.Header>
+           <!--ToolTip="{DynamicResource CultistTime_TT}"-->
            <TextBlock Text="{DynamicResource CultistTime}"/>
           </ui:NumberBox.Header>
          </ui:NumberBox>
@@ -1037,7 +1042,7 @@
             <TextBlock Text="{DynamicResource Mechanic}"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Traders.TraderSell.Ref}" Style="{DynamicResource MinMax}"  Width="200">
+          <ui:NumberBox Value="{Binding Traders.TraderSell.Ref}" Style="{DynamicResource Mults}"  Width="200">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Ref}"/>
            </ui:NumberBox.Header>
@@ -1090,12 +1095,12 @@
         <StackPanel Margin="10" HorizontalAlignment="Left"  Name="InsuranceSection" IsEnabled="False">
          <DockPanel Margin="5,5,0,5">
           <TextBlock TextWrapping="Wrap" Text="{DynamicResource InsuranceMinimumTime}" Width="200" VerticalAlignment="Bottom" Padding="0,0,0,5"/>
-          <ui:NumberBox Value="{Binding Services.Therapist_Min}" Maximum="{Binding Services.Therapist_Max}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}">
+          <ui:NumberBox Value="{Binding Services.Therapist_Min}" Minimum="1" Maximum="{Binding Services.Therapist_Max}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMaxOne}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Therapist}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
           </ui:NumberBox>
-          <ui:NumberBox Value="{Binding Services.Prapor_Min}" Maximum="{Binding Services.Prapor_Max}"   Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}">
+          <ui:NumberBox Value="{Binding Services.Prapor_Min}" Minimum="1" Maximum="{Binding Services.Prapor_Max}"   Margin="5,0,5,0" Width="100" Style="{StaticResource MinMaxOne}">
            <ui:NumberBox.Header>
             <TextBlock Text="{DynamicResource Prapor}" HorizontalAlignment="Center"/>
            </ui:NumberBox.Header>
@@ -1104,8 +1109,8 @@
          </DockPanel>
          <DockPanel Margin="5,5,0,5">
           <TextBlock Text="{DynamicResource InsuranceMaximumTime}" TextWrapping="Wrap" Width="200" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding Services.Therapist_Max}" Minimum="{Binding Services.Therapist_Min}"   Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}" VerticalAlignment="Center"/>
-          <ui:NumberBox Value="{Binding Services.Prapor_Max}" Minimum="{Binding Services.Prapor_Min}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMax}" VerticalAlignment="Center"/>
+          <ui:NumberBox Value="{Binding Services.Therapist_Max}"  Minimum="{Binding Services.Therapist_Min}"   Margin="5,0,5,0" Width="100" Style="{StaticResource MinMaxOne}" VerticalAlignment="Center"/>
+          <ui:NumberBox Value="{Binding Services.Prapor_Max}" Minimum="{Binding Services.Prapor_Min}"  Margin="5,0,5,0" Width="100" Style="{StaticResource MinMaxOne}" VerticalAlignment="Center"/>
          </DockPanel>
          <DockPanel Margin="5,5,0,5">
           <TextBlock Text="{DynamicResource InsuranceStorageTime}" TextWrapping="Wrap" Width="200" VerticalAlignment="Center"/>
@@ -2905,7 +2910,7 @@
            </ui:NumberBox.Header>
           </ui:NumberBox>
           <StackPanel>
-           <TextBlock Text="{DynamicResource RemoveFilters}" HorizontalAlignment="Center"/>
+           <TextBlock Foreground="#FFFFA73B" Text="{DynamicResource RemoveFilters}" HorizontalAlignment="Center"/>
            <CheckBox IsChecked="{Binding CSM.Cases.MoneyCase.Filter}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
           </StackPanel>
          </DockPanel>
