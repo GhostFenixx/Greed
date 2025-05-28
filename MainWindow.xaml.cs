@@ -1,4 +1,5 @@
 ﻿using Greed.Models;
+using ModernWpf.Controls;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -630,30 +631,17 @@ namespace Greed
             EnableSubSection(StaminaHandsCheck.IsChecked, StaminaHandsSection);
         }
 
-        public static void EnableSection(bool? Checker, Grid Field)
+        public static void EnableSection(bool? checker, Grid field)
         {
-            if (Checker == true)
-            {
-                Field.IsEnabled = true;
-                Field.Opacity = 1;
-            }
-            else
-            {
-                Field.IsEnabled = false;
-                Field.Opacity = 0.2;
-            }
+            bool isChecked = checker.Value;
+
+            field.IsEnabled = isChecked;
+            field.Opacity = isChecked ? 1 : 0.2;
         }
 
-        public static void EnableSubSection(bool? Checker, StackPanel Field)
+        public static void EnableSubSection(bool? checker, StackPanel field)
         {
-            if (Checker == true)
-            {
-                Field.IsEnabled = true;
-            }
-            else
-            {
-                Field.IsEnabled = false;
-            }
+            field.IsEnabled = checker.Value;
         }
 
         private void Dragger(object sender, MouseButtonEventArgs e)
@@ -668,15 +656,20 @@ namespace Greed
 
         private void AppMaximize(object sender, RoutedEventArgs e)
         {
-            if (WindowState == WindowState.Maximized)
+            switch (WindowState)
             {
-                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-                WindowState = WindowState.Normal;
-            }
-            else if (WindowState == WindowState.Normal)
-            {
-                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-                WindowState = WindowState.Maximized;
+                case WindowState.Maximized:
+                    MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                    WindowState = WindowState.Normal;
+                    break;
+                case WindowState.Normal:
+                    MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                    WindowState = WindowState.Maximized;
+                    break;
+                default:
+                    MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                    WindowState = WindowState.Normal;
+                    break;
             }
         }
 
