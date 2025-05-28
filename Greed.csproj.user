@@ -20,11 +20,5 @@
     <Page Update="Popup.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <EmbeddedResource Update="Resources\Dictionary-en-US.xaml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Dictionary-ru-RU.xaml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
