@@ -191,7 +191,7 @@ namespace Greed
                 Message.ShowDialog();
                 return Message.Confirm;
             }
-            else if (PresetNameRegex().IsMatch(Presets.Text))
+            else if (!PresetNameRegex().IsMatch(Presets.Text))
             {
                 return true;
             }
@@ -234,11 +234,12 @@ namespace Greed
             MainClass.MainConfig loadedConfig = JsonSerializer.Deserialize<MainClass.MainConfig>(rawJSON);
             DataContext = loadedConfig;
         }
+
         private void LoadFunc()
         {
             try
             {
-                LoadJson();//Horrible solution - the issue is: Converters and MVVM maximum/minimums bugging out the parsed values, therefore to properly apply them - i need to reload DataContext twice.
+                //LoadJson();//Horrible solution - the issue is: Converters and MVVM maximum/minimums bugging out the parsed values, therefore to properly apply them - i need to reload DataContext twice.
                 LoadJson();//Possible solution was nulling DataContext, however it cause application to hang for 3-5 seconds, unacceptable. Previous solution was loading whole LoadFunc, causing messages to show up twice.
                            //May coding dieties mercy me
                 SectionEnabled(null, null);
@@ -264,6 +265,7 @@ namespace Greed
                 Message.ShowDialog();
             }
         }
+
         private void RunEverything(object sender, RoutedEventArgs e)
         {
             try
