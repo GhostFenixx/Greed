@@ -33,7 +33,7 @@ namespace Greed
                 Message.ShowDialog();
                 if (!Message.Confirm)
                 {
-                    this.Close();
+                    Close();
                 }
             }
             if (!Directory.GetCurrentDirectory().Contains("Loader"))
@@ -638,20 +638,20 @@ namespace Greed
 
         private void AppMinimize(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void AppMaximize(object sender, RoutedEventArgs e)
         {
-            if (this.WindowState == WindowState.Maximized)
+            if (WindowState == WindowState.Maximized)
             {
-                this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-                this.WindowState = WindowState.Normal;
+                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                WindowState = WindowState.Normal;
             }
-            else if (this.WindowState == WindowState.Normal)
+            else if (WindowState == WindowState.Normal)
             {
-                this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-                this.WindowState = WindowState.Maximized;
+                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                WindowState = WindowState.Maximized;
             }
         }
 
