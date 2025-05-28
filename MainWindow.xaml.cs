@@ -325,10 +325,11 @@ namespace Greed
 
         private void PresetFolder(object sender, EventArgs e)
         {
-            if (Directory.Exists(Directory.GetCurrentDirectory() + @"\Presets"))
+            var currDir = Directory.GetCurrentDirectory();
+            if (Directory.Exists(currDir + @"\Presets"))
             {
 
-                Process.Start("explorer.exe", Directory.GetCurrentDirectory() + @"\Presets");
+                Process.Start("explorer.exe", currDir + @"\Presets");
             }
             else
             {
@@ -336,6 +337,7 @@ namespace Greed
                 Message.ShowDialog();
             }
         }
+
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             if (RoubleRatio.Value + DollarRatio.Value + EuroRatio.Value != 100)
