@@ -164,7 +164,7 @@ namespace Greed
                     {
                         string rawJSON = JsonSerializer.Serialize((MainClass.MainConfig)DataContext, new JsonSerializerOptions() { WriteIndented = true });
                         string savepath = Directory.GetCurrentDirectory() + @"\Presets\";
-                        savepath += (Presets.Text == "") ? "Noname.json" : Presets.Text + ".json";
+                        savepath += string.IsNullOrEmpty(Presets.Text) ? "Noname.json" : Presets.Text + ".json";
                         File.WriteAllText(savepath, rawJSON);
                         ToList();
                         if (Presets.Text == "")
