@@ -396,6 +396,7 @@ namespace Greed
             await Task.Delay(1500);
             Save.Text = new((string)Application.Current.FindResource("SaveButton"));
         }
+
         private void RunURL(string Resource, string URL)
         {
             Popup Message = new((string)Application.Current.FindResource(Resource));
@@ -407,6 +408,7 @@ namespace Greed
                 Process.Start(browserPath, argUrl);
             }
         }
+
         private void ItemFinder(object sender, EventArgs e)
         {
             Popup Message = new((string)Application.Current.FindResource("IDFinder"));
@@ -418,34 +420,42 @@ namespace Greed
                 Process.Start(browserPath, argUrl);
             }
         }
+
         private void SPTDiscord(object sender, EventArgs e)
         {
             RunURL("SPTLink", "https://discord.gg/Xn9msqQZan");
         }
+
         private void SPTWEB(object sender, EventArgs e)
         {
             RunURL("SPTWeb", "https://hub.sp-tarkov.com");
         }
+
         private void KofiLink(object sender, EventArgs e)
         {
             RunURL("KofiLink", "https://ko-fi.com/ghostfenixx");
         }
+
         private void GitHubLink(object sender, EventArgs e)
         {
             RunURL("GitHubLink", "https://github.com/GhostFenixx?tab=repositories");
         }
+
         private void ModLink(object sender, EventArgs e)
         {
             RunURL("ModPage", "https://hub.sp-tarkov.com/files/file/379-kmc-server-value-modifier");
         }
+
         private void FikaDiscord(object sender, EventArgs e)
         {
             RunURL("FikaLink", "https://discord.gg/HknsaAjGvX");
         }
+
         private void WikiPage(object sender, EventArgs e)
         {
             RunURL("WikiPage_Link", "https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki");
         }
+
         private void InstallPlugin(object sender, RoutedEventArgs e)
         {
             string modFolder = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
@@ -475,16 +485,19 @@ namespace Greed
                 Message.ShowDialog();
             }
         }
+
         private void Disclaimer(object sender, RoutedEventArgs e)
         {
             Popup Message = new((string)Application.Current.FindResource("DisclaimerText"));
             Message.ShowDialog();
         }
+
         private void ThanksTo(object sender, RoutedEventArgs e)
         {
             Popup Message = new((string)Application.Current.FindResource("ThanksToText"));
             Message.ShowDialog();
         }
+
         private void License(object sender, RoutedEventArgs e)
         {
             Popup Message = new((string)Application.Current.FindResource("LicenseText"));
@@ -500,12 +513,12 @@ namespace Greed
         }
         private void TextValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new("[`<>^@!?#%*%:&\\]*$]");
+            Regex regex = TextValidationRegex();
             e.Handled = regex.IsMatch(e.Text);
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new("[^0-9.,]+");
+            Regex regex = NumberValidationRegex();
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -690,5 +703,9 @@ namespace Greed
 
         [GeneratedRegex("(?:\\W)")]
         private static partial Regex PresetNameRegex();
+        [GeneratedRegex("[^0-9.,]+")]
+        public static partial Regex NumberValidationRegex();
+        [GeneratedRegex("[`<>^@!?#%*%:&\\]*$]")]
+        public static partial Regex TextValidationRegex();
     }
 }
