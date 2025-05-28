@@ -1,5 +1,4 @@
 ﻿using Greed.Models;
-using ModernWpf.Controls;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -23,7 +22,7 @@ namespace Greed
             InitializeComponent();
             string currDir = Directory.GetCurrentDirectory();
             string modFolder = Directory.GetParent(currDir).FullName;
-            
+
             ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject),
                 new FrameworkPropertyMetadata(int.MaxValue));
             LangSwitch((Thread.CurrentThread.CurrentCulture).ToString());
@@ -85,7 +84,7 @@ namespace Greed
                     Presets.Items.Add(fileInfo.Name.Replace(".json", ""));
                 }
             }
-            
+
             Presets.SelectedItem = tempfield;
         }
 
@@ -512,11 +511,13 @@ namespace Greed
                 File.WriteAllText("UIcfg", "true," + Presets.Text);
             }
         }
+
         private void TextValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = TextValidationRegex();
             e.Handled = regex.IsMatch(e.Text);
         }
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = NumberValidationRegex();
