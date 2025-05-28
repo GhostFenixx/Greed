@@ -38,11 +38,11 @@ namespace Greed
             }
             if (!Directory.GetCurrentDirectory().Contains("Loader"))
             {
-                System.IO.Directory.CreateDirectory("Loader");
+                Directory.CreateDirectory("Loader");
             }
             if (!Directory.GetCurrentDirectory().Contains("Presets"))
             {
-                System.IO.Directory.CreateDirectory("Presets");
+                Directory.CreateDirectory("Presets");
             }
 
             ToList();
@@ -54,25 +54,27 @@ namespace Greed
         {
             LangSwitch(((MenuItem)sender).Tag.ToString());
         }
+
         private static void LoadRTF(RichTextBox RT, Stream Stream)
         {
             RT.Document.Blocks.Clear();
             RT.Selection.Load(Stream, DataFormats.Rtf);
             RT.Selection.Select(RT.Selection.Start, RT.Selection.Start);
         }
+
         private void ToList()
         {
             string startFolder = Directory.GetCurrentDirectory() + @"\Presets";
             object tempfield = Presets.SelectedItem;
             Presets.Items.Clear();
-            System.IO.DirectoryInfo dir = new(startFolder);
-            IEnumerable<System.IO.FileInfo> fileList = dir.GetFiles("*.*", System.IO.SearchOption.AllDirectories);
-            IEnumerable<System.IO.FileInfo> fileQuery =
+            DirectoryInfo dir = new(startFolder);
+            IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
+            IEnumerable<FileInfo> fileQuery =
                 from file in fileList
                 where file.Extension == ".json"
                 orderby file.Name
                 select file;
-            foreach (System.IO.FileInfo fi in fileQuery)
+            foreach (FileInfo fi in fileQuery)
             {
                 Presets.Items.Add(fi.Name.Remove(fi.Name.Length - 5));
             }
@@ -133,9 +135,9 @@ namespace Greed
                 Source = new Uri(dict, UriKind.Relative)
             };
             Application.Current.Resources.MergedDictionaries.Add(resdict);
-            CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            CultureInfo customCulture = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+            Thread.CurrentThread.CurrentCulture = customCulture;
             LoadRTF(WelcomeMessage, Assembly.GetExecutingAssembly().GetManifestResourceStream(hello));
             LoadRTF(RTF1, Assembly.GetExecutingAssembly().GetManifestResourceStream(faq));
         }
@@ -239,7 +241,7 @@ namespace Greed
                 Popup Message = new((string)Application.Current.FindResource("FileNotFoundException"));
                 Message.ShowDialog();
             }
-            catch (System.Text.Json.JsonException e)
+            catch (JsonException e)
             {
                 Popup Message = new((string)Application.Current.FindResource("CorruptedJSON") + "\n" + e.Message);
                 Message.ShowDialog();
@@ -317,7 +319,7 @@ namespace Greed
             if (Directory.Exists(Directory.GetCurrentDirectory() + @"\Presets"))
             {
 
-                System.Diagnostics.Process.Start("explorer.exe", Directory.GetCurrentDirectory() + @"\Presets");
+                Process.Start("explorer.exe", Directory.GetCurrentDirectory() + @"\Presets");
             }
             else
             {
@@ -336,12 +338,12 @@ namespace Greed
             try
             {
                 string savepath = Directory.GetCurrentDirectory() + @"\Loader\loader.json";
-                System.IO.File.Delete(savepath);
+                File.Delete(savepath);
                 if (Presets.Text == "")
                 {
                     if (File.Exists(Directory.GetCurrentDirectory() + @"\Presets\Noname.json"))
                     {
-                        System.IO.File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\": \"Noname\"" + "\n}");
+                        File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\": \"Noname\"" + "\n}");
                         Popup Message = new((string)Application.Current.FindResource("NonameApplied"));
                         Message.ShowDialog();
                     }
@@ -353,7 +355,7 @@ namespace Greed
                 }
                 else
                 {
-                    System.IO.File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\":\"" + Presets.Text + "\"\n}");
+                    File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\":\"" + Presets.Text + "\"\n}");
                     _ = ApplyTextAsync();
                 }
             }
@@ -390,7 +392,7 @@ namespace Greed
             {
                 string browserPath = ("C:/Windows/explorer.exe");
                 string argUrl = "\"" + URL + "\"";
-                System.Diagnostics.Process.Start(browserPath, argUrl);
+                Process.Start(browserPath, argUrl);
             }
         }
         private void ItemFinder(object sender, EventArgs e)
@@ -401,7 +403,7 @@ namespace Greed
             {
                 string browserPath = ("C:/Windows/explorer.exe");
                 string argUrl = "https://db.sp-tarkov.com/search";
-                System.Diagnostics.Process.Start(browserPath, argUrl);
+                Process.Start(browserPath, argUrl);
             }
         }
         private void SPTDiscord(object sender, EventArgs e)
@@ -557,6 +559,7 @@ namespace Greed
             Popup Message = new((string)Application.Current.FindResource("ChangelogText"));
             Message.ShowDialog();
         }
+
         private void SectionEnabled(object sender, RoutedEventArgs e)//horrible
         {
             EnableSection(ItemsCheck.IsChecked, ItemsSection);
@@ -601,6 +604,7 @@ namespace Greed
             EnableSubSection(StaminaLegsCheck.IsChecked, StaminaLegsSection);
             EnableSubSection(StaminaHandsCheck.IsChecked, StaminaHandsSection);
         }
+
         public static void EnableSection(bool? Checker, Grid Field)
         {
             if (Checker == true)
@@ -614,6 +618,7 @@ namespace Greed
                 Field.Opacity = 0.2;
             }
         }
+
         public static void EnableSubSection(bool? Checker, StackPanel Field)
         {
             if (Checker == true)
@@ -626,7 +631,7 @@ namespace Greed
             }
         }
 
-        private void Dragger(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Dragger(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }

@@ -27,25 +27,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Dictionary-es-ES.xaml" />
+    <!--<EmbeddedResource Include="Resources\Dictionary-es-ES.xaml" />-->
     <EmbeddedResource Include="Resources\Dictionary-zh-CN.xaml" />
     <EmbeddedResource Include="Resources\Dictionary-uk-UA.xaml" />
     <EmbeddedResource Include="Resources\Dictionary-ko-KR.xaml" />
     <EmbeddedResource Include="Resources\Dictionary-en-US.xaml" />
     <EmbeddedResource Include="Resources\Dictionary-ru-RU.xaml" />
     <EmbeddedResource Include="Resources\faqCN.rtf" />
-    <EmbeddedResource Include="Resources\faqES.rtf" />
+    <!--<EmbeddedResource Include="Resources\faqES.rtf" />-->
     <EmbeddedResource Include="Resources\faqKR.rtf" />
     <EmbeddedResource Include="Resources\faqUA.rtf" />
     <EmbeddedResource Include="Resources\faqEN.rtf" />
     <EmbeddedResource Include="Resources\faqRU.rtf" />
     <EmbeddedResource Include="Resources\HelloCN.rtf" />
     <EmbeddedResource Include="Resources\HelloEN.rtf" />
-    <EmbeddedResource Include="Resources\HelloES.rtf" />
+    <!--<EmbeddedResource Include="Resources\HelloES.rtf" />-->
     <EmbeddedResource Include="Resources\HelloKR.rtf" />
     <EmbeddedResource Include="Resources\HelloRU.rtf" />
     <EmbeddedResource Include="Resources\HelloUA.rtf" />
-    <EmbeddedResource Include="Resources\HideSpecialIcon.dll" />
+    <!--<EmbeddedResource Include="Resources\HideSpecialIcon.dll" />-->
     <Resource Include="Resources\HealthCN.png" />
     <Resource Include="Resources\HealthUA.png" />
     <Resource Include="Resources\Icons\icon_button_logout_over.png">
