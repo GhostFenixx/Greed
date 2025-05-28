@@ -65,19 +65,26 @@ namespace Greed
         private void ToList()
         {
             string startFolder = Directory.GetCurrentDirectory() + @"\Presets";
+            if (!Directory.Exists(startFolder))
+            {
+                throw new NullReferenceException($"{startFolder} does not exist.");
+            }
+
             object tempfield = Presets.SelectedItem;
             Presets.Items.Clear();
             DirectoryInfo dir = new(startFolder);
-            IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
-            IEnumerable<FileInfo> fileQuery =
-                from file in fileList
-                where file.Extension == ".json"
-                orderby file.Name
-                select file;
-            foreach (FileInfo fi in fileQuery)
+            List<FileInfo> fileList = [.. dir.GetFiles("*.*", SearchOption.AllDirectories)
+                .Where(x => x.Extension == ".json")
+                .OrderBy(x => x.Name)];
+
+            if (fileList.Count > 0)
             {
-                Presets.Items.Add(fi.Name.Remove(fi.Name.Length - 5));
+                foreach (FileInfo fileInfo in fileList)
+                {
+                    Presets.Items.Add(fileInfo.Name.Replace(".json", ""));
+                }
             }
+            
             Presets.SelectedItem = tempfield;
         }
 
