@@ -191,7 +191,7 @@ namespace Greed
                 Message.ShowDialog();
                 return Message.Confirm;
             }
-            else if (!Presets.Text.Contains('/') && !Presets.Text.Contains('\\') && !Presets.Text.Contains('"') && !Presets.Text.Contains(':') && !Presets.Text.Contains('?') && !Presets.Text.Contains('>') && !Presets.Text.Contains('<') && !Presets.Text.Contains('|')) //!Presets.Text.Contains(" ")
+            else if (PresetNameRegex().IsMatch(Presets.Text))
             {
                 return true;
             }
@@ -682,5 +682,8 @@ namespace Greed
                 }
             }
         }
+
+        [GeneratedRegex("(?:\\W)")]
+        private static partial Regex PresetNameRegex();
     }
 }
