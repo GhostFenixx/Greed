@@ -348,11 +348,12 @@ namespace Greed
             }
             try
             {
-                string savepath = Directory.GetCurrentDirectory() + @"\Loader\loader.json";
+                var currDir = Directory.GetCurrentDirectory();
+                string savepath = currDir + @"\Loader\loader.json";
                 File.Delete(savepath);
                 if (Presets.Text == "")
                 {
-                    if (File.Exists(Directory.GetCurrentDirectory() + @"\Presets\Noname.json"))
+                    if (File.Exists(currDir + @"\Presets\Noname.json"))
                     {
                         File.AppendAllText(savepath, "{\n" + "\"CurrentlySelectedPreset\": \"Noname\"" + "\n}");
                         Popup Message = new((string)Application.Current.FindResource("NonameApplied"));
