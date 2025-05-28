@@ -19,28 +19,28 @@ namespace Greed
     {
         public MainWindow()
         {
-            string ModFolder = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
-            //ToolTipService.ShowDurationProperty = 8000;
-            System.Windows.Media.RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
-            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
             InitializeComponent();
+            string currDir = Directory.GetCurrentDirectory();
+            string modFolder = Directory.GetParent(currDir).FullName;
+            
+            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject),
+                new FrameworkPropertyMetadata(int.MaxValue));
             LangSwitch((Thread.CurrentThread.CurrentCulture).ToString());
 
-            if (!ModFolder.Contains("mods") && !ModFolder.Contains("Mods"))//&& !ModFolder.Contains("bin"))
+            if (!modFolder.Contains("mods") && !modFolder.Contains("Mods"))
             {
-                Popup Message = new((string)Application.Current.FindResource("SVMWrongInstallation"));
-                //Popup Message = new((string)("Same Name Selected, want to override?"));
-                Message.ShowDialog();
-                if (!Message.Confirm)
+                Popup message = new((string)Application.Current.FindResource("SVMWrongInstallation"));
+                message.ShowDialog();
+                if (!message.Confirm)
                 {
                     Close();
                 }
             }
-            if (!Directory.GetCurrentDirectory().Contains("Loader"))
+            if (!currDir.Contains("Loader"))
             {
                 Directory.CreateDirectory("Loader");
             }
-            if (!Directory.GetCurrentDirectory().Contains("Presets"))
+            if (!currDir.Contains("Presets"))
             {
                 Directory.CreateDirectory("Presets");
             }
